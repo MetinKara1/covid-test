@@ -1,7 +1,7 @@
 import React from 'react';
 // nodejs library that concatenates classes
 import classnames from 'classnames';
-import bg from '../../assets/img/theme/bg.jpg';
+import bg from '../../assets/img/theme/bg1.png';
 
 import {
   Badge,
@@ -81,9 +81,9 @@ class Landing extends React.Component {
                         <Col lg='4'>
                           <Card className='card-lift--hover shadow border-0'>
                             <CardBody className='py-5'>
-                              <div className='icon icon-shape icon-shape-primary rounded-circle mb-4'>
+                              {/* <div className='icon icon-shape icon-shape-primary rounded-circle mb-4'>
                                 <i className='ni ni-check-bold' />
-                              </div>
+                              </div> */}
                               <h6 className='text-primary text-uppercase'>
                                 PCR Testi
                               </h6>
@@ -105,12 +105,17 @@ class Landing extends React.Component {
                                 </Badge>
                               </div>
                               <Button
-                                className='mt-4'
-                                color='primary'
+                                className='text-primary '
+                                color='link'
                                 href='#pablo'
                                 onClick={e => e.preventDefault()}
+                                style={{marginTop: 15, paddingLeft: -20}}
                               >
-                                Detaylı Bilgi
+                                Detaylı Bilgi{' '}
+                                <i
+                                  className='ni ni-bold-right'
+                                  style={{marginTop: 0, paddingLeft: -20}}
+                                ></i>
                               </Button>
                             </CardBody>
                           </Card>
@@ -118,9 +123,9 @@ class Landing extends React.Component {
                         <Col lg='4'>
                           <Card className='card-lift--hover shadow border-0'>
                             <CardBody className='py-5'>
-                              <div className='icon icon-shape icon-shape-success rounded-circle mb-4'>
+                              {/* <div className='icon icon-shape icon-shape-success rounded-circle mb-4'>
                                 <i className='ni ni-istanbul' />
-                              </div>
+                              </div> */}
                               <h6 className='text-success text-uppercase'>
                                 Antikor Testleri (IgM)
                               </h6>
@@ -142,12 +147,17 @@ class Landing extends React.Component {
                                 </Badge>
                               </div>
                               <Button
-                                className='mt-4'
-                                color='success'
+                                className='text-success '
+                                color='link'
                                 href='#pablo'
                                 onClick={e => e.preventDefault()}
+                                style={{marginTop: 15, paddingLeft: -20}}
                               >
-                                Detaylı Bilgi
+                                Detaylı Bilgi{' '}
+                                <i
+                                  className='ni ni-bold-right'
+                                  style={{marginTop: 0, paddingLeft: -20}}
+                                ></i>
                               </Button>
                             </CardBody>
                           </Card>
@@ -155,9 +165,9 @@ class Landing extends React.Component {
                         <Col lg='4'>
                           <Card className='card-lift--hover shadow border-0'>
                             <CardBody className='py-5'>
-                              <div className='icon icon-shape icon-shape-warning rounded-circle mb-4'>
+                              {/* <div className='icon icon-shape icon-shape-warning rounded-circle mb-4'>
                                 <i className='ni ni-planet' />
-                              </div>
+                              </div> */}
                               <h6 className='text-warning text-uppercase'>
                                 Antikor Testleri (IgG)
                               </h6>
@@ -179,12 +189,17 @@ class Landing extends React.Component {
                                 </Badge>
                               </div>
                               <Button
-                                className='mt-4'
-                                color='warning'
+                                className='text-warning '
+                                color='link'
                                 href='#pablo'
                                 onClick={e => e.preventDefault()}
+                                style={{marginTop: 15, paddingLeft: -20}}
                               >
-                                Detaylı Bilgi
+                                Detaylı Bilgi{' '}
+                                <i
+                                  className='ni ni-bold-right'
+                                  style={{marginTop: 0, paddingLeft: -20}}
+                                ></i>
                               </Button>
                             </CardBody>
                           </Card>
@@ -795,7 +810,7 @@ class Landing extends React.Component {
                             </InputGroupText>
                           </InputGroupAddon>
                           <Input
-                            placeholder='Adınız Soyadınız...'
+                            placeholder='Adınız Soyadınız'
                             type='text'
                             onFocus={e => this.setState({nameFocused: true})}
                             onBlur={e => this.setState({nameFocused: false})}
@@ -823,58 +838,66 @@ class Landing extends React.Component {
                       </FormGroup>
                       <FormGroup
                         className={classnames({
-                          focused: this.state.emailFocused,
+                          focused: this.state.phoneFocused,
                         })}
                       >
                         <InputGroup className='input-group-alternative'>
                           <InputGroupAddon addonType='prepend'>
                             <InputGroupText>
-                              <i className='ni ni-email-83' />
+                              <i className='ni ni-mobile-button' />
                             </InputGroupText>
                           </InputGroupAddon>
                           <Input
                             placeholder='Telefon'
                             type='phone'
-                            onFocus={e => this.setState({emailFocused: true})}
-                            onBlur={e => this.setState({emailFocused: false})}
+                            onFocus={e => this.setState({phoneFocused: true})}
+                            onBlur={e => this.setState({phoneFocused: false})}
                           />
                         </InputGroup>
                       </FormGroup>
                       <FormGroup
                         className={classnames({
-                          focused: this.state.emailFocused,
+                          focused: this.state.testTypeFocused,
                         })}
                       >
                         <InputGroup className='input-group-alternative'>
                           <InputGroupAddon addonType='prepend'>
                             <InputGroupText>
-                              <i className='ni ni-email-83' />
+                              <i className='ni ni-sound-wave' />
                             </InputGroupText>
                           </InputGroupAddon>
                           <Input
                             placeholder='Test Tipi'
-                            type='email'
-                            onFocus={e => this.setState({emailFocused: true})}
-                            onBlur={e => this.setState({emailFocused: false})}
+                            type='text'
+                            onFocus={e =>
+                              this.setState({testTypeFocused: true})
+                            }
+                            onBlur={e =>
+                              this.setState({testTypeFocused: false})
+                            }
                           />
                         </InputGroup>
                       </FormGroup>
                       <FormGroup
                         className={classnames({
-                          focused: this.state.emailFocused,
+                          focused: this.state.locationFocused,
                         })}
                       >
                         <InputGroup className='input-group-alternative'>
                           <InputGroupAddon addonType='prepend'>
                             <InputGroupText>
-                              <i className='ni ni-email-83' />
+                              <i className='ni ni-map-big' />
                             </InputGroupText>
                           </InputGroupAddon>
                           <Input
                             placeholder='Lokasyon'
-                            type='email'
-                            onFocus={e => this.setState({emailFocused: true})}
-                            onBlur={e => this.setState({emailFocused: false})}
+                            type='text'
+                            onFocus={e =>
+                              this.setState({locationFocused: true})
+                            }
+                            onBlur={e =>
+                              this.setState({locationFocused: false})
+                            }
                           />
                         </InputGroup>
                       </FormGroup>
@@ -883,7 +906,7 @@ class Landing extends React.Component {
                           className='form-control-alternative'
                           cols='80'
                           name='name'
-                          placeholder='Type a message...'
+                          placeholder='Bir mesaj yazın...'
                           rows='4'
                           type='textarea'
                         />
