@@ -823,58 +823,66 @@ class Landing extends React.Component {
                       </FormGroup>
                       <FormGroup
                         className={classnames({
-                          focused: this.state.emailFocused,
+                          focused: this.state.phoneFocused,
                         })}
                       >
                         <InputGroup className='input-group-alternative'>
                           <InputGroupAddon addonType='prepend'>
                             <InputGroupText>
-                              <i className='ni ni-email-83' />
+                              <i className='ni ni-mobile-button' />
                             </InputGroupText>
                           </InputGroupAddon>
                           <Input
                             placeholder='Telefon'
                             type='phone'
-                            onFocus={e => this.setState({emailFocused: true})}
-                            onBlur={e => this.setState({emailFocused: false})}
+                            onFocus={e => this.setState({phoneFocused: true})}
+                            onBlur={e => this.setState({phoneFocused: false})}
                           />
                         </InputGroup>
                       </FormGroup>
                       <FormGroup
                         className={classnames({
-                          focused: this.state.emailFocused,
+                          focused: this.state.testTypeFocused,
                         })}
                       >
                         <InputGroup className='input-group-alternative'>
                           <InputGroupAddon addonType='prepend'>
                             <InputGroupText>
-                              <i className='ni ni-email-83' />
+                              <i className='ni ni-sound-wave' />
                             </InputGroupText>
                           </InputGroupAddon>
                           <Input
                             placeholder='Test Tipi'
-                            type='email'
-                            onFocus={e => this.setState({emailFocused: true})}
-                            onBlur={e => this.setState({emailFocused: false})}
+                            type='text'
+                            onFocus={e =>
+                              this.setState({testTypeFocused: true})
+                            }
+                            onBlur={e =>
+                              this.setState({testTypeFocused: false})
+                            }
                           />
                         </InputGroup>
                       </FormGroup>
                       <FormGroup
                         className={classnames({
-                          focused: this.state.emailFocused,
+                          focused: this.state.locationFocused,
                         })}
                       >
                         <InputGroup className='input-group-alternative'>
                           <InputGroupAddon addonType='prepend'>
                             <InputGroupText>
-                              <i className='ni ni-email-83' />
+                              <i className='ni ni-map-big' />
                             </InputGroupText>
                           </InputGroupAddon>
                           <Input
                             placeholder='Lokasyon'
-                            type='email'
-                            onFocus={e => this.setState({emailFocused: true})}
-                            onBlur={e => this.setState({emailFocused: false})}
+                            type='text'
+                            onFocus={e =>
+                              this.setState({locationFocused: true})
+                            }
+                            onBlur={e =>
+                              this.setState({locationFocused: false})
+                            }
                           />
                         </InputGroup>
                       </FormGroup>
