@@ -5797,8 +5797,9 @@ button.bg-darker:focus {
 .position-absolute {
   position: absolute !important; }
 
-.position-fixed, .headroom--pinned, .headroom--unpinned {
-  position: fixed !important; }
+.position-fixed, .headroom--pinned { /* .headroom--unpinned */
+  position: fixed !important; 
+}
 
 .position-sticky {
   position: sticky !important; }
@@ -15328,13 +15329,15 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   transform: translateY(0%); }
 
 .headroom--unpinned {
-  transform: translateY(-100%); }
+  /* transform: translateY(-100%);  */
+}
 
 .headroom--not-top {
-  padding-top: .5rem;
+  /* padding-top: .5rem;
   padding-bottom: .5rem;
   background-color: #172b4d !important;
-  box-shadow: 0 1px 10px rgba(130, 130, 134, 0.1); }
+  box-shadow: 0 1px 10px rgba(130, 130, 134, 0.1);  */
+}
 
 .ct-clipboard {
   position: relative;

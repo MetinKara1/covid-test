@@ -8,8 +8,9 @@
     transform: translateY(0%);
 }
 .headroom--unpinned {
-	@extend .position-fixed;
-    transform: translateY(-100%);
+	// @extend .position-fixed;
+    // transform: translateY(-100%);
+    position: fixed;
 }
 
 .headroom--not-top {
