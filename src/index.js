@@ -21,12 +21,12 @@ ReactDOM.render(
     <Switch>
       <Route path='/components' exact render={props => <Index {...props} />} />
       <Route
-        path='/bireylere-özel'
+        path='/bireylere-ozel'
         exact
         render={props => <SpecialToIndividual {...props} />}
       />
       <Route
-        path='/kurumlara-özel'
+        path='/kurumlara-ozel'
         exact
         render={props => <SpecialToCorporate {...props} />}
       />

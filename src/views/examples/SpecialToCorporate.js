@@ -360,10 +360,10 @@ class Landing extends React.Component {
                     </p>
                     <a
                       className='font-weight-bold text-warning mt-5'
-                      href='#pablo'
+                      href='#appointment'
                       onClick={e => e.preventDefault()}
                     >
-                      Randevu Al
+                      Teklif Al
                     </a>
                   </div>
                 </Col>
@@ -755,15 +755,18 @@ class Landing extends React.Component {
               </svg>
             </div>
           </section>
-          <section className='section section-lg pt-lg-0 section-contact-us'>
+          <section
+            className='section section-lg pt-lg-0 section-contact-us'
+            id='appointment'
+          >
             <Container>
               <Row className='justify-content-center mt--300'>
                 <Col lg='8'>
                   <Card className='bg-gradient-secondary shadow'>
                     <CardBody className='p-lg-5'>
-                      <h4 className='mb-1'>Randevu Al</h4>
+                      <h4 className='mb-1'>Teklif Al</h4>
                       <p className='mt-0'>
-                        Randevu almak için formu doldurunuz.
+                        Teklif almak için formu doldurunuz.
                       </p>
                       <FormGroup
                         className={classnames('mt-5', {
@@ -891,6 +894,22 @@ class Landing extends React.Component {
                       </div>
                     </CardBody>
                   </Card>
+                  <Button
+                    className=''
+                    color='primary'
+                    // href='https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-navbar'
+                    target='_blank'
+                    style={{position: 'fixed', bottom: 15, right: 15}}
+                  >
+                    <a href='#appointment' style={{color: 'white'}}>
+                      <span className='btn-inner--icon'>
+                        <i className='fa fa-send mr-2' />
+                      </span>
+                      <span className='nav-link-inner--text ml-1'>
+                        Teklif Al
+                      </span>
+                    </a>
+                  </Button>
                 </Col>
               </Row>
             </Container>

@@ -174,23 +174,6 @@ class Landing extends React.Component {
                   </Row>
                 </Container>
               </section>
-
-              {/* SVG separator */}
-              {/* <div className='separator separator-bottom separator-skew'>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  preserveAspectRatio='none'
-                  version='1.1'
-                  viewBox='0 0 2560 100'
-                  x='0'
-                  y='0'
-                >
-                  <polygon
-                    className='fill-white'
-                    points='2560 0 2560 100 0 100'
-                  />
-                </svg>
-              </div> */}
             </section>
             {/* 1st Hero Variation */}
           </div>
@@ -207,9 +190,6 @@ class Landing extends React.Component {
                 </Col>
                 <Col className='order-md-1' md='8'>
                   <div className='pr-md-5'>
-                    {/* <div className='icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5'>
-                      <i className='ni ni-settings-gear-65' />
-                    </div> */}
                     <h3>TESTLERİNİZİ ZAMAN KAYBETMEDEN YAPTIRIN</h3>
                     <p>
                       COVID-19 virüsünün tüm aşamaları için gerekli olabilecek
@@ -329,9 +309,6 @@ class Landing extends React.Component {
                 </Col>
                 <Col md='6'>
                   <div className='pl-md-5'>
-                    {/* <div className='icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5'>
-                      <i className='ni ni-settings' />
-                    </div> */}
                     <h3>COVID-19 PCR ve ANTİKOR TESTLERİ</h3>
                     <p className='lead'>
                       PCR testi, herhangi bir semptomu olmasa bile hastalığı
@@ -360,7 +337,7 @@ class Landing extends React.Component {
                     </p>
                     <a
                       className='font-weight-bold text-warning mt-5'
-                      href='#pablo'
+                      href='#appointment'
                       onClick={e => e.preventDefault()}
                     >
                       Randevu Al
@@ -393,69 +370,8 @@ class Landing extends React.Component {
                       <h4 className='display-3 text-white'>
                         Sıkça Sorulan Sorular
                       </h4>
-                      {/* <p className='text-white'>
-                        The Arctic Ocean freezes every winter and much of the
-                        sea-ice then thaws every summer, and that process will
-                        continue whatever.
-                      </p> */}
                     </div>
                   </div>
-                  {/* <Card className='shadow shadow-lg--hover mt-5'>
-                    <CardBody>
-                      <div className='d-flex px-3'>
-                        <div>
-                          <div className='icon icon-shape bg-gradient-success rounded-circle text-white'>
-                            <i className='ni ni-satisfied' />
-                          </div>
-                        </div>
-                        <div className='pl-4'>
-                          <h5 className='title text-success'>
-                            Awesome Support
-                          </h5>
-                          <p>
-                            The Arctic Ocean freezes every winter and much of
-                            the sea-ice then thaws every summer, and that
-                            process will continue whatever.
-                          </p>
-                          <a
-                            className='text-success'
-                            href='#pablo'
-                            onClick={e => e.preventDefault()}
-                          >
-                            Learn more
-                          </a>
-                        </div>
-                      </div>
-                    </CardBody>
-                  </Card>
-                  <Card className='shadow shadow-lg--hover mt-5'>
-                    <CardBody>
-                      <div className='d-flex px-3'>
-                        <div>
-                          <div className='icon icon-shape bg-gradient-warning rounded-circle text-white'>
-                            <i className='ni ni-active-40' />
-                          </div>
-                        </div>
-                        <div className='pl-4'>
-                          <h5 className='title text-warning'>
-                            Modular Components
-                          </h5>
-                          <p>
-                            The Arctic Ocean freezes every winter and much of
-                            the sea-ice then thaws every summer, and that
-                            process will continue whatever.
-                          </p>
-                          <a
-                            className='text-warning'
-                            href='#pablo'
-                            onClick={e => e.preventDefault()}
-                          >
-                            Learn more
-                          </a>
-                        </div>
-                      </div>
-                    </CardBody>
-                  </Card> */}
                 </Col>
               </Row>
             </Container>
@@ -476,269 +392,11 @@ class Landing extends React.Component {
               </svg>
             </div>
           </section>
-          {/* <section className='section section-lg'>
-            <Container>
-              <Row className='justify-content-center text-center mb-lg'>
-                <Col lg='8'>
-                  <h2 className='display-3'>The amazing Team</h2>
-                  <p className='lead text-muted'>
-                    According to the National Oceanic and Atmospheric
-                    Administration, Ted, Scambos, NSIDClead scentist, puts the
-                    potentially record maximum.
-                  </p>
-                </Col>
-              </Row>
-              <Row>
-                <Col className='mb-5 mb-lg-0' lg='3' md='6'>
-                  <div className='px-4'>
-                    <img
-                      alt='...'
-                      className='rounded-circle img-center img-fluid shadow shadow-lg--hover'
-                      src={require('assets/img/theme/team-1-800x800.jpg')}
-                      style={{width: '200px'}}
-                    />
-                    <div className='pt-4 text-center'>
-                      <h5 className='title'>
-                        <span className='d-block mb-1'>Ryan Tompson</span>
-                        <small className='h6 text-muted'>Web Developer</small>
-                      </h5>
-                      <div className='mt-3'>
-                        <Button
-                          className='btn-icon-only rounded-circle'
-                          color='warning'
-                          href='#pablo'
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className='fa fa-twitter' />
-                        </Button>
-                        <Button
-                          className='btn-icon-only rounded-circle ml-1'
-                          color='warning'
-                          href='#pablo'
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className='fa fa-facebook' />
-                        </Button>
-                        <Button
-                          className='btn-icon-only rounded-circle ml-1'
-                          color='warning'
-                          href='#pablo'
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className='fa fa-dribbble' />
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </Col>
-                <Col className='mb-5 mb-lg-0' lg='3' md='6'>
-                  <div className='px-4'>
-                    <img
-                      alt='...'
-                      className='rounded-circle img-center img-fluid shadow shadow-lg--hover'
-                      src={require('assets/img/theme/team-2-800x800.jpg')}
-                      style={{width: '200px'}}
-                    />
-                    <div className='pt-4 text-center'>
-                      <h5 className='title'>
-                        <span className='d-block mb-1'>Romina Hadid</span>
-                        <small className='h6 text-muted'>
-                          Marketing Strategist
-                        </small>
-                      </h5>
-                      <div className='mt-3'>
-                        <Button
-                          className='btn-icon-only rounded-circle'
-                          color='primary'
-                          href='#pablo'
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className='fa fa-twitter' />
-                        </Button>
-                        <Button
-                          className='btn-icon-only rounded-circle ml-1'
-                          color='primary'
-                          href='#pablo'
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className='fa fa-facebook' />
-                        </Button>
-                        <Button
-                          className='btn-icon-only rounded-circle ml-1'
-                          color='primary'
-                          href='#pablo'
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className='fa fa-dribbble' />
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </Col>
-                <Col className='mb-5 mb-lg-0' lg='3' md='6'>
-                  <div className='px-4'>
-                    <img
-                      alt='...'
-                      className='rounded-circle img-center img-fluid shadow shadow-lg--hover'
-                      src={require('assets/img/theme/team-3-800x800.jpg')}
-                      style={{width: '200px'}}
-                    />
-                    <div className='pt-4 text-center'>
-                      <h5 className='title'>
-                        <span className='d-block mb-1'>Alexander Smith</span>
-                        <small className='h6 text-muted'>UI/UX Designer</small>
-                      </h5>
-                      <div className='mt-3'>
-                        <Button
-                          className='btn-icon-only rounded-circle'
-                          color='info'
-                          href='#pablo'
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className='fa fa-twitter' />
-                        </Button>
-                        <Button
-                          className='btn-icon-only rounded-circle ml-1'
-                          color='info'
-                          href='#pablo'
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className='fa fa-facebook' />
-                        </Button>
-                        <Button
-                          className='btn-icon-only rounded-circle ml-1'
-                          color='info'
-                          href='#pablo'
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className='fa fa-dribbble' />
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </Col>
-                <Col className='mb-5 mb-lg-0' lg='3' md='6'>
-                  <div className='px-4'>
-                    <img
-                      alt='...'
-                      className='rounded-circle img-center img-fluid shadow shadow-lg--hover'
-                      src={require('assets/img/theme/team-4-800x800.jpg')}
-                      style={{width: '200px'}}
-                    />
-                    <div className='pt-4 text-center'>
-                      <h5 className='title'>
-                        <span className='d-block mb-1'>John Doe</span>
-                        <small className='h6 text-muted'>Founder and CEO</small>
-                      </h5>
-                      <div className='mt-3'>
-                        <Button
-                          className='btn-icon-only rounded-circle'
-                          color='success'
-                          href='#pablo'
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className='fa fa-twitter' />
-                        </Button>
-                        <Button
-                          className='btn-icon-only rounded-circle ml-1'
-                          color='success'
-                          href='#pablo'
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className='fa fa-facebook' />
-                        </Button>
-                        <Button
-                          className='btn-icon-only rounded-circle ml-1'
-                          color='success'
-                          href='#pablo'
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className='fa fa-dribbble' />
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-          </section> */}
           <section className='section section-lg pt-0'>
-            <Container>
-              {/* <Card className='bg-gradient-warning shadow-lg border-0'>
-                <div className='p-5'>
-                  <Row className='align-items-center'>
-                    <Col lg='8'>
-                      <h3 className='text-white'>
-                        We made website building easier for you.
-                      </h3>
-                      <p className='lead text-white mt-3'>
-                        I will be the leader of a company that ends up being
-                        worth billions of dollars, because I got the answers. I
-                        understand culture.
-                      </p>
-                    </Col>
-                    <Col className='ml-lg-auto' lg='3'>
-                      <Button
-                        block
-                        className='btn-white'
-                        color='default'
-                        href='https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page'
-                        size='lg'
-                      >
-                        Download React
-                      </Button>
-                    </Col>
-                  </Row>
-                </div>
-              </Card> */}
-            </Container>
+            <Container></Container>
           </section>
           <section className='section section-lg bg-gradient-default'>
-            <Container className='pt-lg pb-300'>
-              {/* <Row className='text-center justify-content-center'>
-                <Col lg='10'>
-                  <h2 className='display-3 text-white'>Build something</h2>
-                  <p className='lead text-white'>
-                    According to the National Oceanic and Atmospheric
-                    Administration, Ted, Scambos, NSIDClead scentist, puts the
-                    potentially record low maximum sea ice extent tihs year down
-                    to low ice.
-                  </p>
-                </Col>
-              </Row> */}
-              {/* <Row className='row-grid mt-5'>
-                <Col lg='4'>
-                  <div className='icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary'>
-                    <i className='ni ni-settings text-primary' />
-                  </div>
-                  <h5 className='text-white mt-3'>Building tools</h5>
-                  <p className='text-white mt-3'>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </Col>
-                <Col lg='4'>
-                  <div className='icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary'>
-                    <i className='ni ni-ruler-pencil text-primary' />
-                  </div>
-                  <h5 className='text-white mt-3'>Grow your market</h5>
-                  <p className='text-white mt-3'>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </Col>
-                <Col lg='4'>
-                  <div className='icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary'>
-                    <i className='ni ni-atom text-primary' />
-                  </div>
-                  <h5 className='text-white mt-3'>Launch time</h5>
-                  <p className='text-white mt-3'>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </Col>
-              </Row> */}
-            </Container>
+            <Container className='pt-lg pb-300'></Container>
             <div className='separator separator-bottom separator-skew zindex-100'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -755,11 +413,17 @@ class Landing extends React.Component {
               </svg>
             </div>
           </section>
-          <section className='section section-lg pt-lg-0 section-contact-us'>
+          <section
+            className='section section-lg pt-lg-0 section-contact-us'
+            id='appointment'
+          >
             <Container>
               <Row className='justify-content-center mt--300'>
                 <Col lg='8'>
-                  <Card className='bg-gradient-secondary shadow'>
+                  <Card
+                    className='bg-gradient-secondary shadow'
+                    style={{overflowY: 'scroll', scrollBehavior: 'smooth'}}
+                  >
                     <CardBody className='p-lg-5'>
                       <h4 className='mb-1'>Randevu Al</h4>
                       <p className='mt-0'>
@@ -891,6 +555,22 @@ class Landing extends React.Component {
                       </div>
                     </CardBody>
                   </Card>
+                  <Button
+                    className=''
+                    color='primary'
+                    // href='https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-navbar'
+                    target='_blank'
+                    style={{position: 'fixed', bottom: 15, right: 15}}
+                  >
+                    <a href='#appointment' style={{color: 'white'}}>
+                      <span className='btn-inner--icon'>
+                        <i className='fa fa-send mr-2' />
+                      </span>
+                      <span className='nav-link-inner--text ml-1'>
+                        Randevu Al
+                      </span>
+                    </a>
+                  </Button>
                 </Col>
               </Row>
             </Container>
