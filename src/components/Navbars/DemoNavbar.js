@@ -31,6 +31,7 @@ class DemoNavbar extends React.Component {
   state = {
     collapseClasses: '',
     collapseOpen: false,
+    changeButtonText: null,
   };
 
   onExiting = () => {
@@ -46,6 +47,7 @@ class DemoNavbar extends React.Component {
   };
 
   render() {
+    const {changeButtonText} = this.state;
     return (
       <>
         <header className='header-global'>
@@ -93,7 +95,10 @@ class DemoNavbar extends React.Component {
                   <UncontrolledDropdown nav>
                     <DropdownToggle nav>
                       <i className='ni ni-ui-04 d-lg-none mr-1' />
-                      <span className='nav-link-inner--text'>
+                      <span
+                        className='nav-link-inner--text'
+                        onClick={() => this.setState({changeButtonText: true})}
+                      >
                         Bireylere Özel
                       </span>
                     </DropdownToggle>
@@ -159,7 +164,10 @@ class DemoNavbar extends React.Component {
                   <UncontrolledDropdown nav>
                     <DropdownToggle nav>
                       <i className='ni ni-collection d-lg-none mr-1' />
-                      <span className='nav-link-inner--text'>
+                      <span
+                        className='nav-link-inner--text'
+                        onClick={() => this.setState({changeButtonText: false})}
+                      >
                         Kurumlara Özel
                       </span>
                     </DropdownToggle>
@@ -245,19 +253,21 @@ class DemoNavbar extends React.Component {
                     </UncontrolledTooltip>
                   </NavItem> */}
                   <NavItem className='d-none d-lg-block ml-lg-4'>
-                    <Button
-                      className='btn-neutral btn-icon'
-                      color='default'
-                      // href='https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-navbar'
-                      target='_blank'
-                    >
-                      <span className='btn-inner--icon'>
-                        <i className='fa fa-send mr-2' />
-                      </span>
-                      <span className='nav-link-inner--text ml-1'>
-                        Randevu Al
-                      </span>
-                    </Button>
+                    {changeButtonText !== null && (
+                      <Button
+                        className='btn-neutral btn-icon'
+                        color='default'
+                        // href='https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-navbar'
+                        target='_blank'
+                      >
+                        <span className='btn-inner--icon'>
+                          <i className='fa fa-send mr-2' />
+                        </span>
+                        <span className='nav-link-inner--text ml-1'>
+                          {changeButtonText ? 'Randevu Al' : 'Teklif Al'}
+                        </span>
+                      </Button>
+                    )}
                   </NavItem>
                 </Nav>
               </UncontrolledCollapse>

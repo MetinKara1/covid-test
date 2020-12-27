@@ -11,6 +11,7 @@ import Landing from 'views/examples/Landing.js';
 import Login from 'views/examples/Login.js';
 import Profile from 'views/examples/Profile.js';
 import Register from 'views/examples/Register.js';
+import SpecialToIndividual from 'views/examples/SpecialToIndividual.js';
 
 import Dashboard from 'views/examples/Dashboard.js';
 
@@ -18,7 +19,16 @@ ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route path='/components' exact render={props => <Index {...props} />} />
-      <Route path='/bireylere-özel' exact render={props => <Landing {...props} />} />
+      <Route
+        path='/bireylere-özel'
+        exact
+        render={props => <SpecialToIndividual {...props} />}
+      />
+      <Route
+        path='/landing-page'
+        exact
+        render={props => <Landing {...props} />}
+      />
       <Route path='/login-page' exact render={props => <Login {...props} />} />
       <Route
         path='/profile-page'
@@ -30,11 +40,7 @@ ReactDOM.render(
         exact
         render={props => <Register {...props} />}
       />
-       <Route
-        path='/'
-        exact
-        render={props => <Dashboard {...props} />}
-      />
+      <Route path='/' exact render={props => <Dashboard {...props} />} />
       <Redirect to='/' />
     </Switch>
   </BrowserRouter>,
