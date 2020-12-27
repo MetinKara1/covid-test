@@ -74,30 +74,45 @@ class Landing extends React.Component {
                 </Container>
               </div>
               <section className='section section-lg pt-lg-0 mt--200'>
-                <Container style={{marginTop:96}}>
+                <Container style={{marginTop: 96}}>
                   <Row className='justify-content-center'>
                     <Col lg='12'>
                       <Row className='row-grid'>
                         <Col lg='6'>
                           <Card className='card-lift--hover shadow border-0'>
                             <CardBody className='py-2'>
-                              <h6 style={{color: '#001430', fontWeight:700, fontFamily:'Calibri', textAlign:'center'}}
-                            //    className='text-primary text-uppercase'
-                            >
-                              BİREYLERE ÖZEL
+                              <h6
+                                style={{
+                                  color: '#001430',
+                                  fontWeight: 700,
+                                  fontFamily: 'Calibri',
+                                  textAlign: 'center',
+                                }}
+                                //    className='text-primary text-uppercase'
+                              >
+                                BİREYLERE ÖZEL
                               </h6>
-                              <p className='description mt-3'  style={{textAlign:'center',color: '#333'}}>
-                              COVID-19 testlerinizi yaptırarak virüse karşı önlem alabilir, kendinizi ve sevdiklerinizi koruyabilirsiniz.
+                              <p
+                                className='description mt-3'
+                                style={{textAlign: 'center', color: '#333'}}
+                              >
+                                COVID-19 testlerinizi yaptırarak virüse karşı
+                                önlem alabilir, kendinizi ve sevdiklerinizi
+                                koruyabilirsiniz.
                               </p>
                               <Button
                                 color='link'
                                 href='#pablo'
                                 onClick={e => e.preventDefault()}
-                                style={{ paddingLeft: -20, textAlign:'center', color: '#05e8c2',
-                                fontWeight: 500,
-                                display: 'block',
-                                fontSize: 13,
-                                fontWeight: 600}}
+                                style={{
+                                  paddingLeft: -20,
+                                  textAlign: 'center',
+                                  color: '#05e8c2',
+                                  fontWeight: 500,
+                                  display: 'block',
+                                  fontSize: 13,
+                                  fontWeight: 600,
+                                }}
                               >
                                 Detaylı Bilgi{' '}
                                 <i
@@ -111,22 +126,37 @@ class Landing extends React.Component {
                         <Col lg='6'>
                           <Card className='card-lift--hover shadow border-0'>
                             <CardBody className='py-2'>
-                              <h6 style={{color: '#001430', fontWeight:700, fontFamily:'Calibri', textAlign:'center'}}>
-                              KURUMLARA ÖZEL
+                              <h6
+                                style={{
+                                  color: '#001430',
+                                  fontWeight: 700,
+                                  fontFamily: 'Calibri',
+                                  textAlign: 'center',
+                                }}
+                              >
+                                KURUMLARA ÖZEL
                               </h6>
-                              <p className='description mt-3' style={{textAlign:'center', color:'#333'}}>
-                              Çalışanlarınızın sağlığı ve güvenliği için COVID-19 testlerinizi yaptırabilirsiniz..
+                              <p
+                                className='description mt-3'
+                                style={{textAlign: 'center', color: '#333'}}
+                              >
+                                Çalışanlarınızın sağlığı ve güvenliği için
+                                COVID-19 testlerinizi yaptırabilirsiniz..
                               </p>
-                           
+
                               <Button
                                 color='link'
                                 href='#pablo'
                                 onClick={e => e.preventDefault()}
-                                style={{ paddingLeft: -20, textAlign:'center', color: '#05e8c2',
-                                fontWeight: 500,
-                                display: 'block',
-                                fontSize: 13,
-                                fontWeight: 600}}
+                                style={{
+                                  paddingLeft: -20,
+                                  textAlign: 'center',
+                                  color: '#05e8c2',
+                                  fontWeight: 500,
+                                  display: 'block',
+                                  fontSize: 13,
+                                  fontWeight: 600,
+                                }}
                               >
                                 Detaylı Bilgi{' '}
                                 <i
@@ -137,7 +167,6 @@ class Landing extends React.Component {
                             </CardBody>
                           </Card>
                         </Col>
-                       
                       </Row>
                     </Col>
                   </Row>

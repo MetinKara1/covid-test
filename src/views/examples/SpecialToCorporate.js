@@ -536,89 +536,6 @@ class Landing extends React.Component {
               </Row>
             </Container>
           </section>
-          <section className='section bg-secondary'>
-            <Container>
-              <Row className='row-grid align-items-center'>
-                <Col md='6'>
-                  <Card className='bg-default shadow border-0'>
-                    <CardImg
-                      alt='...'
-                      src={require('assets/img/theme/covid1.jpg')}
-                      top
-                    />
-                    <blockquote className='card-blockquote'>
-                      <svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        className='svg-bg'
-                        preserveAspectRatio='none'
-                        viewBox='0 0 583 95'
-                      >
-                        <polygon
-                          className='fill-default'
-                          points='0,52 583,95 0,95'
-                        />
-                        <polygon
-                          className='fill-default'
-                          opacity='.2'
-                          points='0,42 583,95 683,0 0,95'
-                        />
-                      </svg>
-                      <h4 className='display-3 font-weight-bold text-white'>
-                        COVID-19 PCR ve ANTİKOR TESTLERİ
-                      </h4>
-                      <p className='lead text-italic text-white'>
-                        PCR testi, herhangi bir semptomu olmasa bile hastalığı
-                        taşıyan kişilerin en erken evrede belirlenmesini,
-                        antikor testleri de COVID-19’u geçirmiş ya da belirtisiz
-                        olarak atlatmış kişilerin bağışıklık durumunu
-                        öğrenmesini sağlamaktadır.
-                      </p>
-                    </blockquote>
-                  </Card>
-                </Col>
-                <Col md='6'>
-                  <div className='pl-md-5'>
-                    {/* <div className='icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5'>
-                      <i className='ni ni-settings' />
-                    </div> */}
-                    <h3>COVID-19 PCR ve ANTİKOR TESTLERİ</h3>
-                    <p className='lead'>
-                      PCR testi, herhangi bir semptomu olmasa bile hastalığı
-                      taşıyan kişilerin en erken evrede belirlenmesini, antikor
-                      testleri de COVID-19’u geçirmiş ya da belirtisiz olarak
-                      atlatmış kişilerin bağışıklık durumunu öğrenmesini
-                      sağlamaktadır.
-                    </p>
-                    <h3>Ameliyat ve Yurt Dışına Çıkış Öncesi</h3>
-                    <p>
-                      Cerrahi bir operasyon ya da işlem geçirmeniz gerekiyor
-                      veya yurt dışına çıkmayı planlıyorsanız, COVID-19
-                      testlerinizi yaptırabilir, sonuçlarınızı vakit kaybetmeden
-                      alabilirsiniz.
-                    </p>
-                    <h3>Tanıda Güvenilirliği Artırın</h3>
-                    <p>
-                      Elisa ve benzeri yöntemlerle yapılan antikor testlerinin
-                      hassasiyet ve doğruluğu, hızlı antikor testlerine göre
-                      oldukça yüksektir. İleri altyapıya sahip olan anlaşmalı
-                      laboratuvarlarımızda uygulanan, Elisa ve benzeri duyarlı
-                      yöntemlerin PCR ile birlikte kullanılması da doğru tanı
-                      şansını artırmaktadır. PCR ile IgM / IgG antikor testleri
-                      birlikte yapılarak hastalık ve evresi güvenli bir şekilde
-                      belirlenebilmektedir.
-                    </p>
-                    <a
-                      className='font-weight-bold text-warning mt-5'
-                      href='#appointment'
-                      onClick={e => e.preventDefault()}
-                    >
-                      Teklif Al
-                    </a>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-          </section>
 
           <section className='section pb-0 bg-gradient-warning'>
             <Container>
@@ -726,269 +643,11 @@ class Landing extends React.Component {
               </svg>
             </div>
           </section>
-          {/* <section className='section section-lg'>
-            <Container>
-              <Row className='justify-content-center text-center mb-lg'>
-                <Col lg='8'>
-                  <h2 className='display-3'>The amazing Team</h2>
-                  <p className='lead text-muted'>
-                    According to the National Oceanic and Atmospheric
-                    Administration, Ted, Scambos, NSIDClead scentist, puts the
-                    potentially record maximum.
-                  </p>
-                </Col>
-              </Row>
-              <Row>
-                <Col className='mb-5 mb-lg-0' lg='3' md='6'>
-                  <div className='px-4'>
-                    <img
-                      alt='...'
-                      className='rounded-circle img-center img-fluid shadow shadow-lg--hover'
-                      src={require('assets/img/theme/team-1-800x800.jpg')}
-                      style={{width: '200px'}}
-                    />
-                    <div className='pt-4 text-center'>
-                      <h5 className='title'>
-                        <span className='d-block mb-1'>Ryan Tompson</span>
-                        <small className='h6 text-muted'>Web Developer</small>
-                      </h5>
-                      <div className='mt-3'>
-                        <Button
-                          className='btn-icon-only rounded-circle'
-                          color='warning'
-                          href='#pablo'
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className='fa fa-twitter' />
-                        </Button>
-                        <Button
-                          className='btn-icon-only rounded-circle ml-1'
-                          color='warning'
-                          href='#pablo'
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className='fa fa-facebook' />
-                        </Button>
-                        <Button
-                          className='btn-icon-only rounded-circle ml-1'
-                          color='warning'
-                          href='#pablo'
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className='fa fa-dribbble' />
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </Col>
-                <Col className='mb-5 mb-lg-0' lg='3' md='6'>
-                  <div className='px-4'>
-                    <img
-                      alt='...'
-                      className='rounded-circle img-center img-fluid shadow shadow-lg--hover'
-                      src={require('assets/img/theme/team-2-800x800.jpg')}
-                      style={{width: '200px'}}
-                    />
-                    <div className='pt-4 text-center'>
-                      <h5 className='title'>
-                        <span className='d-block mb-1'>Romina Hadid</span>
-                        <small className='h6 text-muted'>
-                          Marketing Strategist
-                        </small>
-                      </h5>
-                      <div className='mt-3'>
-                        <Button
-                          className='btn-icon-only rounded-circle'
-                          color='primary'
-                          href='#pablo'
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className='fa fa-twitter' />
-                        </Button>
-                        <Button
-                          className='btn-icon-only rounded-circle ml-1'
-                          color='primary'
-                          href='#pablo'
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className='fa fa-facebook' />
-                        </Button>
-                        <Button
-                          className='btn-icon-only rounded-circle ml-1'
-                          color='primary'
-                          href='#pablo'
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className='fa fa-dribbble' />
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </Col>
-                <Col className='mb-5 mb-lg-0' lg='3' md='6'>
-                  <div className='px-4'>
-                    <img
-                      alt='...'
-                      className='rounded-circle img-center img-fluid shadow shadow-lg--hover'
-                      src={require('assets/img/theme/team-3-800x800.jpg')}
-                      style={{width: '200px'}}
-                    />
-                    <div className='pt-4 text-center'>
-                      <h5 className='title'>
-                        <span className='d-block mb-1'>Alexander Smith</span>
-                        <small className='h6 text-muted'>UI/UX Designer</small>
-                      </h5>
-                      <div className='mt-3'>
-                        <Button
-                          className='btn-icon-only rounded-circle'
-                          color='info'
-                          href='#pablo'
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className='fa fa-twitter' />
-                        </Button>
-                        <Button
-                          className='btn-icon-only rounded-circle ml-1'
-                          color='info'
-                          href='#pablo'
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className='fa fa-facebook' />
-                        </Button>
-                        <Button
-                          className='btn-icon-only rounded-circle ml-1'
-                          color='info'
-                          href='#pablo'
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className='fa fa-dribbble' />
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </Col>
-                <Col className='mb-5 mb-lg-0' lg='3' md='6'>
-                  <div className='px-4'>
-                    <img
-                      alt='...'
-                      className='rounded-circle img-center img-fluid shadow shadow-lg--hover'
-                      src={require('assets/img/theme/team-4-800x800.jpg')}
-                      style={{width: '200px'}}
-                    />
-                    <div className='pt-4 text-center'>
-                      <h5 className='title'>
-                        <span className='d-block mb-1'>John Doe</span>
-                        <small className='h6 text-muted'>Founder and CEO</small>
-                      </h5>
-                      <div className='mt-3'>
-                        <Button
-                          className='btn-icon-only rounded-circle'
-                          color='success'
-                          href='#pablo'
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className='fa fa-twitter' />
-                        </Button>
-                        <Button
-                          className='btn-icon-only rounded-circle ml-1'
-                          color='success'
-                          href='#pablo'
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className='fa fa-facebook' />
-                        </Button>
-                        <Button
-                          className='btn-icon-only rounded-circle ml-1'
-                          color='success'
-                          href='#pablo'
-                          onClick={e => e.preventDefault()}
-                        >
-                          <i className='fa fa-dribbble' />
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-          </section> */}
           <section className='section section-lg pt-0'>
-            <Container>
-              {/* <Card className='bg-gradient-warning shadow-lg border-0'>
-                <div className='p-5'>
-                  <Row className='align-items-center'>
-                    <Col lg='8'>
-                      <h3 className='text-white'>
-                        We made website building easier for you.
-                      </h3>
-                      <p className='lead text-white mt-3'>
-                        I will be the leader of a company that ends up being
-                        worth billions of dollars, because I got the answers. I
-                        understand culture.
-                      </p>
-                    </Col>
-                    <Col className='ml-lg-auto' lg='3'>
-                      <Button
-                        block
-                        className='btn-white'
-                        color='default'
-                        href='https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page'
-                        size='lg'
-                      >
-                        Download React
-                      </Button>
-                    </Col>
-                  </Row>
-                </div>
-              </Card> */}
-            </Container>
+            <Container></Container>
           </section>
           <section className='section section-lg bg-gradient-default'>
-            <Container className='pt-lg pb-300'>
-              {/* <Row className='text-center justify-content-center'>
-                <Col lg='10'>
-                  <h2 className='display-3 text-white'>Build something</h2>
-                  <p className='lead text-white'>
-                    According to the National Oceanic and Atmospheric
-                    Administration, Ted, Scambos, NSIDClead scentist, puts the
-                    potentially record low maximum sea ice extent tihs year down
-                    to low ice.
-                  </p>
-                </Col>
-              </Row> */}
-              {/* <Row className='row-grid mt-5'>
-                <Col lg='4'>
-                  <div className='icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary'>
-                    <i className='ni ni-settings text-primary' />
-                  </div>
-                  <h5 className='text-white mt-3'>Building tools</h5>
-                  <p className='text-white mt-3'>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </Col>
-                <Col lg='4'>
-                  <div className='icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary'>
-                    <i className='ni ni-ruler-pencil text-primary' />
-                  </div>
-                  <h5 className='text-white mt-3'>Grow your market</h5>
-                  <p className='text-white mt-3'>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </Col>
-                <Col lg='4'>
-                  <div className='icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary'>
-                    <i className='ni ni-atom text-primary' />
-                  </div>
-                  <h5 className='text-white mt-3'>Launch time</h5>
-                  <p className='text-white mt-3'>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </Col>
-              </Row> */}
-            </Container>
+            <Container className='pt-lg pb-300'></Container>
             <div className='separator separator-bottom separator-skew zindex-100'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -1094,6 +753,29 @@ class Landing extends React.Component {
                             }
                             onBlur={e =>
                               this.setState({testTypeFocused: false})
+                            }
+                          />
+                        </InputGroup>
+                      </FormGroup>
+                      <FormGroup
+                        className={classnames({
+                          focused: this.state.employeeCountFocused,
+                        })}
+                      >
+                        <InputGroup className='input-group-alternative'>
+                          <InputGroupAddon addonType='prepend'>
+                            <InputGroupText>
+                              <i className='ni ni-circle-08' />
+                            </InputGroupText>
+                          </InputGroupAddon>
+                          <Input
+                            placeholder='Çalışan Sayısı'
+                            type='number'
+                            onFocus={e =>
+                              this.setState({employeeCountFocused: true})
+                            }
+                            onBlur={e =>
+                              this.setState({employeeCountFocused: false})
                             }
                           />
                         </InputGroup>

@@ -57,7 +57,7 @@ class Landing extends React.Component {
                 <Container className='py-lg-md d-flex'>
                   <div className='col px-0'>
                     <Row style={{marginTop: 200}}>
-                      <Col lg='6'>
+                      <Col lg='8'>
                         <h1
                           className='display-3'
                           style={{
@@ -67,8 +67,8 @@ class Landing extends React.Component {
                             marginBottom: 30,
                           }}
                         >
-                          GÜVENİLİRLİĞİ YÜKSEK YÖNTEMLERLE <br></br> COVID-19
-                          TESTLERİ {/* <span>completed with examples</span> */}
+                          GÜVENİLİRLİĞİ YÜKSEK YÖNTEMLERLE COVID-19 TESTLERİ{' '}
+                          {/* <span>completed with examples</span> */}
                         </h1>
                         <p className='lead text-white'>
                           COVID-19 testlerinizi yaptırarak virüse karşı önlem
@@ -82,7 +82,7 @@ class Landing extends React.Component {
                 </Container>
               </div>
               <section className='section section-lg pt-lg-0 mt--200 '>
-                <Container>
+                <Container style={{marginTop: 85}}>
                   <Row className='justify-content-center'>
                     <Col lg='12'>
                       <Row className='row-grid'>
@@ -516,92 +516,18 @@ class Landing extends React.Component {
               </Row>
             </Container>
           </section>
-          <section className='section bg-secondary'>
+          <section className='section pb-0 bg-gradient-warning'>
             <Container>
               <Row className='row-grid align-items-center'>
-                <Col md='6'>
-                  <Card className='bg-default shadow border-0'>
-                    <CardImg
+                <Col className='order-lg-2 ml-lg-auto' md='6'>
+                  <div className='position-relative pl-md-5'>
+                    <img
                       alt='...'
-                      src={require('assets/img/theme/covid1.jpg')}
-                      top
+                      className='img-center img-fluid'
+                      src={require('assets/img/ill/ill-2.svg')}
                     />
-                    <blockquote className='card-blockquote'>
-                      <svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        className='svg-bg'
-                        preserveAspectRatio='none'
-                        viewBox='0 0 583 95'
-                      >
-                        <polygon
-                          className='fill-default'
-                          points='0,52 583,95 0,95'
-                        />
-                        <polygon
-                          className='fill-default'
-                          opacity='.2'
-                          points='0,42 583,95 683,0 0,95'
-                        />
-                      </svg>
-                      <h4 className='display-3 font-weight-bold text-white'>
-                        COVID-19 PCR ve ANTİKOR TESTLERİ
-                      </h4>
-                      <p className='lead text-italic text-white'>
-                        PCR testi, herhangi bir semptomu olmasa bile hastalığı
-                        taşıyan kişilerin en erken evrede belirlenmesini,
-                        antikor testleri de COVID-19’u geçirmiş ya da belirtisiz
-                        olarak atlatmış kişilerin bağışıklık durumunu
-                        öğrenmesini sağlamaktadır.
-                      </p>
-                    </blockquote>
-                  </Card>
-                </Col>
-                <Col md='6'>
-                  <div className='pl-md-5'>
-                    <h3>COVID-19 PCR ve ANTİKOR TESTLERİ</h3>
-                    <p className='lead'>
-                      PCR testi, herhangi bir semptomu olmasa bile hastalığı
-                      taşıyan kişilerin en erken evrede belirlenmesini, antikor
-                      testleri de COVID-19’u geçirmiş ya da belirtisiz olarak
-                      atlatmış kişilerin bağışıklık durumunu öğrenmesini
-                      sağlamaktadır.
-                    </p>
-                    <h3>Ameliyat ve Yurt Dışına Çıkış Öncesi</h3>
-                    <p>
-                      Cerrahi bir operasyon ya da işlem geçirmeniz gerekiyor
-                      veya yurt dışına çıkmayı planlıyorsanız, COVID-19
-                      testlerinizi yaptırabilir, sonuçlarınızı vakit kaybetmeden
-                      alabilirsiniz.
-                    </p>
-                    <h3>Tanıda Güvenilirliği Artırın</h3>
-                    <p>
-                      Elisa ve benzeri yöntemlerle yapılan antikor testlerinin
-                      hassasiyet ve doğruluğu, hızlı antikor testlerine göre
-                      oldukça yüksektir. İleri altyapıya sahip olan anlaşmalı
-                      laboratuvarlarımızda uygulanan, Elisa ve benzeri duyarlı
-                      yöntemlerin PCR ile birlikte kullanılması da doğru tanı
-                      şansını artırmaktadır. PCR ile IgM / IgG antikor testleri
-                      birlikte yapılarak hastalık ve evresi güvenli bir şekilde
-                      belirlenebilmektedir.
-                    </p>
-                    <a
-                      className='font-weight-bold text-warning mt-5'
-                      href='#appointment'
-                      onClick={e => e.preventDefault()}
-                    >
-                      Randevu Al
-                    </a>
                   </div>
                 </Col>
-              </Row>
-            </Container>
-          </section>
-          <section>
-            <Container
-              className='img-center img-fluid'
-              src={require('assets/img/ill/ill-2.svg')}
-            >
-              <Row>
                 <Col className='order-lg-1' lg='6'>
                   <div className='d-flex px-3'>
                     <div>
@@ -613,8 +539,69 @@ class Landing extends React.Component {
                       <h4 className='display-3 text-white'>
                         Sıkça Sorulan Sorular
                       </h4>
+                      {/* <p className='text-white'>
+                        The Arctic Ocean freezes every winter and much of the
+                        sea-ice then thaws every summer, and that process will
+                        continue whatever.
+                      </p> */}
                     </div>
                   </div>
+                  {/* <Card className='shadow shadow-lg--hover mt-5'>
+                    <CardBody>
+                      <div className='d-flex px-3'>
+                        <div>
+                          <div className='icon icon-shape bg-gradient-success rounded-circle text-white'>
+                            <i className='ni ni-satisfied' />
+                          </div>
+                        </div>
+                        <div className='pl-4'>
+                          <h5 className='title text-success'>
+                            Awesome Support
+                          </h5>
+                          <p>
+                            The Arctic Ocean freezes every winter and much of
+                            the sea-ice then thaws every summer, and that
+                            process will continue whatever.
+                          </p>
+                          <a
+                            className='text-success'
+                            href='#pablo'
+                            onClick={e => e.preventDefault()}
+                          >
+                            Learn more
+                          </a>
+                        </div>
+                      </div>
+                    </CardBody>
+                  </Card>
+                  <Card className='shadow shadow-lg--hover mt-5'>
+                    <CardBody>
+                      <div className='d-flex px-3'>
+                        <div>
+                          <div className='icon icon-shape bg-gradient-warning rounded-circle text-white'>
+                            <i className='ni ni-active-40' />
+                          </div>
+                        </div>
+                        <div className='pl-4'>
+                          <h5 className='title text-warning'>
+                            Modular Components
+                          </h5>
+                          <p>
+                            The Arctic Ocean freezes every winter and much of
+                            the sea-ice then thaws every summer, and that
+                            process will continue whatever.
+                          </p>
+                          <a
+                            className='text-warning'
+                            href='#pablo'
+                            onClick={e => e.preventDefault()}
+                          >
+                            Learn more
+                          </a>
+                        </div>
+                      </div>
+                    </CardBody>
+                  </Card> */}
                 </Col>
               </Row>
             </Container>

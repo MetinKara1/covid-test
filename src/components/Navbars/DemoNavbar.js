@@ -47,7 +47,6 @@ class DemoNavbar extends React.Component {
   };
 
   render() {
-    console.log('locaitonnn', window.innerWidth);
     const {changeButtonText} = this.state;
     return (
       <>
@@ -61,7 +60,7 @@ class DemoNavbar extends React.Component {
               <NavbarBrand className='mr-lg-5' to='/' tag={Link}>
                 <img
                   alt='...'
-                  src={require('assets/img/icons/common/covid4.png')}
+                  src={require('assets/img/icons/common/lg.png')}
                 />
               </NavbarBrand>
               <button className='navbar-toggler' id='navbar_global'>
@@ -79,12 +78,12 @@ class DemoNavbar extends React.Component {
                     <Col
                       className='collapse-brand'
                       xs='6'
-                      style={{background: '#0a1720'}}
+                      // style={{background: '#0a1720'}}
                     >
                       <Link to='/'>
                         <img
                           alt='...'
-                          src={require('assets/img/icons/common/covid4.png')}
+                          src={require('assets/img/icons/common/lg2.png')}
                         />
                       </Link>
                     </Col>
