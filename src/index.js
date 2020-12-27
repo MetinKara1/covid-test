@@ -19,7 +19,6 @@ ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route path='/components' exact render={props => <Index {...props} />} />
-      <Route path='/' exact render={props => <Landing {...props} />} />
       <Route
         path='/bireylere-özel'
         exact
