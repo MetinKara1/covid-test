@@ -425,15 +425,17 @@ class Landing extends React.Component {
                       </div>
                     </div>
                     <div className='pl-4'>
-                      <h4 className='display-3 text-white'>Modern Interface</h4>
-                      <p className='text-white'>
+                      <h4 className='display-3 text-white'>
+                        Sıkça Sorulan Sorular
+                      </h4>
+                      {/* <p className='text-white'>
                         The Arctic Ocean freezes every winter and much of the
                         sea-ice then thaws every summer, and that process will
                         continue whatever.
-                      </p>
+                      </p> */}
                     </div>
                   </div>
-                  <Card className='shadow shadow-lg--hover mt-5'>
+                  {/* <Card className='shadow shadow-lg--hover mt-5'>
                     <CardBody>
                       <div className='d-flex px-3'>
                         <div>
@@ -488,7 +490,7 @@ class Landing extends React.Component {
                         </div>
                       </div>
                     </CardBody>
-                  </Card>
+                  </Card> */}
                 </Col>
               </Row>
             </Container>
