@@ -97,7 +97,7 @@ class DemoNavbar extends React.Component {
                         Bireylere Özel
                       </span>
                     </DropdownToggle>
-                    <DropdownMenu className='dropdown-menu-xl'>
+                    {/* <DropdownMenu className='dropdown-menu-xl'>
                       <div className='dropdown-menu-inner'>
                         <Media
                           className='d-flex align-items-center'
@@ -154,7 +154,7 @@ class DemoNavbar extends React.Component {
                           </Media>
                         </Media>
                       </div>
-                    </DropdownMenu>
+                    </DropdownMenu> */}
                   </UncontrolledDropdown>
                   <UncontrolledDropdown nav>
                     <DropdownToggle nav>
@@ -163,7 +163,7 @@ class DemoNavbar extends React.Component {
                         Kurumlara Özel
                       </span>
                     </DropdownToggle>
-                    <DropdownMenu>
+                    {/* <DropdownMenu>
                       <DropdownItem to='/landing-page' tag={Link}>
                         Landing
                       </DropdownItem>
@@ -176,7 +176,7 @@ class DemoNavbar extends React.Component {
                       <DropdownItem to='/register-page' tag={Link}>
                         Register
                       </DropdownItem>
-                    </DropdownMenu>
+                    </DropdownMenu> */}
                   </UncontrolledDropdown>
                 </Nav>
                 <Nav className='align-items-lg-center ml-lg-auto' navbar>
@@ -248,7 +248,7 @@ class DemoNavbar extends React.Component {
                     <Button
                       className='btn-neutral btn-icon'
                       color='default'
-                      href='https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-navbar'
+                      // href='https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-navbar'
                       target='_blank'
                     >
                       <span className='btn-inner--icon'>
