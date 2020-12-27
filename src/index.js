@@ -13,6 +13,8 @@ import Profile from 'views/examples/Profile.js';
 import Register from 'views/examples/Register.js';
 import SpecialToIndividual from 'views/examples/SpecialToIndividual.js';
 
+import Dashboard from 'views/examples/Dashboard.js';
+
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
@@ -22,6 +24,11 @@ ReactDOM.render(
         path='/bireylere-özel'
         exact
         render={props => <SpecialToIndividual {...props} />}
+      />
+      <Route
+        path='/landing-page'
+        exact
+        render={props => <Landing {...props} />}
       />
       <Route path='/login-page' exact render={props => <Login {...props} />} />
       <Route
@@ -34,6 +41,7 @@ ReactDOM.render(
         exact
         render={props => <Register {...props} />}
       />
+      <Route path='/' exact render={props => <Dashboard {...props} />} />
       <Redirect to='/' />
     </Switch>
   </BrowserRouter>,
