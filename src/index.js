@@ -12,6 +12,7 @@ import Login from 'views/examples/Login.js';
 import Profile from 'views/examples/Profile.js';
 import Register from 'views/examples/Register.js';
 import SpecialToIndividual from 'views/examples/SpecialToIndividual.js';
+import SpecialToCorporate from 'views/examples/SpecialToCorporate.js';
 
 import Dashboard from 'views/examples/Dashboard.js';
 
@@ -23,6 +24,11 @@ ReactDOM.render(
         path='/bireylere-özel'
         exact
         render={props => <SpecialToIndividual {...props} />}
+      />
+      <Route
+        path='/kurumlara-özel'
+        exact
+        render={props => <SpecialToCorporate {...props} />}
       />
       <Route
         path='/landing-page'

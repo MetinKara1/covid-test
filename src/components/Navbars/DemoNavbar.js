@@ -99,7 +99,9 @@ class DemoNavbar extends React.Component {
                         className='nav-link-inner--text'
                         onClick={() => this.setState({changeButtonText: true})}
                       >
-                        Bireylere Özel
+                        <Link to='/bireylere-özel' style={{color: 'white'}}>
+                          Bireylere Özel
+                        </Link>
                       </span>
                     </DropdownToggle>
                     {/* <DropdownMenu className='dropdown-menu-xl'>
@@ -168,7 +170,10 @@ class DemoNavbar extends React.Component {
                         className='nav-link-inner--text'
                         onClick={() => this.setState({changeButtonText: false})}
                       >
-                        Kurumlara Özel
+                        <Link to='/kurumlara-özel' style={{color: 'white'}}>
+                          {' '}
+                          Kurumlara Özel
+                        </Link>
                       </span>
                     </DropdownToggle>
                     {/* <DropdownMenu>
