@@ -6,20 +6,15 @@ import Headroom from 'headroom.js';
 import {
   Button,
   UncontrolledCollapse,
-  DropdownMenu,
-  DropdownItem,
   DropdownToggle,
   UncontrolledDropdown,
-  Media,
   NavbarBrand,
   Navbar,
   NavItem,
-  NavLink,
   Nav,
   Container,
   Row,
   Col,
-  UncontrolledTooltip,
 } from 'reactstrap';
 
 class DemoNavbar extends React.Component {
@@ -31,7 +26,12 @@ class DemoNavbar extends React.Component {
   state = {
     collapseClasses: '',
     collapseOpen: false,
-    changeButtonText: null,
+    changeButtonText:
+      window.location.href === 'http://localhost:3000/bireylere-ozel'
+        ? true
+        : window.location.href === 'http://localhost:3000/kurumlara-ozel'
+        ? false
+        : null,
   };
 
   onExiting = () => {
@@ -47,6 +47,7 @@ class DemoNavbar extends React.Component {
   };
 
   render() {
+    console.log('locaitonnn', window.innerWidth);
     const {changeButtonText} = this.state;
     return (
       <>
@@ -75,11 +76,15 @@ class DemoNavbar extends React.Component {
               >
                 <div className='navbar-collapse-header'>
                   <Row>
-                    <Col className='collapse-brand' xs='6'>
+                    <Col
+                      className='collapse-brand'
+                      xs='6'
+                      style={{background: '#0a1720'}}
+                    >
                       <Link to='/'>
                         <img
                           alt='...'
-                          src={require('assets/img/brand/argon-react.png')}
+                          src={require('assets/img/icons/common/covid4.png')}
                         />
                       </Link>
                     </Col>
@@ -93,75 +98,24 @@ class DemoNavbar extends React.Component {
                 </div>
                 <Nav className='navbar-nav-hover align-items-lg-center' navbar>
                   <UncontrolledDropdown nav>
-                    <DropdownToggle nav>
+                    <DropdownToggle
+                      nav
+                      onClick={() => this.setState({changeButtonText: true})}
+                    >
                       <i className='ni ni-ui-04 d-lg-none mr-1' />
-                      <span
-                        className='nav-link-inner--text'
-                        onClick={() => this.setState({changeButtonText: true})}
-                      >
-                        <Link to='/bireylere-özel' style={{color: 'white'}}>
+                      <span className='nav-link-inner--text'>
+                        <Link
+                          to='/bireylere-ozel'
+                          style={{
+                            color: `${
+                              window.innerWidth > 992 ? 'white' : 'black'
+                            } `,
+                          }}
+                        >
                           Bireylere Özel
                         </Link>
                       </span>
                     </DropdownToggle>
-                    {/* <DropdownMenu className='dropdown-menu-xl'>
-                      <div className='dropdown-menu-inner'>
-                        <Media
-                          className='d-flex align-items-center'
-                          href='https://demos.creative-tim.com/argon-design-system-react/#/documentation/overview?ref=adsr-navbar'
-                          target='_blank'
-                        >
-                          <div className='icon icon-shape bg-gradient-primary rounded-circle text-white'>
-                            <i className='ni ni-spaceship' />
-                          </div>
-                          <Media body className='ml-3'>
-                            <h6 className='heading text-primary mb-md-1'>
-                              Getting started
-                            </h6>
-                            <p className='description d-none d-md-inline-block mb-0'>
-                              Learn how to use Argon compiling Scss, change
-                              brand colors and more.
-                            </p>
-                          </Media>
-                        </Media>
-                        <Media
-                          className='d-flex align-items-center'
-                          href='https://demos.creative-tim.com/argon-design-system-react/#/documentation/colors?ref=adsr-navbar'
-                          target='_blank'
-                        >
-                          <div className='icon icon-shape bg-gradient-success rounded-circle text-white'>
-                            <i className='ni ni-palette' />
-                          </div>
-                          <Media body className='ml-3'>
-                            <h6 className='heading text-primary mb-md-1'>
-                              Foundation
-                            </h6>
-                            <p className='description d-none d-md-inline-block mb-0'>
-                              Learn more about colors, typography, icons and the
-                              grid system we used for Argon.
-                            </p>
-                          </Media>
-                        </Media>
-                        <Media
-                          className='d-flex align-items-center'
-                          href='https://demos.creative-tim.com/argon-design-system-react/#/documentation/alert?ref=adsr-navbar'
-                          target='_blank'
-                        >
-                          <div className='icon icon-shape bg-gradient-warning rounded-circle text-white'>
-                            <i className='ni ni-ui-04' />
-                          </div>
-                          <Media body className='ml-3'>
-                            <h5 className='heading text-warning mb-md-1'>
-                              Components
-                            </h5>
-                            <p className='description d-none d-md-inline-block mb-0'>
-                              Browse our 50 beautiful handcrafted components
-                              offered in the Free version.
-                            </p>
-                          </Media>
-                        </Media>
-                      </div>
-                    </DropdownMenu> */}
                   </UncontrolledDropdown>
                   <UncontrolledDropdown nav>
                     <DropdownToggle nav>
@@ -170,93 +124,22 @@ class DemoNavbar extends React.Component {
                         className='nav-link-inner--text'
                         onClick={() => this.setState({changeButtonText: false})}
                       >
-                        <Link to='/kurumlara-özel' style={{color: 'white'}}>
+                        <Link
+                          to='/kurumlara-ozel'
+                          style={{
+                            color: `${
+                              window.innerWidth > 992 ? 'white' : 'black'
+                            } `,
+                          }}
+                        >
                           {' '}
                           Kurumlara Özel
                         </Link>
                       </span>
                     </DropdownToggle>
-                    {/* <DropdownMenu>
-                      <DropdownItem to='/landing-page' tag={Link}>
-                        Landing
-                      </DropdownItem>
-                      <DropdownItem to='/profile-page' tag={Link}>
-                        Profile
-                      </DropdownItem>
-                      <DropdownItem to='/login-page' tag={Link}>
-                        Login
-                      </DropdownItem>
-                      <DropdownItem to='/register-page' tag={Link}>
-                        Register
-                      </DropdownItem>
-                    </DropdownMenu> */}
                   </UncontrolledDropdown>
                 </Nav>
                 <Nav className='align-items-lg-center ml-lg-auto' navbar>
-                  {/* <NavItem>
-                    <NavLink
-                      className='nav-link-icon'
-                      href='https://www.facebook.com/creativetim'
-                      id='tooltip333589074'
-                      target='_blank'
-                    >
-                      <i className='fa fa-facebook-square' />
-                      <span className='nav-link-inner--text d-lg-none ml-2'>
-                        Facebook
-                      </span>
-                    </NavLink>
-                    <UncontrolledTooltip delay={0} target='tooltip333589074'>
-                      Like us on Facebook
-                    </UncontrolledTooltip>
-                  </NavItem> */}
-                  {/* <NavItem>
-                    <NavLink
-                      className='nav-link-icon'
-                      href='https://www.instagram.com/creativetimofficial'
-                      id='tooltip356693867'
-                      target='_blank'
-                    >
-                      <i className='fa fa-instagram' />
-                      <span className='nav-link-inner--text d-lg-none ml-2'>
-                        Instagram
-                      </span>
-                    </NavLink>
-                    <UncontrolledTooltip delay={0} target='tooltip356693867'>
-                      Follow us on Instagram
-                    </UncontrolledTooltip>
-                  </NavItem> */}
-                  {/* <NavItem>
-                    <NavLink
-                      className='nav-link-icon'
-                      href='https://twitter.com/creativetim'
-                      id='tooltip184698705'
-                      target='_blank'
-                    >
-                      <i className='fa fa-twitter-square' />
-                      <span className='nav-link-inner--text d-lg-none ml-2'>
-                        Twitter
-                      </span>
-                    </NavLink>
-                    <UncontrolledTooltip delay={0} target='tooltip184698705'>
-                      Follow us on Twitter
-                    </UncontrolledTooltip>
-                  </NavItem> */}
-                  {/* <NavItem>
-                    <NavLink
-                      className='nav-link-icon'
-                      href='https://github.com/creativetimofficial/argon-design-system-react'
-                      id='tooltip112445449'
-                      target='_blank'
-                    >
-                      <i className='fa fa-github' />
-                      <span className='nav-link-inner--text d-lg-none ml-2'>
-                        Github
-                      </span>
-                    </NavLink>
-                    <UncontrolledTooltip delay={0} target='tooltip112445449'>
-                      Star us on Github
-                    </UncontrolledTooltip>
-                  </NavItem> */}
                   <NavItem className='d-none d-lg-block ml-lg-4'>
                     {changeButtonText !== null && (
                       <Button
@@ -264,13 +147,16 @@ class DemoNavbar extends React.Component {
                         color='default'
                         // href='https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-navbar'
                         target='_blank'
+                        style={{scrollBehavior: 'smooth'}}
                       >
-                        <span className='btn-inner--icon'>
-                          <i className='fa fa-send mr-2' />
-                        </span>
-                        <span className='nav-link-inner--text ml-1'>
-                          {changeButtonText ? 'Randevu Al' : 'Teklif Al'}
-                        </span>
+                        <a href='#appointment'>
+                          <span className='btn-inner--icon'>
+                            <i className='fa fa-send mr-2' />
+                          </span>
+                          <span className='nav-link-inner--text ml-1'>
+                            {changeButtonText ? 'Randevu Al' : 'Teklif Al'}
+                          </span>
+                        </a>
                       </Button>
                     )}
                   </NavItem>

@@ -14,6 +14,9 @@ License - nucleoapp.com/license/
 /*------------------------
     base class definition
 -------------------------*/
+html{
+    scroll-behavior: smooth;
+}
 .ni {
   display: inline-block;
   font: normal normal normal 14px/1 NucleoIcons;
