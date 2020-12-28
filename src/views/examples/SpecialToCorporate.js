@@ -119,10 +119,10 @@ class Landing extends React.Component {
                                 color='link'
                                 href='#pablo'
                                 onClick={e => e.preventDefault()}
-                                style={{marginTop: 3}}
+                                style={{marginTop: 3,textTransform:'none', fontFamily:'Arial'}}
                               >
                                 Detaylı Bilgi{' '}
-                                <i className='ni ni-bold-right'></i>
+                                <i  className='ni ni-fat-add'></i>
                               </Button>
                             </CardBody>
                           </Card>
@@ -161,10 +161,10 @@ class Landing extends React.Component {
                                 color='link'
                                 href='#pablo'
                                 onClick={e => e.preventDefault()}
-                                style={{marginTop: 3}}
+                                style={{marginTop: 3,textTransform:'none', fontFamily:'Arial'}}
                               >
                                 Detaylı Bilgi{' '}
-                                <i className='ni ni-bold-right'></i>
+                                <i  className='ni ni-fat-add'></i>
                               </Button>
                             </CardBody>
                           </Card>
@@ -203,10 +203,10 @@ class Landing extends React.Component {
                                 color='link'
                                 href='#pablo'
                                 onClick={e => e.preventDefault()}
-                                style={{marginTop: 3}}
+                                style={{marginTop: 3,textTransform:'none', fontFamily:'Arial'}}
                               >
                                 Detaylı Bilgi{' '}
-                                <i className='ni ni-bold-right'></i>
+                                <i  className='ni ni-fat-add'></i>
                               </Button>
                             </CardBody>
                           </Card>
@@ -537,6 +537,143 @@ class Landing extends React.Component {
             </Container>
           </section>
 
+          <section className='section section-lg'>
+            <Container>
+              <Row>
+                <Col>
+                  <div style={{justifyContent: 'center'}}>
+                    <h3
+                      style={{
+                        fontSize: 35,
+                        fontWeight: 700,
+                        fontFamily: 'Calibri',
+                        textAlign: 'center',
+                      }}
+                    >
+                      TEST SÜREÇLERİ
+                    </h3>
+                    <p
+                      style={{
+                        fontSize: 15,
+                        fontFamily: 'Arial',
+                        textAlign: 'center',
+                      }}
+                    >
+                      COVID-19 PCR ve Antikor testi yaptırmak için…
+                    </p>
+                  </div>
+                </Col>
+              </Row>
+              <Row className='row-grid align-items-center'>
+              <Col className='order-md-1' md='6'>
+                  <div className='pr-md-5'>
+                    <ul className='list-unstyled mt-5'>
+                      <li className='py-2'>
+                        <div className='d-flex'>
+                          <div style={{marginTop: 7}}>
+                            <Badge
+                              className='badge-circle mr-3'
+                              color='success'
+                            >
+                              <i className='ni ni-check-bold' />
+                            </Badge>
+                          </div>
+                          <div>
+                            <h5
+                              className='mb-0'
+                              style={{fontSize: 20, fontFamily: 'Calibri'}}
+                            >
+                             İletişim Formunu Doldurun
+                            </h5>
+                            <h6 style={{fontSize: 15, fontFamily: 'Arial'}}>
+                            Test yaptırmak için formu doldurduğunuzda, randevu ekibimiz en kısa sürede sizinle irtibata geçecektir.
+                            </h6>
+                          </div>
+                        </div>
+                      </li>
+                      <li className='py-2'>
+                        <div className='d-flex'>
+                          <div style={{marginTop: 7}}>
+                            <Badge
+                              className='badge-circle mr-3'
+                              color='success'
+                            >
+                              <i className='ni ni-check-bold' />
+                            </Badge>
+                          </div>
+                          <div>
+                            <h5
+                              className='mb-0'
+                              style={{fontSize: 20, fontFamily: 'Calibri'}}
+                            >
+                              Hastanede test hizmetleri
+                            </h5>
+                            <h6 style={{fontSize: 15, fontFamily: 'Arial'}}>
+                            İstanbul, Ankara, İzmir, Bursa ve anlaşmalı olduğumuz tüm Acıbadem Hastanelerininde COVID-19 testleri yapılabilmektedir.
+                            </h6>
+                          </div>
+                        </div>
+                      </li>
+                        </ul>
+                  </div>
+                </Col>
+            
+                <Col className='order-md-1' md='6'>
+                  <div className='pr-md-5'>
+                    <ul className='list-unstyled mt-5'>
+                      <li className='py-2'>
+                        <div className='d-flex'>
+                          <div style={{marginTop: 7}}>
+                            <Badge
+                              className='badge-circle mr-3'
+                              color='success'
+                            >
+                              <i className='ni ni-check-bold' />
+                            </Badge>
+                          </div>
+                          <div>
+                            <h5
+                              className='mb-0'
+                              style={{fontSize: 20, fontFamily: 'Calibri'}}
+                            >
+                             Evde ya da İş yerinizde Test İmkanı
+                            </h5>
+                            <h6 style={{fontSize: 15, fontFamily: 'Arial'}}>
+                            COVID-19 testleriniz için evinizde ya da iş yerinizde örnek alınabilmektedir.
+                            </h6>
+                          </div>
+                        </div>
+                      </li>
+                      <li className='py-2'>
+                        <div className='d-flex'>
+                          <div style={{marginTop: 7}}>
+                            <Badge
+                              className='badge-circle mr-3'
+                              color='success'
+                            >
+                              <i className='ni ni-check-bold' />
+                            </Badge>
+                          </div>
+                          <div>
+                            <h5
+                              className='mb-0'
+                              style={{fontSize: 20, fontFamily: 'Calibri'}}
+                            >
+                              Sonuçlarınıza kolayca ulaşın
+                            </h5>
+                            <h6 style={{fontSize: 15, fontFamily: 'Arial'}}>
+                            Çalışanlarınızın sonuçları anlaşmalı olduğumuz sağlık kurumlarının web sitelerindeki e-sonuç sayfasından online olarak görüntülenebilirken, test raporlarınız toplu olarak en kısa sürede kurumunuza özel iletilmektedir.
+                            </h6>
+                          </div>
+                        </div>
+                      </li>
+                        </ul>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </section>
+        
           <section className='section pb-0 bg-gradient-warning'>
             <Container>
               <Row className='row-grid align-items-center'>
