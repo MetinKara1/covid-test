@@ -27,9 +27,9 @@ class DemoNavbar extends React.Component {
     collapseClasses: '',
     collapseOpen: false,
     changeButtonText:
-      window.location.href === 'http://localhost:3000/bireylere-ozel'
+      window.location.href === 'https://muratpazan.com/bireylere-ozel'
         ? true
-        : window.location.href === 'http://localhost:3000/kurumlara-ozel'
+        : window.location.href === 'https://muratpazan.com/kurumlara-ozel'
         ? false
         : null,
   };
