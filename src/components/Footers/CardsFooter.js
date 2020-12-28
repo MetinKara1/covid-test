@@ -57,7 +57,7 @@ class CardsFooter extends React.Component {
                 <Button
                   className='btn-icon-only rounded-circle'
                   color='twitter'
-                  href='https://twitter.com/creativetim'
+                  href=''
                   id='tooltip475038074'
                   target='_blank'
                 >
@@ -71,7 +71,7 @@ class CardsFooter extends React.Component {
                 <Button
                   className='btn-icon-only rounded-circle ml-1'
                   color='facebook'
-                  href='https://www.facebook.com/creativetim'
+                  href=''
                   id='tooltip837440414'
                   target='_blank'
                 >
@@ -85,31 +85,14 @@ class CardsFooter extends React.Component {
                 <Button
                   className='btn-icon-only rounded-circle ml-1'
                   color='dribbble'
-                  href='https://dribbble.com/creativetim'
+                  href=''
                   id='tooltip829810202'
                   target='_blank'
                 >
                   <span className='btn-inner--icon'>
-                    <i className='fa fa-dribbble' />
+                    <i className='fa fa-instagram' />
                   </span>
                 </Button>
-                <UncontrolledTooltip delay={0} target='tooltip829810202'>
-                  Follow us
-                </UncontrolledTooltip>
-                <Button
-                  className='btn-icon-only rounded-circle ml-1'
-                  color='github'
-                  href='https://github.com/creativetimofficial'
-                  id='tooltip495507257'
-                  target='_blank'
-                >
-                  <span className='btn-inner--icon'>
-                    <i className='fa fa-github' />
-                  </span>
-                </Button>
-                <UncontrolledTooltip delay={0} target='tooltip495507257'>
-                  Star on Github
-                </UncontrolledTooltip>
               </Col>
             </Row>
             <hr />
@@ -117,30 +100,18 @@ class CardsFooter extends React.Component {
               <Col md='6'>
                 <div className='copyright'>
                   © {new Date().getFullYear()}{' '}
-                  <a
-                    href='https://www.creative-tim.com?ref=adsr-footer'
-                    target='_blank'
-                  >
-                    Covid Test Merkezi
-                  </a>
-                  .
+                  <a href='#'>Covid Test Merkezi</a>.
                 </div>
               </Col>
               <Col md='6'>
                 <Nav className='nav-footer justify-content-end'>
                   <NavItem>
-                    <NavLink
-                      href='https://www.creative-tim.com?ref=adsr-footer'
-                      target='_blank'
-                    >
+                    <NavLink href='#' target='_blank'>
                       Covid Test Merkezi
                     </NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink
-                      href='https://www.creative-tim.com/presentation?ref=adsr-footer'
-                      target='_blank'
-                    >
+                    <NavLink href='#' target='_blank'>
                       Hakkımızda
                     </NavLink>
                   </NavItem>
