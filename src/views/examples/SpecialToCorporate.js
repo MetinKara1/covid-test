@@ -574,7 +574,13 @@ class Landing extends React.Component {
                 </Col>
               </Row>
               <Row className='row-grid align-items-center'>
-                <Col className='order-md-1' md='6'>
+                <Col
+                  className='order-md-1'
+                  md='6'
+                  style={{
+                    marginTop: `${window.innerWidth < 768 ? '0.1rem' : '3rem'}`,
+                  }}
+                >
                   <div className='pr-md-5'>
                     <ul className='list-unstyled mt-5'>
                       <li className='py-2'>
@@ -631,7 +637,13 @@ class Landing extends React.Component {
                   </div>
                 </Col>
 
-                <Col className='order-md-1' md='6'>
+                <Col
+                  className='order-md-1'
+                  md='6'
+                  style={{
+                    marginTop: `${window.innerWidth < 768 ? '0.1rem' : '3rem'}`,
+                  }}
+                >
                   <div className='pr-md-5'>
                     <ul className='list-unstyled mt-5'>
                       <li className='py-2'>
