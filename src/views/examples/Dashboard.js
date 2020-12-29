@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 // nodejs library that concatenates classes
 import classnames from 'classnames';
-import bg from '../../assets/img/theme/bg1.png';
+import bg from '../../assets/img/theme/bg2.jpeg';
 
 import {
   Badge,
@@ -83,7 +83,7 @@ class Landing extends React.Component {
                           <Card className='card-lift--hover shadow border-0'>
                             <CardBody className='py-2'>
                               <h6
-                               className='text-primary'
+                                className='text-primary'
                                 style={{
                                   color: '#001430',
                                   fontWeight: 700,
@@ -103,7 +103,7 @@ class Landing extends React.Component {
                                 koruyabilirsiniz.
                               </p>
                               <Button
-                               className='text-primary'
+                                className='text-primary'
                                 color='link'
                                 href='#pablo'
                                 onClick={e => e.preventDefault()}
@@ -115,18 +115,18 @@ class Landing extends React.Component {
                                   display: 'block',
                                   fontSize: 13,
                                   fontWeight: 600,
-                                  fontFamily:'Arial'
+                                  fontFamily: 'Arial',
                                 }}
                               >
                                 <Link
                                   to='/kurumlara-ozel'
-                                  style={{textTransform:'none'}}
+                                  style={{textTransform: 'none'}}
                                 >
-                                Detaylı Bilgi{' '}
-                                <i
-                                  className='ni ni-fat-add'
-                                  style={{marginTop: 0, paddingLeft: -20}}
-                                ></i>
+                                  Detaylı Bilgi{' '}
+                                  <i
+                                    className='ni ni-fat-add'
+                                    style={{marginTop: 0, paddingLeft: -20}}
+                                  ></i>
                                 </Link>
                               </Button>
                             </CardBody>
@@ -154,7 +154,7 @@ class Landing extends React.Component {
                               </p>
 
                               <Button
-                              className='text-primary'
+                                className='text-primary'
                                 color='link'
                                 href='#pablo'
                                 onClick={e => e.preventDefault()}
@@ -165,20 +165,19 @@ class Landing extends React.Component {
                                   display: 'block',
                                   fontSize: 13,
                                   fontWeight: 600,
-                                  fontFamily:'Arial'
+                                  fontFamily: 'Arial',
                                 }}
                               >
                                 <Link
                                   to='/kurumlara-ozel'
-                                  style={{textTransform:'none'}}
+                                  style={{textTransform: 'none'}}
                                 >
                                   Detaylı Bilgi{' '}
-                                        <i
-                                           className='ni ni-fat-add'
-                                          style={{marginTop: 0, paddingLeft: -20}}
-                                        ></i>
+                                  <i
+                                    className='ni ni-fat-add'
+                                    style={{marginTop: 0, paddingLeft: -20}}
+                                  ></i>
                                 </Link>
-                               
                               </Button>
                             </CardBody>
                           </Card>

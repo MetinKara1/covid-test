@@ -1,7 +1,7 @@
 import React from 'react';
 // nodejs library that concatenates classes
 import classnames from 'classnames';
-import bg from '../../assets/img/theme/bg1.png';
+import bg from '../../assets/img/theme/bg2.jpeg';
 
 import {
   Badge,
@@ -54,9 +54,9 @@ class Landing extends React.Component {
                   position: 'relative',
                 }}
               >
-                <Container className='py-lg-md d-flex'>
+                <Container className='py-lg-md d-flex' style={{paddingLeft: 5}}>
                   <div className='col px-0'>
-                    <Row style={{marginTop: 200}}>
+                    <Row style={{marginTop: 120}}>
                       <Col lg='8'>
                         <h1
                           className='display-3'
@@ -120,10 +120,13 @@ class Landing extends React.Component {
                                 color='link'
                                 href='#pablo'
                                 onClick={e => e.preventDefault()}
-                                style={{marginTop: 3,textTransform:'none', fontFamily:'Arial'}}
+                                style={{
+                                  marginTop: 3,
+                                  textTransform: 'none',
+                                  fontFamily: 'Arial',
+                                }}
                               >
-                                Detaylı Bilgi{' '}
-                                <i  className='ni ni-fat-add'></i>
+                                Detaylı Bilgi <i className='ni ni-fat-add'></i>
                               </Button>
                             </CardBody>
                           </Card>
@@ -162,10 +165,13 @@ class Landing extends React.Component {
                                 color='link'
                                 href='#pablo'
                                 onClick={e => e.preventDefault()}
-                                style={{marginTop: 3,textTransform:'none', fontFamily:'Arial'}}
+                                style={{
+                                  marginTop: 3,
+                                  textTransform: 'none',
+                                  fontFamily: 'Arial',
+                                }}
                               >
-                                Detaylı Bilgi{' '}
-                                <i  className='ni ni-fat-add'></i>
+                                Detaylı Bilgi <i className='ni ni-fat-add'></i>
                               </Button>
                             </CardBody>
                           </Card>
@@ -204,10 +210,13 @@ class Landing extends React.Component {
                                 color='link'
                                 href='#pablo'
                                 onClick={e => e.preventDefault()}
-                                style={{marginTop: 3,textTransform:'none', fontFamily:'Arial'}}
+                                style={{
+                                  marginTop: 3,
+                                  textTransform: 'none',
+                                  fontFamily: 'Arial',
+                                }}
                               >
-                                Detaylı Bilgi{' '}
-                                <i  className='ni ni-fat-add'></i>
+                                Detaylı Bilgi <i className='ni ni-fat-add'></i>
                               </Button>
                             </CardBody>
                           </Card>
@@ -516,7 +525,7 @@ class Landing extends React.Component {
               </Row>
             </Container>
           </section>
-          
+
           <section className='section section-lg'>
             <Container>
               <Row>
@@ -545,7 +554,13 @@ class Landing extends React.Component {
                 </Col>
               </Row>
               <Row className='row-grid align-items-center'>
-              <Col className='order-md-1' md='6'>
+                <Col
+                  className='order-md-1'
+                  md='6'
+                  style={{
+                    marginTop: `${window.innerWidth < 768 ? '0.1rem' : '3rem'}`,
+                  }}
+                >
                   <div className='pr-md-5'>
                     <ul className='list-unstyled mt-5'>
                       <li className='py-2'>
@@ -563,10 +578,12 @@ class Landing extends React.Component {
                               className='mb-0'
                               style={{fontSize: 20, fontFamily: 'Calibri'}}
                             >
-                             İletişim Formunu Doldurun
+                              İletişim Formunu Doldurun
                             </h5>
                             <h6 style={{fontSize: 15, fontFamily: 'Arial'}}>
-                            Test yaptırmak için formu doldurduğunuzda, randevu ekibimiz en kısa sürede sizinle irtibata geçecektir.
+                              Test yaptırmak için formu doldurduğunuzda, randevu
+                              ekibimiz en kısa sürede sizinle irtibata
+                              geçecektir.
                             </h6>
                           </div>
                         </div>
@@ -589,16 +606,24 @@ class Landing extends React.Component {
                               Hastanede test hizmetleri
                             </h5>
                             <h6 style={{fontSize: 15, fontFamily: 'Arial'}}>
-                            İstanbul, Ankara, İzmir, Bursa ve anlaşmalı olduğumuz tüm Acıbadem Hastanelerininde COVID-19 testleri yapılabilmektedir.
+                              İstanbul, Ankara, İzmir, Bursa ve anlaşmalı
+                              olduğumuz tüm Acıbadem Hastanelerininde COVID-19
+                              testleri yapılabilmektedir.
                             </h6>
                           </div>
                         </div>
                       </li>
-                        </ul>
+                    </ul>
                   </div>
                 </Col>
-            
-                <Col className='order-md-1' md='6'>
+
+                <Col
+                  className='order-md-1'
+                  md='6'
+                  style={{
+                    marginTop: `${window.innerWidth < 768 ? '0.1rem' : '3rem'}`,
+                  }}
+                >
                   <div className='pr-md-5'>
                     <ul className='list-unstyled mt-5'>
                       <li className='py-2'>
@@ -616,10 +641,11 @@ class Landing extends React.Component {
                               className='mb-0'
                               style={{fontSize: 20, fontFamily: 'Calibri'}}
                             >
-                             Evde ya da İş yerinizde Test İmkanı
+                              Evde ya da İş yerinizde Test İmkanı
                             </h5>
                             <h6 style={{fontSize: 15, fontFamily: 'Arial'}}>
-                            COVID-19 testleriniz için evinizde ya da iş yerinizde örnek alınabilmektedir.
+                              COVID-19 testleriniz için evinizde ya da iş
+                              yerinizde örnek alınabilmektedir.
                             </h6>
                           </div>
                         </div>
@@ -642,19 +668,23 @@ class Landing extends React.Component {
                               Sonuçlarınıza kolayca ulaşın
                             </h5>
                             <h6 style={{fontSize: 15, fontFamily: 'Arial'}}>
-                            Test sonuçlarınız çıktığında tarafınıza SMS ile bilgilendirme yapılmaktadır. Sonuçlarınız, anlaşmalı olduğumuz sağlık kurumunun web sitelerindeki e-sonuç sayfasından online olarak görüntülenebilmektedir.
+                              Test sonuçlarınız çıktığında tarafınıza SMS ile
+                              bilgilendirme yapılmaktadır. Sonuçlarınız,
+                              anlaşmalı olduğumuz sağlık kurumunun web
+                              sitelerindeki e-sonuç sayfasından online olarak
+                              görüntülenebilmektedir.
                             </h6>
                           </div>
                         </div>
                       </li>
-                        </ul>
+                    </ul>
                   </div>
                 </Col>
               </Row>
             </Container>
           </section>
-          
-          <section className='section pb-0 bg-gradient-warning'>
+
+          {/* <section className='section pb-0 bg-gradient-warning'>
             <Container>
               <Row className='row-grid align-items-center'>
                 <Col className='order-lg-2 ml-lg-auto' md='6'>
@@ -677,73 +707,11 @@ class Landing extends React.Component {
                       <h4 className='display-3 text-white'>
                         Sıkça Sorulan Sorular
                       </h4>
-                      {/* <p className='text-white'>
-                        The Arctic Ocean freezes every winter and much of the
-                        sea-ice then thaws every summer, and that process will
-                        continue whatever.
-                      </p> */}
                     </div>
                   </div>
-                  {/* <Card className='shadow shadow-lg--hover mt-5'>
-                    <CardBody>
-                      <div className='d-flex px-3'>
-                        <div>
-                          <div className='icon icon-shape bg-gradient-success rounded-circle text-white'>
-                            <i className='ni ni-satisfied' />
-                          </div>
-                        </div>
-                        <div className='pl-4'>
-                          <h5 className='title text-success'>
-                            Awesome Support
-                          </h5>
-                          <p>
-                            The Arctic Ocean freezes every winter and much of
-                            the sea-ice then thaws every summer, and that
-                            process will continue whatever.
-                          </p>
-                          <a
-                            className='text-success'
-                            href='#pablo'
-                            onClick={e => e.preventDefault()}
-                          >
-                            Learn more
-                          </a>
-                        </div>
-                      </div>
-                    </CardBody>
-                  </Card>
-                  <Card className='shadow shadow-lg--hover mt-5'>
-                    <CardBody>
-                      <div className='d-flex px-3'>
-                        <div>
-                          <div className='icon icon-shape bg-gradient-warning rounded-circle text-white'>
-                            <i className='ni ni-active-40' />
-                          </div>
-                        </div>
-                        <div className='pl-4'>
-                          <h5 className='title text-warning'>
-                            Modular Components
-                          </h5>
-                          <p>
-                            The Arctic Ocean freezes every winter and much of
-                            the sea-ice then thaws every summer, and that
-                            process will continue whatever.
-                          </p>
-                          <a
-                            className='text-warning'
-                            href='#pablo'
-                            onClick={e => e.preventDefault()}
-                          >
-                            Learn more
-                          </a>
-                        </div>
-                      </div>
-                    </CardBody>
-                  </Card> */}
                 </Col>
               </Row>
             </Container>
-            {/* SVG separator */}
             <div className='separator separator-bottom separator-skew zindex-100'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -759,7 +727,7 @@ class Landing extends React.Component {
                 />
               </svg>
             </div>
-          </section>
+          </section> */}
           <section className='section section-lg pt-0'>
             <Container></Container>
           </section>
