@@ -98,16 +98,16 @@ class CardsFooter extends React.Component {
             <hr />
             <Row className='align-items-center justify-content-md-between'>
               <Col md='6'>
-                <div className='copyright'>
+                {/* <div className='copyright'>
                   © {new Date().getFullYear()}{' '}
                   <a href='#'>Covid Test Merkezi</a>.
-                </div>
+                </div> */}
               </Col>
               <Col md='6'>
                 <Nav className='nav-footer justify-content-end'>
                   <NavItem>
                     <NavLink href='#' target='_blank'>
-                      Covid Test Merkezi
+                      Covid-19 Tanı Merkezi
                     </NavLink>
                   </NavItem>
                   <NavItem>
