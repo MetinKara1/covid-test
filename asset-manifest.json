@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/static/css/main.bb16f68a.chunk.css",
+    "main.js": "/static/js/main.1eda6d47.chunk.js",
+    "main.js.map": "/static/js/main.1eda6d47.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d7651f20.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d7651f20.js.map",
+    "static/js/2.71413c3b.chunk.js": "/static/js/2.71413c3b.chunk.js",
+    "static/js/2.71413c3b.chunk.js.map": "/static/js/2.71413c3b.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.f785e12bf1c3d24d86934d507a5ec372.js": "/precache-manifest.f785e12bf1c3d24d86934d507a5ec372.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.bb16f68a.chunk.css.map": "/static/css/main.bb16f68a.chunk.css.map",
+    "static/js/2.71413c3b.chunk.js.LICENSE.txt": "/static/js/2.71413c3b.chunk.js.LICENSE.txt",
+    "static/media/argon-react-white.png": "/static/media/argon-react-white.275a2629.png",
+    "static/media/argon-react.png": "/static/media/argon-react.f38ddea9.png",
+    "static/media/bg1.png": "/static/media/bg1.67b9884d.png",
+    "static/media/bg2.jpeg": "/static/media/bg2.861c3fd9.jpeg",
+    "static/media/covid1.jpg": "/static/media/covid1.afa59436.jpg",
+    "static/media/covid2.png": "/static/media/covid2.3b15bc5a.png",
+    "static/media/creativetim-white-slim.png": "/static/media/creativetim-white-slim.f7cb2d39.png",
+    "static/media/font-awesome.min.css": "/static/media/fontawesome-webfont.fee66e71.woff",
+    "static/media/github.svg": "/static/media/github.4ffd4fe7.svg",
+    "static/media/google.svg": "/static/media/google.87be59a1.svg",
+    "static/media/ill-2.svg": "/static/media/ill-2.594b1ee1.svg",
+    "static/media/img-1-1200x1000.jpg": "/static/media/img-1-1200x1000.1e7c70dc.jpg",
+    "static/media/img-2-1200x1000.jpg": "/static/media/img-2-1200x1000.ba449a06.jpg",
+    "static/media/lg.png": "/static/media/lg.d6669795.png",
+    "static/media/lg2.png": "/static/media/lg2.97e9ca37.png",
+    "static/media/nucleo.css": "/static/media/nucleo-icons.f82ec6ba.ttf",
+    "static/media/team-1-800x800.jpg": "/static/media/team-1-800x800.53033970.jpg",
+    "static/media/team-2-800x800.jpg": "/static/media/team-2-800x800.dcfcf3b7.jpg",
+    "static/media/team-3-800x800.jpg": "/static/media/team-3-800x800.497bb359.jpg",
+    "static/media/team-4-800x800.jpg": "/static/media/team-4-800x800.23007132.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d7651f20.js",
+    "static/js/2.71413c3b.chunk.js",
+    "static/css/main.bb16f68a.chunk.css",
+    "static/js/main.1eda6d47.chunk.js"
+  ]
+}
