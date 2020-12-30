@@ -435,7 +435,7 @@ class Landing extends React.Component {
                       </p> */}
                     </div>
                   </div>
-                  {/* <Card className='shadow shadow-lg--hover mt-5'>
+                  <Card className='shadow shadow-lg--hover mt-5'>
                     <CardBody>
                       <div className='d-flex px-3'>
                         <div>
@@ -490,7 +490,7 @@ class Landing extends React.Component {
                         </div>
                       </div>
                     </CardBody>
-                  </Card> */}
+                  </Card>
                 </Col>
               </Row>
             </Container>
@@ -730,7 +730,7 @@ class Landing extends React.Component {
           </section>
           <section className='section section-lg bg-gradient-default'>
             <Container className='pt-lg pb-300'>
-              {/* <Row className='text-center justify-content-center'>
+              <Row className='text-center justify-content-center'>
                 <Col lg='10'>
                   <h2 className='display-3 text-white'>Build something</h2>
                   <p className='lead text-white'>
@@ -740,8 +740,8 @@ class Landing extends React.Component {
                     to low ice.
                   </p>
                 </Col>
-              </Row> */}
-              {/* <Row className='row-grid mt-5'>
+              </Row>
+              <Row className='row-grid mt-5'>
                 <Col lg='4'>
                   <div className='icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary'>
                     <i className='ni ni-settings text-primary' />
@@ -772,7 +772,7 @@ class Landing extends React.Component {
                     up the bulk of the card's content.
                   </p>
                 </Col>
-              </Row> */}
+              </Row>
             </Container>
             <div className='separator separator-bottom separator-skew zindex-100'>
               <svg
