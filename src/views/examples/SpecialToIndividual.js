@@ -672,33 +672,25 @@ const SpecialToIndividual = () => {
           </Container>
         </section>
 
-        <section className='pb-0 bg-gradient-warning'>
+        <section className='pb-0 bg-secondary'>
           <Container>
-            <Row className='row-grid align-items-center'>
-              <Col className='order-lg-2 ml-lg-auto' md='6'>
-                <div className='position-relative pl-md-5'>
-                  <img
-                    alt='...'
-                    className='img-center img-fluid'
-                    src={require('assets/img/ill/ill-2.svg')}
-                  />
-                </div>
-              </Col>
-              <Col className='order-lg-1' lg='6'>
-                <div className='d-flex px-3' style={{marginBottom: 15}}>
-                  <div>
-                    <div className='icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary'>
-                      <i className='ni ni-building text-primary' />
-                    </div>
-                  </div>
-                  <div className='pl-4'>
-                    <h4 className='display-3 text-white'>
-                      Sıkça Sorulan Sorular
+            <Row className='row-grid'>
+              <Col className='order-lg-1' lg='12'>
+                <div className=' px-3' style={{marginBottom: 25,paddingTop:15}}>
+                  <div >
+                    <h4 className='display-3' style={{
+                      fontSize: 35,
+                      fontWeight: 700,
+                      fontFamily: 'Calibri',
+                      textAlign: 'center',
+                      color: '#32325d'
+                    }}>
+                    SIKÇA SORULAN SORULAR
                     </h4>
                   </div>
                 </div>
                 <>
-                  <p>
+                  <p lg='12'>
                     <Button
                       color='neutral'
                       href='#pablo'
@@ -708,7 +700,8 @@ const SpecialToIndividual = () => {
                       }}
                       role='button'
                       id='collapseExample'
-                      style={{marginBottom: 5}}
+                      style={{marginBottom: 5, width:'100%',textAlign:'start',color:'#32325d',
+                      fontFamily:'Arial',textTransform:'none'}}
                     >
                       1) PCR testi nasıl yapılır?
                     </Button>
@@ -727,7 +720,8 @@ const SpecialToIndividual = () => {
                       onClick={() => {
                         setCollapseOpen(2);
                       }}
-                      style={{marginBottom: 5}}
+                      style={{marginBottom: 5, width:'100%',textAlign:'start',color:'#32325d',
+                      fontFamily:'Arial',textTransform:'none'}}
                     >
                       2) PCR testi güvenli mi?
                     </Button>
@@ -750,7 +744,8 @@ const SpecialToIndividual = () => {
                       onClick={() => {
                         setCollapseOpen(3);
                       }}
-                      style={{marginBottom: 5}}
+                      style={{marginBottom: 5, width:'100%',textAlign:'start',color:'#32325d',
+                      fontFamily:'Arial',textTransform:'none'}}
                     >
                       3) Antikor testi nasıl yapılır?
                     </Button>
@@ -768,7 +763,8 @@ const SpecialToIndividual = () => {
                       onClick={() => {
                         setCollapseOpen(4);
                       }}
-                      style={{marginBottom: 5}}
+                      style={{marginBottom: 5, width:'100%',textAlign:'start',color:'#32325d',
+                      fontFamily:'Arial',textTransform:'none'}}
                     >
                       4) Antikor testleri güvenli mi?
                     </Button>
@@ -793,7 +789,8 @@ const SpecialToIndividual = () => {
                       onClick={() => {
                         setCollapseOpen(5);
                       }}
-                      style={{marginBottom: 5}}
+                      style={{marginBottom: 5, width:'100%',textAlign:'start',color:'#32325d',
+                      fontFamily:'Arial',textTransform:'none'}}
                     >
                       5) PCR ve Antikor testleri arasındaki farklar nelerdir?
                     </Button>
@@ -864,8 +861,8 @@ const SpecialToIndividual = () => {
                   style={{overflowY: 'scroll', scrollBehavior: 'smooth'}}
                 >
                   <CardBody className='p-lg-5'>
-                    <h4 className='mb-1'>Randevu Al</h4>
-                    <p className='mt-0'>Randevu almak için formu doldurunuz.</p>
+                    <h4 className='mb-1' style={{textAlign:'center',fontFamily:'Calibri',fontSize:25}}>Randevu Al</h4>
+                    <p className='mt-0'  style={{textAlign:'center',fontFamily:'Arial'}}>Randevu almak için formu doldurunuz.</p>
                     <FormGroup
                       className={classnames('mt-5', {
                         focused: state.nameFocused,
