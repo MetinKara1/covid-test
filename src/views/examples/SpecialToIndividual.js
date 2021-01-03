@@ -874,7 +874,7 @@ const SpecialToIndividual = () => {
                       <InputGroup className='input-group-alternative'>
                         <InputGroupAddon addonType='prepend'>
                           <InputGroupText>
-                            <i className='ni ni-user-run' />
+                            <i className='ni ni-circle-08' />
                           </InputGroupText>
                         </InputGroupAddon>
                         <Input
