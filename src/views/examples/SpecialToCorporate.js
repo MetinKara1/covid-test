@@ -883,8 +883,8 @@ const SpecialToCorporate = () => {
               <Col lg='8'>
                 <Card className='bg-gradient-secondary shadow'>
                   <CardBody className='p-lg-5'>
-                    <h4 className='mb-1' style={{textAlign:'center'}}>Teklif Al</h4>
-                    <p className='mt-0' style={{textAlign:'center'}}>Teklif almak için formu doldurunuz.</p>
+                    <h4 className='mb-1' style={{textAlign:'center',fontFamily:'Calibri',fontSize:25}}>Teklif Al</h4>
+                    <p className='mt-0' style={{textAlign:'center',fontFamily:'Arial'}}>Teklif almak için formu doldurunuz.</p>
                     <FormGroup
                       className={classnames('mt-5', {
                         focused: state.nameFocused,
@@ -893,7 +893,7 @@ const SpecialToCorporate = () => {
                       <InputGroup className='input-group-alternative'>
                         <InputGroupAddon addonType='prepend'>
                           <InputGroupText>
-                            <i className='ni ni-user-run' />
+                            <i className='ni ni-circle-08' />
                           </InputGroupText>
                         </InputGroupAddon>
                         <Input
@@ -970,7 +970,26 @@ const SpecialToCorporate = () => {
                         </Input>
                       </InputGroup>
                     </FormGroup>
-                   
+                    <FormGroup
+                      className={classnames({
+                        focused: state.nameFocused,
+                      })}
+                    >
+                      <InputGroup className='input-group-alternative'>
+                        <InputGroupAddon addonType='prepend'>
+                          <InputGroupText>
+                            <i className='fa fa-building' />
+                          </InputGroupText>
+                        </InputGroupAddon>
+                        <Input
+                          placeholder='Kurum Adı'
+                          type='text'
+                          onFocus={e => setState({nameFocused: true})}
+                          onBlur={e => setState({nameFocused: false})}
+                          onChange={e => setCorporate({ ...corporates, CorporateName: e.target.value })}
+                        />
+                      </InputGroup>
+                    </FormGroup>
                     <FormGroup
                       className={classnames({
                         focused: state.employeeCountFocused,
@@ -979,7 +998,7 @@ const SpecialToCorporate = () => {
                       <InputGroup className='input-group-alternative'>
                         <InputGroupAddon addonType='prepend'>
                           <InputGroupText>
-                            <i className='ni ni-circle-08' />
+                            <i className='fa fa-users' />
                           </InputGroupText>
                         </InputGroupAddon>
                         <Input
