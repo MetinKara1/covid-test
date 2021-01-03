@@ -13,8 +13,8 @@ import Profile from 'views/examples/Profile.js';
 import Register from 'views/examples/Register.js';
 import SpecialToIndividual from 'views/examples/SpecialToIndividual.js';
 import SpecialToCorporate from 'views/examples/SpecialToCorporate.js';
-
 import Dashboard from 'views/examples/Dashboard.js';
+import Applications from 'views/examples/Applications.js';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -29,6 +29,11 @@ ReactDOM.render(
         path='/kurumlara-ozel'
         exact
         render={props => <SpecialToCorporate {...props} />}
+      />
+       <Route
+        path='/basvurular'
+        exact
+        render={props => <Applications {...props} />}
       />
       <Route
         path='/landing-page'

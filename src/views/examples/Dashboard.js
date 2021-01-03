@@ -119,7 +119,7 @@ class Landing extends React.Component {
                                 }}
                               >
                                 <Link
-                                  to='/kurumlara-ozel'
+                                  to='/bireylere-ozel'
                                   style={{textTransform: 'none'}}
                                 >
                                   Detaylı Bilgi{' '}
