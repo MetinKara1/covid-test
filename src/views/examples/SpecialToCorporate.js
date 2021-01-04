@@ -730,7 +730,7 @@ const SpecialToCorporate = () => {
                       }}
                       role='button'
                       id='collapseExample'
-                      style={{marginBottom: 5}}
+                      style={{marginBottom: 5, width:'100%',textAlign:'start'}}
                     >
                       1) PCR testi nasıl yapılır?
                     </Button>
@@ -749,7 +749,7 @@ const SpecialToCorporate = () => {
                       onClick={() => {
                         setCollapseOpen(2);
                       }}
-                      style={{marginBottom: 5}}
+                      style={{marginBottom: 5, width:'100%',textAlign:'start'}}
                     >
                       2) PCR testi güvenli mi?
                     </Button>
@@ -772,7 +772,7 @@ const SpecialToCorporate = () => {
                       onClick={() => {
                         setCollapseOpen(3);
                       }}
-                      style={{marginBottom: 5}}
+                      style={{marginBottom: 5, width:'100%',textAlign:'start'}}
                     >
                       3) Antikor testi nasıl yapılır?
                     </Button>
@@ -790,7 +790,7 @@ const SpecialToCorporate = () => {
                       onClick={() => {
                         setCollapseOpen(4);
                       }}
-                      style={{marginBottom: 5}}
+                      style={{marginBottom: 5, width:'100%',textAlign:'start'}}
                     >
                       4) Antikor testleri güvenli mi?
                     </Button>
@@ -815,7 +815,7 @@ const SpecialToCorporate = () => {
                       onClick={() => {
                         setCollapseOpen(5);
                       }}
-                      style={{marginBottom: 5}}
+                      style={{marginBottom: 5, width:'100%',textAlign:'start'}}
                     >
                       5) PCR ve Antikor testleri arasındaki farklar nelerdir?
                     </Button>
