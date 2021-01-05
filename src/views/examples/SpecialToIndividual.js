@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 // nodejs library that concatenates classes
 import classnames from 'classnames';
-import bg from '../../assets/img/theme/bg2.jpeg';
+import bg from '../../assets/img/theme/bg3.png';
 
 import {
   Badge,
@@ -831,11 +831,20 @@ const SpecialToIndividual = () => {
             </svg>
           </div>
         </section>
-        <section className='section section-lg pt-0'>
+      
+      
+        {/* <section className='section section-lg pt-0'>
           <Container></Container>
-        </section>
+        </section> */}
         <section className='section section-lg bg-gradient-default'>
-          <Container className='pt-lg pb-300'></Container>
+          <Container className=' pb-200' > 
+          <h5   className='display-3' style={{
+                          fontSize: 40,
+                          color: '#ffffff',
+                          fontFamily: 'Calibri',
+                          marginBottom: 30,
+                          textAlign:'center'
+                        }}>COVID-19 TESTLERİNİZİ GÜVENLE YAPTIRIN</h5></Container>
           <div className='separator separator-bottom separator-skew zindex-100'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -847,6 +856,7 @@ const SpecialToIndividual = () => {
             >
               <polygon className='fill-white' points='2560 0 2560 100 0 100' />
             </svg>
+           
           </div>
         </section>
         <section
@@ -948,7 +958,6 @@ const SpecialToIndividual = () => {
                         </Input>
                       </InputGroup>
                     </FormGroup>
-                  
                     <FormGroup
                       className={classnames({
                         focused: state.locationFocused,
@@ -1025,7 +1034,8 @@ const SpecialToIndividual = () => {
             </Row>
           </Container>
         </section>
-      </main>
+     
+        </main>
       <CardsFooter />
     </>
   );
