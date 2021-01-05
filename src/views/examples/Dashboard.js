@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 // nodejs library that concatenates classes
 import classnames from 'classnames';
-import bg from '../../assets/img/theme/bg2.jpeg';
+import bg from '../../assets/img/theme/bg3.png';
 
 import {
   Badge,
