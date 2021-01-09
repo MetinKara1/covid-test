@@ -1,3 +1,4 @@
+import React from 'react';
 import Alert from '../components/Alerts/index';
 
 export const responseMessages = (type, messages) => {

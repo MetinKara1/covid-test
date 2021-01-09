@@ -6,7 +6,7 @@ import {responseMessages} from '../utils';
 // import { getServiceOrigin } from '../origins';
 
 const instance = axios.create({
-  baseURL: `http://localhost:1234/`, // ${getServiceOrigin()}
+  baseURL: `https://api.covid19-tanimerkezi.com/`, // ${getServiceOrigin()}
   // baseURL: 'http://api.tys.medyasoft-innolab.com/',
   headers: {
     'Content-Type': 'application/json',
