@@ -28,31 +28,30 @@ import CardsFooter from 'components/Footers/CardsFooter.js';
 import Download from '../IndexSections/Download.js';
 
 const SpecialToCorporate = () => {
-  const  corporate = {
+  const corporate = {
     Name: '',
     Email: '',
     Phone: '',
-    TestType:'',
-    Location:'',
-    Message:'' ,
-    KVKK:false,
-    WorkerCount:'',
+    TestType: '',
+    Location: '',
+    Message: '',
+    KVKK: false,
+    WorkerCount: '',
     CorporateName: '',
-
-  }
+  };
   const [corporates, setCorporate] = useState(corporate);
 
   const submit = e => {
-    e.preventDefault()
-    fetch('https://localhost:44390/api/addOfferCorporate', {
+    e.preventDefault();
+    fetch('http://api.covid19-tanimerkezi.com/api/addOfferCorporate', {
       method: 'POST',
       body: JSON.stringify(corporates),
-      headers: { 'Content-Type': 'application/json' },
+      headers: {'Content-Type': 'application/json'},
     })
       .then(res => res.json())
-      .then(json => setCorporate(json.corporates))
-  }
-  
+      .then(json => setCorporate(json.corporates));
+  };
+
   const [state, setState] = useState({
     nameFocused: true,
   });
@@ -697,16 +696,22 @@ const SpecialToCorporate = () => {
           <Container>
             <Row className='row-grid'>
               <Col className='order-lg-1' lg='12'>
-                <div className=' px-3' style={{marginBottom: 25,paddingTop:15}}>
-                  <div >
-                    <h4 className='display-3' style={{
-                      fontSize: 35,
-                      fontWeight: 700,
-                      fontFamily: 'Calibri',
-                      textAlign: 'center',
-                      color: '#32325d'
-                    }}>
-                    SIKÇA SORULAN SORULAR
+                <div
+                  className=' px-3'
+                  style={{marginBottom: 25, paddingTop: 15}}
+                >
+                  <div>
+                    <h4
+                      className='display-3'
+                      style={{
+                        fontSize: 35,
+                        fontWeight: 700,
+                        fontFamily: 'Calibri',
+                        textAlign: 'center',
+                        color: '#32325d',
+                      }}
+                    >
+                      SIKÇA SORULAN SORULAR
                     </h4>
                   </div>
                 </div>
@@ -721,8 +726,14 @@ const SpecialToCorporate = () => {
                       }}
                       role='button'
                       id='collapseExample'
-                      style={{marginBottom: 5, width:'100%',textAlign:'start',color:'#32325d',
-                      fontFamily:'Arial',textTransform:'none'}}
+                      style={{
+                        marginBottom: 5,
+                        width: '100%',
+                        textAlign: 'start',
+                        color: '#32325d',
+                        fontFamily: 'Arial',
+                        textTransform: 'none',
+                      }}
                     >
                       1) PCR testi nasıl yapılır?
                     </Button>
@@ -741,8 +752,14 @@ const SpecialToCorporate = () => {
                       onClick={() => {
                         setCollapseOpen(2);
                       }}
-                      style={{marginBottom: 5, width:'100%',textAlign:'start',color:'#32325d',
-                      fontFamily:'Arial',textTransform:'none'}}
+                      style={{
+                        marginBottom: 5,
+                        width: '100%',
+                        textAlign: 'start',
+                        color: '#32325d',
+                        fontFamily: 'Arial',
+                        textTransform: 'none',
+                      }}
                     >
                       2) PCR testi güvenli mi?
                     </Button>
@@ -765,8 +782,14 @@ const SpecialToCorporate = () => {
                       onClick={() => {
                         setCollapseOpen(3);
                       }}
-                      style={{marginBottom: 5, width:'100%',textAlign:'start',color:'#32325d',
-                      fontFamily:'Arial',textTransform:'none'}}
+                      style={{
+                        marginBottom: 5,
+                        width: '100%',
+                        textAlign: 'start',
+                        color: '#32325d',
+                        fontFamily: 'Arial',
+                        textTransform: 'none',
+                      }}
                     >
                       3) Antikor testi nasıl yapılır?
                     </Button>
@@ -784,8 +807,14 @@ const SpecialToCorporate = () => {
                       onClick={() => {
                         setCollapseOpen(4);
                       }}
-                      style={{marginBottom: 5, width:'100%',textAlign:'start',color:'#32325d',
-                      fontFamily:'Arial',textTransform:'none'}}
+                      style={{
+                        marginBottom: 5,
+                        width: '100%',
+                        textAlign: 'start',
+                        color: '#32325d',
+                        fontFamily: 'Arial',
+                        textTransform: 'none',
+                      }}
                     >
                       4) Antikor testleri güvenli mi?
                     </Button>
@@ -810,8 +839,14 @@ const SpecialToCorporate = () => {
                       onClick={() => {
                         setCollapseOpen(5);
                       }}
-                      style={{marginBottom: 5, width:'100%',textAlign:'start',color:'#32325d',
-                      fontFamily:'Arial',textTransform:'none'}}
+                      style={{
+                        marginBottom: 5,
+                        width: '100%',
+                        textAlign: 'start',
+                        color: '#32325d',
+                        fontFamily: 'Arial',
+                        textTransform: 'none',
+                      }}
                     >
                       5) PCR ve Antikor testleri arasındaki farklar nelerdir?
                     </Button>
@@ -852,8 +887,7 @@ const SpecialToCorporate = () => {
             </svg>
           </div>
         </section>
-      
-        
+
         <section className='section section-lg pt-0'>
           <Container></Container>
         </section>
@@ -881,8 +915,22 @@ const SpecialToCorporate = () => {
               <Col lg='8'>
                 <Card className='bg-gradient-secondary shadow'>
                   <CardBody className='p-lg-5'>
-                    <h4 className='mb-1' style={{textAlign:'center',fontFamily:'Calibri',fontSize:25}}>Teklif Al</h4>
-                    <p className='mt-0' style={{textAlign:'center',fontFamily:'Arial'}}>Teklif almak için formu doldurunuz.</p>
+                    <h4
+                      className='mb-1'
+                      style={{
+                        textAlign: 'center',
+                        fontFamily: 'Calibri',
+                        fontSize: 25,
+                      }}
+                    >
+                      Teklif Al
+                    </h4>
+                    <p
+                      className='mt-0'
+                      style={{textAlign: 'center', fontFamily: 'Arial'}}
+                    >
+                      Teklif almak için formu doldurunuz.
+                    </p>
                     <FormGroup
                       className={classnames('mt-5', {
                         focused: state.nameFocused,
@@ -899,7 +947,9 @@ const SpecialToCorporate = () => {
                           type='text'
                           onFocus={e => setState({nameFocused: true})}
                           onBlur={e => setState({nameFocused: false})}
-                          onChange={e => setCorporate({ ...corporates, Name: e.target.value })}
+                          onChange={e =>
+                            setCorporate({...corporates, Name: e.target.value})
+                          }
                         />
                       </InputGroup>
                     </FormGroup>
@@ -919,7 +969,9 @@ const SpecialToCorporate = () => {
                           type='email'
                           onFocus={e => setState({emailFocused: true})}
                           onBlur={e => setState({emailFocused: false})}
-                          onChange={e => setCorporate({ ...corporates, Email: e.target.value })}
+                          onChange={e =>
+                            setCorporate({...corporates, Email: e.target.value})
+                          }
                         />
                       </InputGroup>
                     </FormGroup>
@@ -939,32 +991,40 @@ const SpecialToCorporate = () => {
                           type='phone'
                           onFocus={e => setState({phoneFocused: true})}
                           onBlur={e => setState({phoneFocused: false})}
-                          onChange={e => setCorporate({ ...corporates, Phone: e.target.value })}
+                          onChange={e =>
+                            setCorporate({...corporates, Phone: e.target.value})
+                          }
                         />
                       </InputGroup>
                     </FormGroup>
-                    <FormGroup 
-                    className={classnames({
+                    <FormGroup
+                      className={classnames({
                         focused: state.locationFocused,
-                      })}>
-                    <InputGroup className='input-group-alternative'>
+                      })}
+                    >
+                      <InputGroup className='input-group-alternative'>
                         <InputGroupAddon addonType='prepend'>
                           <InputGroupText>
                             <i className='ni ni-sound-wave' />
                           </InputGroupText>
                         </InputGroupAddon>
-                       
+
                         <Input
                           placeholder='Test Tipi'
                           type='select'
                           onFocus={e => setState({testTypeFocused: true})}
                           onBlur={e => setState({testTypeFocused: false})}
-                          onChange={e => setCorporate({ ...corporates, TestType: e.target.value })}
+                          onChange={e =>
+                            setCorporate({
+                              ...corporates,
+                              TestType: e.target.value,
+                            })
+                          }
                         >
-                        <option value='0'>Test Tipi Seçiniz</option>
-                        <option value='1'>PCR</option>
-                        <option value='2'>Antikor(IgM/IgG)</option>
-                        <option value='3'>PCR + Antikor(IgM/IgG)</option>
+                          <option value='0'>Test Tipi Seçiniz</option>
+                          <option value='1'>PCR</option>
+                          <option value='2'>Antikor(IgM/IgG)</option>
+                          <option value='3'>PCR + Antikor(IgM/IgG)</option>
                         </Input>
                       </InputGroup>
                     </FormGroup>
@@ -984,7 +1044,12 @@ const SpecialToCorporate = () => {
                           type='text'
                           onFocus={e => setState({nameFocused: true})}
                           onBlur={e => setState({nameFocused: false})}
-                          onChange={e => setCorporate({ ...corporates, CorporateName: e.target.value })}
+                          onChange={e =>
+                            setCorporate({
+                              ...corporates,
+                              CorporateName: e.target.value,
+                            })
+                          }
                         />
                       </InputGroup>
                     </FormGroup>
@@ -1004,7 +1069,12 @@ const SpecialToCorporate = () => {
                           type='number'
                           onFocus={e => setState({employeeCountFocused: true})}
                           onBlur={e => setState({employeeCountFocused: false})}
-                          onChange={e => setCorporate({ ...corporates, WorkerCount: e.target.value })}
+                          onChange={e =>
+                            setCorporate({
+                              ...corporates,
+                              WorkerCount: e.target.value,
+                            })
+                          }
                         />
                       </InputGroup>
                     </FormGroup>
@@ -1024,7 +1094,12 @@ const SpecialToCorporate = () => {
                           type='text'
                           onFocus={e => setState({locationFocused: true})}
                           onBlur={e => setState({locationFocused: false})}
-                          onChange={e => setCorporate({ ...corporates, Location: e.target.value })}
+                          onChange={e =>
+                            setCorporate({
+                              ...corporates,
+                              Location: e.target.value,
+                            })
+                          }
                         />
                       </InputGroup>
                     </FormGroup>
@@ -1036,21 +1111,33 @@ const SpecialToCorporate = () => {
                         placeholder='Bir mesaj yazın...'
                         rows='4'
                         type='textarea'
-                        onChange={e => setCorporate({ ...corporates, Message: e.target.value })}
+                        onChange={e =>
+                          setCorporate({...corporates, Message: e.target.value})
+                        }
                       />
                     </FormGroup>
-                    <FormGroup className="custom-control custom-checkbox mb-3">
+                    <FormGroup className='custom-control custom-checkbox mb-3'>
                       <Input
-                         className="custom-control-input"
-                         id="customCheck1"
-                         type="checkbox"
-                        onChange={e => setCorporate({ ...corporates, KVKK: e.target.checked })}
+                        className='custom-control-input'
+                        id='customCheck1'
+                        type='checkbox'
+                        onChange={e =>
+                          setCorporate({...corporates, KVKK: e.target.checked})
+                        }
                       />
-                      <label className="custom-control-label" htmlFor="customCheck1">
-                        <span>Kişisel Verilerin Korunması Kanunu uyarınca, verilerimin belirtilen kapsamda işlenmesini ve sağlık hizmet sunumu amacıyla tarafımla iletişime geçilmesini kabul ediyorum.</span>
+                      <label
+                        className='custom-control-label'
+                        htmlFor='customCheck1'
+                      >
+                        <span>
+                          Kişisel Verilerin Korunması Kanunu uyarınca,
+                          verilerimin belirtilen kapsamda işlenmesini ve sağlık
+                          hizmet sunumu amacıyla tarafımla iletişime geçilmesini
+                          kabul ediyorum.
+                        </span>
                       </label>
                     </FormGroup>
-                   
+
                     <div>
                       <Button
                         block
