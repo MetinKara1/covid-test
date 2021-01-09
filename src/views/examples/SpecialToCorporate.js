@@ -43,7 +43,7 @@ const SpecialToCorporate = () => {
 
   const submit = e => {
     e.preventDefault();
-    fetch('http://api.covid19-tanimerkezi.com/api/addOfferCorporate', {
+    fetch('https://api.covid19-tanimerkezi.com/api/addOfferCorporate', {
       method: 'POST',
       body: JSON.stringify(corporates),
       headers: {'Content-Type': 'application/json'},

@@ -50,7 +50,7 @@ const SpecialToIndividual = ({
   const [collapseOpen, setCollapseOpen] = useState(0);
 
   const submit = data => {
-    fetch('http://api.covid19-tanimerkezi.com/addAppointment', {
+    fetch('https://api.covid19-tanimerkezi.com/addAppointment', {
       method: 'POST',
       body: JSON.stringify(appointments),
       headers: {
