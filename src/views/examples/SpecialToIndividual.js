@@ -983,7 +983,6 @@ const SpecialToIndividual = ({
                             message: 'Lütfen eposta giriniz!',
                           },
                         ]}
-                        value='hulyayavuz.96@gmail.com'
                       >
                         <InputGroup className='input-group-alternative'>
                           <InputGroupAddon addonType='prepend'>
@@ -994,7 +993,7 @@ const SpecialToIndividual = ({
                           <Input
                             placeholder='Email'
                             type='email'
-                            value='hulyayavuz.96@gmail.com'
+                            // value={appointment.Email}
                             onChange={e =>
                               setAppointment({
                                 ...appointments,
