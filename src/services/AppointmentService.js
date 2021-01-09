@@ -4,7 +4,7 @@ const DEFAULT_QUERY = '/api';
 
 class AppointmentService {
   addAppointment = payload =>
-    tysClient.post(`${DEFAULT_QUERY}/Appointment`, payload).then(res => {
+    tysClient.post(`${DEFAULT_QUERY}/addAppointment`, payload).then(res => {
       // localStorage.setItem('user_id', res.data.userId);
       return res;
     });
