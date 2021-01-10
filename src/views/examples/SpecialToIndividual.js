@@ -61,6 +61,18 @@ const SpecialToIndividual = ({
     //   .then(res => res.json())
     //   .then(json => setAppointment(json.appointments));
 
+    // fetch('https://api.covid19-tanimerkezi.com/api/values', {
+    //   method: 'POST',
+    //   body: 'some',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     // 'access-control-allow-origin': '*',
+    //   },
+    // }).then(res => {
+    //   debugger;
+    //   console.log('response', res.data);
+    // });
+
     appointmentService.addAppointment(appointments).then(res => {
       debugger;
     });
