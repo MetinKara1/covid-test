@@ -50,20 +50,32 @@ const SpecialToIndividual = ({
   const [collapseOpen, setCollapseOpen] = useState(0);
 
   const submit = data => {
-    fetch('https://api.covid19-tanimerkezi.com/addAppointment', {
-      method: 'POST',
-      body: JSON.stringify(appointments),
-      headers: {
-        'Content-Type': 'application/json',
-        'access-control-allow-origin': '*',
-      },
-    })
-      .then(res => res.json())
-      .then(json => setAppointment(json.appointments));
+    // fetch('https://localhost:44390/addAppointment', {
+    //   method: 'POST',
+    //   body: JSON.stringify(appointments),
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     'access-control-allow-origin': '*',
+    //   },
+    // })
+    //   .then(res => res.json())
+    //   .then(json => setAppointment(json.appointments));
 
-    // appointmentService.addAppointment(appointments).then(res => {
+    // fetch('https://api.covid19-tanimerkezi.com/api/values', {
+    //   method: 'POST',
+    //   body: 'some',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     // 'access-control-allow-origin': '*',
+    //   },
+    // }).then(res => {
     //   debugger;
+    //   console.log('response', res.data);
     // });
+
+    appointmentService.addAppointment(appointments).then(res => {
+      debugger;
+    });
   };
 
   return (

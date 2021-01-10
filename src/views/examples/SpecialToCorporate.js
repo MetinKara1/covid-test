@@ -47,9 +47,9 @@ const SpecialToCorporate = () => {
       method: 'POST',
       body: JSON.stringify(corporates),
       headers: {'Content-Type': 'application/json'},
-    })
-      .then(res => res.json())
-      .then(json => setCorporate(json.corporates));
+    }).then(res => {
+      debugger;
+    });
   };
 
   const [state, setState] = useState({
