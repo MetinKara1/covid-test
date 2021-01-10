@@ -3,7 +3,7 @@ import 'antd/dist/antd.css';
 import {Form, Checkbox} from 'antd';
 // nodejs library that concatenates classes
 import bg from '../../assets/img/theme/bg3.png';
-
+import mbg from '../../assets/img/theme/mbg.png';
 import {
   Badge,
   Card,
@@ -88,13 +88,15 @@ const SpecialToIndividual = ({
             <div
               className=''
               style={{
-                backgroundImage: `url(${bg})`,
+                backgroundImage:`${
+                  window.innerWidth > 992 ?  `url(${bg})` :  `url(${mbg})`
+                } `,
                 width: 'auto',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 marginTop: -96,
-                height: 700,
+                height:  window.innerWidth > 768 ? 700 :  375,
                 position: 'relative',
               }}
             >
@@ -102,7 +104,19 @@ const SpecialToIndividual = ({
                 <div className='col px-0'>
                   <Row style={{marginTop: 120}}>
                     <Col lg='8'>
-                      <h1
+                    <h1 className="display-3 text-white"
+                    style={{
+                     fontSize: window.innerWidth > 400 ? 60 : 25,
+                     fontFamily: 'Calibri'
+                    }}
+                    >
+                    GÜVENİLİRLİĞİ YÜKSEK YÖNTEMLERLE COVID-19 TESTLERİ{" "}
+                      </h1>
+                      <p className="lead text-white"
+                      style={{fontFamily:'Arial'}}>
+                       Erken Evrede Tanı ve Hızlı Sonuç.
+                      </p>
+                      {/* <h1
                         className='display-3'
                         style={{
                           fontSize: 60,
@@ -112,12 +126,11 @@ const SpecialToIndividual = ({
                         }}
                       >
                         GÜVENİLİRLİĞİ YÜKSEK YÖNTEMLERLE COVID-19 TESTLERİ{' '}
-                        {/* <span>completed with examples</span> */}
-                      </h1>
-                      <p className='lead text-white'>
+                      </h1> */}
+                      {/* <p className='lead text-white'>
                         COVID-19 testlerinizi yaptırarak virüse karşı önlem
                         alabilir, kendinizi ve sevdiklerinizi koruyabilirsiniz.
-                      </p>
+                      </p> */}
                       {/* <div className='btn-wrapper'></div> */}
                     </Col>
                   </Row>
