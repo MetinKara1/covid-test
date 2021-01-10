@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 // nodejs library that concatenates classes
 import classnames from 'classnames';
 import bg from '../../assets/img/theme/bg3.png';
+import mbg from '../../assets/img/theme/mbg.png';
 
 import {
   Badge,
@@ -80,13 +81,15 @@ const SpecialToCorporate = () => {
             <div
               className=''
               style={{
-                backgroundImage: `url(${bg})`,
+                backgroundImage:`${
+                  window.innerWidth > 992 ?  `url(${bg})` :  `url(${mbg})`
+                } `,
                 width: 'auto',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 marginTop: -96,
-                height: 700,
+                height:  window.innerWidth > 768 ? 700 :  400,
                 position: 'relative',
               }}
             >
@@ -95,18 +98,16 @@ const SpecialToCorporate = () => {
                   <Row style={{marginTop: 100}}>
                     <Col lg='8'>
                       <h1
-                        className='display-3'
+                        className="display-3 text-white"
                         style={{
-                          fontSize: 60,
-                          color: '#ffffff',
-                          fontFamily: 'Calibri',
-                          marginBottom: 30,
+                         fontSize: window.innerWidth > 400 ? 60 : 25,
+                         fontFamily: 'Calibri'
                         }}
                       >
                         COVID-19 TESTLERİNDE KURUMLARA ÖZEL TEKLİFLER{' '}
-                        {/* <span>completed with examples</span> */}
                       </h1>
-                      <p className='lead text-white'>
+                      <p className='lead text-white'
+                         style={{fontFamily:'Arial'}}>
                         Avrupa standartlarına uygunluk belgesi bulunan, %99,9
                         güvenilirlikte testler
                       </p>

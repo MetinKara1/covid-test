@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 // nodejs library that concatenates classes
 import classnames from 'classnames';
 import bg from '../../assets/img/theme/bg3.png';
+import mbg from '../../assets/img/theme/mbg.png';
 
 import {
   Badge,
@@ -45,13 +46,15 @@ class Landing extends React.Component {
               <div
                 className=''
                 style={{
-                  backgroundImage: `url(${bg})`,
+                  backgroundImage:`${
+                    window.innerWidth > 992 ?  `url(${bg})` :  `url(${mbg})`
+                  } `,
                   width: 'auto',
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat',
                   backgroundSize: 'cover',
                   marginTop: -96,
-                  height: 700,
+                  height:  window.innerWidth > 768 ? 700 :  490,
                   position: 'relative',
                 }}
               >
@@ -59,11 +62,18 @@ class Landing extends React.Component {
                   <div className='col px-0'>
                     <Row style={{marginTop: 200}}>
                       <Col lg='6'>
-                        <h1 className='display-3 text-white'>
+                        <h1
+                        className="display-3 text-white"
+                        style={{
+                         fontSize: window.innerWidth > 400 ? 60 : 25,
+                         fontFamily: 'Calibri'
+                        }}>
                           COVID-19 TESTLERİNİZİ GÜVENLE YAPTIRIN{' '}
                           {/* <span>completed with examples</span> */}
                         </h1>
-                        <p className='lead text-white'>
+                        <p className='lead text-white'
+                           style={{fontFamily:'Arial',
+                           fontSize: window.innerWidth < 325 ? 12 : 20}}>
                           COVID-19 testlerinizi yaptırarak virüse karşı önlem
                           alabilir, kendinizi ve sevdiklerinizi
                           koruyabilirsiniz.
