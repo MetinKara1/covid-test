@@ -28,6 +28,7 @@ import CardsFooter from 'components/Footers/CardsFooter.js';
 import {AppointmentService} from '../../services/index';
 
 import '../../assets/css/validation.css';
+import {responseMessages} from 'config/utils';
 
 const SpecialToIndividual = ({
   appointmentService = new AppointmentService(),
@@ -74,7 +75,20 @@ const SpecialToIndividual = ({
     // });
 
     appointmentService.addAppointment(appointments).then(res => {
-      debugger;
+      if (res.status === 200) {
+        responseMessages('success', [
+          {
+            Message: 'Kaydınız başarıyla oluşturulmuştur.',
+          },
+        ]);
+      } else {
+        responseMessages('error', [
+          {
+            Message:
+              'Bir hata oluştu. Lütfen tekrar deneyiniz. Sorun devam ederse yetkili ile iletişime geçiniz.',
+          },
+        ]);
+      }
     });
   };
 

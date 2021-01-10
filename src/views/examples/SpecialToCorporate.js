@@ -26,6 +26,7 @@ import CardsFooter from 'components/Footers/CardsFooter.js';
 
 // index page sections
 import Download from '../IndexSections/Download.js';
+import {responseMessages} from 'config/utils';
 
 const SpecialToCorporate = () => {
   const corporate = {
@@ -48,7 +49,20 @@ const SpecialToCorporate = () => {
       body: JSON.stringify(corporates),
       headers: {'Content-Type': 'application/json'},
     }).then(res => {
-      debugger;
+      if (res.status === 200) {
+        responseMessages('success', [
+          {
+            Message: 'Kaydınız başarıyla oluşturulmuştur.',
+          },
+        ]);
+      } else {
+        responseMessages('error', [
+          {
+            Message:
+              'Bir hata oluştu. Lütfen tekrar deneyiniz. Sorun devam ederse yetkili ile iletişime geçiniz.',
+          },
+        ]);
+      }
     });
   };
 
