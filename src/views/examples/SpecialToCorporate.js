@@ -27,6 +27,7 @@ import CardsFooter from 'components/Footers/CardsFooter.js';
 
 // index page sections
 import Download from '../IndexSections/Download.js';
+import {responseMessages} from 'config/utils';
 
 const SpecialToCorporate = () => {
   const corporate = {
@@ -49,7 +50,20 @@ const SpecialToCorporate = () => {
       body: JSON.stringify(corporates),
       headers: {'Content-Type': 'application/json'},
     }).then(res => {
-      debugger;
+      if (res.status === 200) {
+        responseMessages('success', [
+          {
+            Message: 'Kaydınız başarıyla oluşturulmuştur.',
+          },
+        ]);
+      } else {
+        responseMessages('error', [
+          {
+            Message:
+              'Bir hata oluştu. Lütfen tekrar deneyiniz. Sorun devam ederse yetkili ile iletişime geçiniz.',
+          },
+        ]);
+      }
     });
   };
 
@@ -67,15 +81,15 @@ const SpecialToCorporate = () => {
             <div
               className=''
               style={{
-                backgroundImage:`${
-                  window.innerWidth > 992 ?  `url(${bg})` :  `url(${mbg})`
+                backgroundImage: `${
+                  window.innerWidth > 992 ? `url(${bg})` : `url(${mbg})`
                 } `,
                 width: 'auto',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 marginTop: -96,
-                height:  window.innerWidth > 768 ? 700 :  400,
+                height: window.innerWidth > 768 ? 700 : 400,
                 position: 'relative',
               }}
             >
@@ -84,16 +98,18 @@ const SpecialToCorporate = () => {
                   <Row style={{marginTop: 100}}>
                     <Col lg='8'>
                       <h1
-                        className="display-3 text-white"
+                        className='display-3 text-white'
                         style={{
-                         fontSize: window.innerWidth > 400 ? 60 : 25,
-                         fontFamily: 'Calibri'
+                          fontSize: window.innerWidth > 400 ? 60 : 25,
+                          fontFamily: 'Calibri',
                         }}
                       >
                         COVID-19 TESTLERİNDE KURUMLARA ÖZEL TEKLİFLER{' '}
                       </h1>
-                      <p className='lead text-white'
-                         style={{fontFamily:'Arial'}}>
+                      <p
+                        className='lead text-white'
+                        style={{fontFamily: 'Arial'}}
+                      >
                         Avrupa standartlarına uygunluk belgesi bulunan, %99,9
                         güvenilirlikte testler
                       </p>
@@ -875,6 +891,7 @@ const SpecialToCorporate = () => {
               </Col>
             </Row>
           </Container>
+
           <div className='separator separator-bottom separator-skew zindex-100'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -893,7 +910,20 @@ const SpecialToCorporate = () => {
           <Container></Container>
         </section>
         <section className='section section-lg bg-gradient-default'>
-          <Container className='pt-lg pb-300'></Container>
+          <Container className=' pb-200'>
+            <h5
+              className='display-3'
+              style={{
+                fontSize: 40,
+                color: '#ffffff',
+                fontFamily: 'Calibri',
+                marginBottom: 30,
+                textAlign: 'center',
+              }}
+            >
+              COVID-19 TESTLERİNİZİ GÜVENLE YAPTIRIN
+            </h5>
+          </Container>
           <div className='separator separator-bottom separator-skew zindex-100'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
