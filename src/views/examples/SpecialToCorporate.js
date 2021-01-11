@@ -100,7 +100,12 @@ const SpecialToCorporate = () => {
                       <h1
                         className='display-3 text-white'
                         style={{
-                          fontSize: window.innerWidth > 400 ? 60 : 25,
+                          fontSize:
+                            window.innerWidth > 1125
+                              ? 60
+                              : window.innerWidth > 500
+                              ? 40
+                              : 25,
                           fontFamily: 'Calibri',
                         }}
                       >
