@@ -102,15 +102,15 @@ const SpecialToIndividual = ({
             <div
               className=''
               style={{
-                backgroundImage:`${
-                  window.innerWidth > 992 ?  `url(${bg})` :  `url(${mbg})`
+                backgroundImage: `${
+                  window.innerWidth > 992 ? `url(${bg})` : `url(${mbg})`
                 } `,
                 width: 'auto',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 marginTop: -96,
-                height:  window.innerWidth > 768 ? 700 :  375,
+                height: window.innerWidth > 768 ? 700 : 375,
                 position: 'relative',
               }}
             >
@@ -118,17 +118,25 @@ const SpecialToIndividual = ({
                 <div className='col px-0'>
                   <Row style={{marginTop: 120}}>
                     <Col lg='8'>
-                    <h1 className="display-3 text-white"
-                    style={{
-                     fontSize: window.innerWidth > 400 ? 60 : 25,
-                     fontFamily: 'Calibri'
-                    }}
-                    >
-                    GÜVENİLİRLİĞİ YÜKSEK YÖNTEMLERLE COVID-19 TESTLERİ{" "}
+                      <h1
+                        className='display-3 text-white'
+                        style={{
+                          fontSize:
+                            window.innerWidth > 1125
+                              ? 60
+                              : window.innerWidth > 500
+                              ? 40
+                              : 25,
+                          fontFamily: 'Calibri',
+                        }}
+                      >
+                        GÜVENİLİRLİĞİ YÜKSEK YÖNTEMLERLE COVID-19 TESTLERİ{' '}
                       </h1>
-                      <p className="lead text-white"
-                      style={{fontFamily:'Arial'}}>
-                       Erken Evrede Tanı ve Hızlı Sonuç.
+                      <p
+                        className='lead text-white'
+                        style={{fontFamily: 'Arial'}}
+                      >
+                        Erken Evrede Tanı ve Hızlı Sonuç.
                       </p>
                       {/* <h1
                         className='display-3'
