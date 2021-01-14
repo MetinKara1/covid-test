@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Form, Spin} from 'antd';
 // nodejs library that concatenates classes
 import classnames from 'classnames';
 import bg from '../../assets/img/theme/bg3.png';
@@ -25,11 +26,13 @@ import {
 import DemoNavbar from 'components/Navbars/DemoNavbar.js';
 import CardsFooter from 'components/Footers/CardsFooter.js';
 
+import {OfferService} from '../../services/index';
+
 // index page sections
 import Download from '../IndexSections/Download.js';
 import {responseMessages} from 'config/utils';
 
-const SpecialToCorporate = () => {
+const SpecialToCorporate = ({offerService = new OfferService()}) => {
   const corporate = {
     Name: '',
     Email: '',
@@ -41,15 +44,38 @@ const SpecialToCorporate = () => {
     WorkerCount: '',
     CorporateName: '',
   };
-  const [corporates, setCorporate] = useState(corporate);
 
-  const submit = e => {
-    e.preventDefault();
-    fetch('https://api.covid19-tanimerkezi.com/api/addOfferCorporate', {
-      method: 'POST',
-      body: JSON.stringify(corporates),
-      headers: {'Content-Type': 'application/json'},
-    }).then(res => {
+  const [form] = Form.useForm();
+
+  const [corporates, setCorporate] = useState(corporate);
+  const [loading, setLoading] = useState(false);
+
+  const submit = data => {
+    setLoading(true);
+
+    // fetch('https://api.covid19-tanimerkezi.com/api/addOfferCorporate', {
+    //   method: 'POST',
+    //   body: JSON.stringify(corporates),
+    //   headers: {'Content-Type': 'application/json'},
+    // }).then(res => {
+    //   if (res.status === 200) {
+    //     responseMessages('success', [
+    //       {
+    //         Message: 'Kaydınız başarıyla oluşturulmuştur.',
+    //       },
+    //     ]);
+    //   } else {
+    //     responseMessages('error', [
+    //       {
+    //         Message:
+    //           'Bir hata oluştu. Lütfen tekrar deneyiniz. Sorun devam ederse yetkili ile iletişime geçiniz.',
+    //       },
+    //     ]);
+    //   }
+    // });
+
+    offerService.addOffer(corporates).then(res => {
+      setLoading(false);
       if (res.status === 200) {
         responseMessages('success', [
           {
@@ -967,225 +993,346 @@ const SpecialToCorporate = () => {
                     >
                       Teklif almak için formu doldurunuz.
                     </p>
-                    <FormGroup
-                      className={classnames('mt-5', {
-                        focused: state.nameFocused,
-                      })}
-                    >
-                      <InputGroup className='input-group-alternative'>
-                        <InputGroupAddon addonType='prepend'>
-                          <InputGroupText>
-                            <i className='ni ni-circle-08' />
-                          </InputGroupText>
-                        </InputGroupAddon>
-                        <Input
-                          placeholder='Adınız Soyadınız'
-                          type='text'
-                          onFocus={e => setState({nameFocused: true})}
-                          onBlur={e => setState({nameFocused: false})}
-                          onChange={e =>
-                            setCorporate({...corporates, Name: e.target.value})
-                          }
-                        />
-                      </InputGroup>
-                    </FormGroup>
-                    <FormGroup
-                      className={classnames({
-                        focused: state.emailFocused,
-                      })}
-                    >
-                      <InputGroup className='input-group-alternative'>
-                        <InputGroupAddon addonType='prepend'>
-                          <InputGroupText>
-                            <i className='ni ni-email-83' />
-                          </InputGroupText>
-                        </InputGroupAddon>
-                        <Input
-                          placeholder='Email'
-                          type='email'
-                          onFocus={e => setState({emailFocused: true})}
-                          onBlur={e => setState({emailFocused: false})}
-                          onChange={e =>
-                            setCorporate({...corporates, Email: e.target.value})
-                          }
-                        />
-                      </InputGroup>
-                    </FormGroup>
-                    <FormGroup
-                      className={classnames({
-                        focused: state.phoneFocused,
-                      })}
-                    >
-                      <InputGroup className='input-group-alternative'>
-                        <InputGroupAddon addonType='prepend'>
-                          <InputGroupText>
-                            <i className='ni ni-mobile-button' />
-                          </InputGroupText>
-                        </InputGroupAddon>
-                        <Input
-                          placeholder='Telefon'
-                          type='phone'
-                          onFocus={e => setState({phoneFocused: true})}
-                          onBlur={e => setState({phoneFocused: false})}
-                          onChange={e =>
-                            setCorporate({...corporates, Phone: e.target.value})
-                          }
-                        />
-                      </InputGroup>
-                    </FormGroup>
-                    <FormGroup
-                      className={classnames({
-                        focused: state.locationFocused,
-                      })}
-                    >
-                      <InputGroup className='input-group-alternative'>
-                        <InputGroupAddon addonType='prepend'>
-                          <InputGroupText>
-                            <i className='ni ni-sound-wave' />
-                          </InputGroupText>
-                        </InputGroupAddon>
-
-                        <Input
-                          placeholder='Test Tipi'
-                          type='select'
-                          onFocus={e => setState({testTypeFocused: true})}
-                          onBlur={e => setState({testTypeFocused: false})}
-                          onChange={e =>
-                            setCorporate({
-                              ...corporates,
-                              TestType: e.target.value,
-                            })
-                          }
+                    <Spin spinning={loading}>
+                      <Form
+                        form={form}
+                        name='register'
+                        onFinish={submit}
+                        scrollToFirstError
+                      >
+                        <Form.Item
+                          name='name'
+                          rules={[
+                            {
+                              required: true,
+                              message: 'Lütfen adınızı ve soy adınız girin!',
+                              whitespace: true,
+                            },
+                          ]}
                         >
-                          <option value='0'>Test Tipi Seçiniz</option>
-                          <option value='1'>PCR</option>
-                          <option value='2'>Antikor(IgM/IgG)</option>
-                          <option value='3'>PCR + Antikor(IgM/IgG)</option>
-                        </Input>
-                      </InputGroup>
-                    </FormGroup>
-                    <FormGroup
-                      className={classnames({
-                        focused: state.nameFocused,
-                      })}
-                    >
-                      <InputGroup className='input-group-alternative'>
-                        <InputGroupAddon addonType='prepend'>
-                          <InputGroupText>
-                            <i className='fa fa-building' />
-                          </InputGroupText>
-                        </InputGroupAddon>
-                        <Input
-                          placeholder='Kurum Adı'
-                          type='text'
-                          onFocus={e => setState({nameFocused: true})}
-                          onBlur={e => setState({nameFocused: false})}
-                          onChange={e =>
-                            setCorporate({
-                              ...corporates,
-                              CorporateName: e.target.value,
-                            })
-                          }
-                        />
-                      </InputGroup>
-                    </FormGroup>
-                    <FormGroup
-                      className={classnames({
-                        focused: state.employeeCountFocused,
-                      })}
-                    >
-                      <InputGroup className='input-group-alternative'>
-                        <InputGroupAddon addonType='prepend'>
-                          <InputGroupText>
-                            <i className='fa fa-users' />
-                          </InputGroupText>
-                        </InputGroupAddon>
-                        <Input
-                          placeholder='Çalışan Sayısı'
-                          type='number'
-                          onFocus={e => setState({employeeCountFocused: true})}
-                          onBlur={e => setState({employeeCountFocused: false})}
-                          onChange={e =>
-                            setCorporate({
-                              ...corporates,
-                              WorkerCount: e.target.value,
-                            })
-                          }
-                        />
-                      </InputGroup>
-                    </FormGroup>
-                    <FormGroup
-                      className={classnames({
-                        focused: state.locationFocused,
-                      })}
-                    >
-                      <InputGroup className='input-group-alternative'>
-                        <InputGroupAddon addonType='prepend'>
-                          <InputGroupText>
-                            <i className='ni ni-map-big' />
-                          </InputGroupText>
-                        </InputGroupAddon>
-                        <Input
-                          placeholder='Lokasyon'
-                          type='text'
-                          onFocus={e => setState({locationFocused: true})}
-                          onBlur={e => setState({locationFocused: false})}
-                          onChange={e =>
-                            setCorporate({
-                              ...corporates,
-                              Location: e.target.value,
-                            })
-                          }
-                        />
-                      </InputGroup>
-                    </FormGroup>
-                    <FormGroup className='mb-4'>
-                      <Input
-                        className='form-control-alternative'
-                        cols='80'
-                        name='name'
-                        placeholder='Bir mesaj yazın...'
-                        rows='4'
-                        type='textarea'
-                        onChange={e =>
-                          setCorporate({...corporates, Message: e.target.value})
-                        }
-                      />
-                    </FormGroup>
-                    <FormGroup className='custom-control custom-checkbox mb-3'>
-                      <Input
-                        className='custom-control-input'
-                        id='customCheck1'
-                        type='checkbox'
-                        onChange={e =>
-                          setCorporate({...corporates, KVKK: e.target.checked})
-                        }
-                      />
-                      <label
-                        className='custom-control-label'
-                        htmlFor='customCheck1'
-                      >
-                        <span>
-                          Kişisel Verilerin Korunması Kanunu uyarınca,
-                          verilerimin belirtilen kapsamda işlenmesini ve sağlık
-                          hizmet sunumu amacıyla tarafımla iletişime geçilmesini
-                          kabul ediyorum.
-                        </span>
-                      </label>
-                    </FormGroup>
+                          <FormGroup
+                            className={classnames('mt-5', {
+                              focused: state.nameFocused,
+                            })}
+                          >
+                            <InputGroup className='input-group-alternative'>
+                              <InputGroupAddon addonType='prepend'>
+                                <InputGroupText>
+                                  <i className='ni ni-circle-08' />
+                                </InputGroupText>
+                              </InputGroupAddon>
+                              <Input
+                                placeholder='Adınız Soyadınız'
+                                type='text'
+                                onFocus={e => setState({nameFocused: true})}
+                                onBlur={e => setState({nameFocused: false})}
+                                onChange={e =>
+                                  setCorporate({
+                                    ...corporates,
+                                    Name: e.target.value,
+                                  })
+                                }
+                              />
+                            </InputGroup>
+                          </FormGroup>
+                        </Form.Item>
+                        <Form.Item
+                          name='email'
+                          rules={[
+                            {
+                              required: true,
+                              message: 'Lütfen email alanını boş bırakmayın!',
+                              whitespace: true,
+                            },
+                          ]}
+                        >
+                          <FormGroup
+                            className={classnames({
+                              focused: state.emailFocused,
+                            })}
+                          >
+                            <InputGroup className='input-group-alternative'>
+                              <InputGroupAddon addonType='prepend'>
+                                <InputGroupText>
+                                  <i className='ni ni-email-83' />
+                                </InputGroupText>
+                              </InputGroupAddon>
+                              <Input
+                                placeholder='Email'
+                                type='email'
+                                onFocus={e => setState({emailFocused: true})}
+                                onBlur={e => setState({emailFocused: false})}
+                                onChange={e =>
+                                  setCorporate({
+                                    ...corporates,
+                                    Email: e.target.value,
+                                  })
+                                }
+                              />
+                            </InputGroup>
+                          </FormGroup>
+                        </Form.Item>
+                        <Form.Item
+                          name='phone'
+                          rules={[
+                            {
+                              required: true,
+                              message: 'Lütfen telefon numaranızı girin!',
+                              whitespace: true,
+                            },
+                          ]}
+                        >
+                          <FormGroup
+                            className={classnames({
+                              focused: state.phoneFocused,
+                            })}
+                          >
+                            <InputGroup className='input-group-alternative'>
+                              <InputGroupAddon addonType='prepend'>
+                                <InputGroupText>
+                                  <i className='ni ni-mobile-button' />
+                                </InputGroupText>
+                              </InputGroupAddon>
+                              <Input
+                                placeholder='Telefon'
+                                type='phone'
+                                onFocus={e => setState({phoneFocused: true})}
+                                onBlur={e => setState({phoneFocused: false})}
+                                onChange={e =>
+                                  setCorporate({
+                                    ...corporates,
+                                    Phone: e.target.value,
+                                  })
+                                }
+                              />
+                            </InputGroup>
+                          </FormGroup>
+                        </Form.Item>
+                        <Form.Item
+                          name='testType'
+                          rules={[
+                            {
+                              required: true,
+                              message: 'Lütfen test tipi seçiniz!',
+                              whitespace: true,
+                            },
+                          ]}
+                        >
+                          <FormGroup
+                            className={classnames({
+                              focused: state.locationFocused,
+                            })}
+                          >
+                            <InputGroup className='input-group-alternative'>
+                              <InputGroupAddon addonType='prepend'>
+                                <InputGroupText>
+                                  <i className='ni ni-sound-wave' />
+                                </InputGroupText>
+                              </InputGroupAddon>
 
-                    <div>
-                      <Button
-                        block
-                        className='btn-round'
-                        color='default'
-                        size='lg'
-                        type='button'
-                        onClick={submit}
-                      >
-                        Gönder
-                      </Button>
-                    </div>
+                              <Input
+                                placeholder='Test Tipi'
+                                type='select'
+                                onFocus={e => setState({testTypeFocused: true})}
+                                onBlur={e => setState({testTypeFocused: false})}
+                                onChange={e =>
+                                  setCorporate({
+                                    ...corporates,
+                                    TestType: e.target.value,
+                                  })
+                                }
+                              >
+                                <option value='0'>Test Tipi Seçiniz</option>
+                                <option value='1'>PCR</option>
+                                <option value='2'>Antikor(IgM/IgG)</option>
+                                <option value='3'>
+                                  PCR + Antikor(IgM/IgG)
+                                </option>
+                              </Input>
+                            </InputGroup>
+                          </FormGroup>
+                        </Form.Item>
+                        <Form.Item
+                          name='companyName'
+                          rules={[
+                            {
+                              required: true,
+                              message:
+                                'Lütfen kurum adı alanını boş brakmayın!',
+                              whitespace: true,
+                            },
+                          ]}
+                        >
+                          <FormGroup
+                            className={classnames({
+                              focused: state.nameFocused,
+                            })}
+                          >
+                            <InputGroup className='input-group-alternative'>
+                              <InputGroupAddon addonType='prepend'>
+                                <InputGroupText>
+                                  <i className='fa fa-building' />
+                                </InputGroupText>
+                              </InputGroupAddon>
+                              <Input
+                                placeholder='Kurum Adı'
+                                type='text'
+                                onFocus={e => setState({nameFocused: true})}
+                                onBlur={e => setState({nameFocused: false})}
+                                onChange={e =>
+                                  setCorporate({
+                                    ...corporates,
+                                    CorporateName: e.target.value,
+                                  })
+                                }
+                              />
+                            </InputGroup>
+                          </FormGroup>
+                        </Form.Item>
+                        <Form.Item
+                          name='workerCount'
+                          rules={[
+                            {
+                              required: true,
+                              message:
+                                'Lütfen çalışan sayısı alanını boş brakmayın!',
+                              whitespace: true,
+                            },
+                          ]}
+                        >
+                          <FormGroup
+                            className={classnames({
+                              focused: state.employeeCountFocused,
+                            })}
+                          >
+                            <InputGroup className='input-group-alternative'>
+                              <InputGroupAddon addonType='prepend'>
+                                <InputGroupText>
+                                  <i className='fa fa-users' />
+                                </InputGroupText>
+                              </InputGroupAddon>
+                              <Input
+                                placeholder='Çalışan Sayısı'
+                                type='number'
+                                onFocus={e =>
+                                  setState({employeeCountFocused: true})
+                                }
+                                onBlur={e =>
+                                  setState({employeeCountFocused: false})
+                                }
+                                onChange={e =>
+                                  setCorporate({
+                                    ...corporates,
+                                    WorkerCount: e.target.value,
+                                  })
+                                }
+                              />
+                            </InputGroup>
+                          </FormGroup>
+                        </Form.Item>
+                        <Form.Item
+                          name='location'
+                          rules={[
+                            {
+                              required: true,
+                              message: 'Lütfen lokasyon alanını boş brakmayın!',
+                              whitespace: true,
+                            },
+                          ]}
+                        >
+                          <FormGroup
+                            className={classnames({
+                              focused: state.locationFocused,
+                            })}
+                          >
+                            <InputGroup className='input-group-alternative'>
+                              <InputGroupAddon addonType='prepend'>
+                                <InputGroupText>
+                                  <i className='ni ni-map-big' />
+                                </InputGroupText>
+                              </InputGroupAddon>
+                              <Input
+                                placeholder='Lokasyon'
+                                type='text'
+                                onFocus={e => setState({locationFocused: true})}
+                                onBlur={e => setState({locationFocused: false})}
+                                onChange={e =>
+                                  setCorporate({
+                                    ...corporates,
+                                    Location: e.target.value,
+                                  })
+                                }
+                              />
+                            </InputGroup>
+                          </FormGroup>
+                        </Form.Item>
+                        <Form.Item name='description'>
+                          <FormGroup className='mb-4'>
+                            <Input
+                              className='form-control-alternative'
+                              cols='80'
+                              // name='name'
+                              placeholder='Bir mesaj yazın...'
+                              rows='4'
+                              type='textarea'
+                              onChange={e =>
+                                setCorporate({
+                                  ...corporates,
+                                  Message: e.target.value,
+                                })
+                              }
+                            />
+                          </FormGroup>
+                        </Form.Item>
+                        <Form.Item
+                          name='kvkkText'
+                          rules={[
+                            {
+                              required: true,
+                              message: 'Lütfen kvkk metnini onaylayınız!',
+                              whitespace: true,
+                            },
+                          ]}
+                        >
+                          <FormGroup className='custom-control custom-checkbox mb-3'>
+                            <Input
+                              className='custom-control-input'
+                              id='customCheck1'
+                              type='checkbox'
+                              onChange={e =>
+                                setCorporate({
+                                  ...corporates,
+                                  KVKK: e.target.checked,
+                                })
+                              }
+                            />
+                            <label
+                              className='custom-control-label'
+                              htmlFor='customCheck1'
+                            >
+                              <span>
+                                Kişisel Verilerin Korunması Kanunu uyarınca,
+                                verilerimin belirtilen kapsamda işlenmesini ve
+                                sağlık hizmet sunumu amacıyla tarafımla
+                                iletişime geçilmesini kabul ediyorum.
+                              </span>
+                            </label>
+                          </FormGroup>
+                        </Form.Item>
+                        <div>
+                          <Button
+                            block
+                            className='btn-round'
+                            color='default'
+                            size='lg'
+                            // type='submit'
+                            // onClick={submit}
+                          >
+                            Teklif Al
+                          </Button>
+                        </div>
+                      </Form>
+                    </Spin>
                   </CardBody>
                 </Card>
                 <Button
