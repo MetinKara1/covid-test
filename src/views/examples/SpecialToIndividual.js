@@ -1119,10 +1119,18 @@ const SpecialToIndividual = ({
                                 })
                               }
                             >
-                              <option value='0'>Test Tipi Seçiniz</option>
-                              <option value='1'>PCR</option>
-                              <option value='2'>Antikor(IgM/IgG)</option>
-                              <option value='3'>PCR + Antikor(IgM/IgG)</option>
+                              <option id='0' value='Test Tipi Seçiniz'>
+                                Test Tipi Seçiniz
+                              </option>
+                              <option id='1' value='PCR'>
+                                PCR
+                              </option>
+                              <option id='2' value='Antikor(IgM/IgG)'>
+                                Antikor(IgM/IgG)
+                              </option>
+                              <option id='3' value='PCR + Antikor(IgM/IgG)'>
+                                PCR + Antikor(IgM/IgG)
+                              </option>
                             </Input>
                           </InputGroup>
                         </Form.Item>
