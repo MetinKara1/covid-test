@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import 'antd/dist/antd.css';
-import {Form, Checkbox} from 'antd';
+import {Form, Checkbox, Spin} from 'antd';
 // nodejs library that concatenates classes
 import bg from '../../assets/img/theme/bg3.png';
 import mbg from '../../assets/img/theme/mbg.png';
@@ -28,6 +28,7 @@ import CardsFooter from 'components/Footers/CardsFooter.js';
 import {AppointmentService} from '../../services/index';
 
 import '../../assets/css/validation.css';
+import {responseMessages} from 'config/utils';
 
 const SpecialToIndividual = ({
   appointmentService = new AppointmentService(),
@@ -44,12 +45,20 @@ const SpecialToIndividual = ({
     KVKK: false,
   };
   const [appointments, setAppointment] = useState(appointment);
+  const [loading, setLoading] = useState(false);
   const [state, setState] = useState({
     nameFocused: true,
   });
   const [collapseOpen, setCollapseOpen] = useState(0);
 
   const submit = data => {
+    setLoading(true);
+    // form.validateFields((err, values) => {
+    //   debugger;
+    //   if (!err) {
+    //   }
+    // });
+
     // fetch('https://localhost:44390/addAppointment', {
     //   method: 'POST',
     //   body: JSON.stringify(appointments),
@@ -74,7 +83,21 @@ const SpecialToIndividual = ({
     // });
 
     appointmentService.addAppointment(appointments).then(res => {
-      debugger;
+      setLoading(false);
+      if (res.status === 200) {
+        responseMessages('success', [
+          {
+            Message: 'Kaydınız başarıyla oluşturulmuştur.',
+          },
+        ]);
+      } else {
+        responseMessages('error', [
+          {
+            Message:
+              'Bir hata oluştu. Lütfen tekrar deneyiniz. Sorun devam ederse yetkili ile iletişime geçiniz.',
+          },
+        ]);
+      }
     });
   };
 
@@ -88,15 +111,15 @@ const SpecialToIndividual = ({
             <div
               className=''
               style={{
-                backgroundImage:`${
-                  window.innerWidth > 992 ?  `url(${bg})` :  `url(${mbg})`
+                backgroundImage: `${
+                  window.innerWidth > 992 ? `url(${bg})` : `url(${mbg})`
                 } `,
                 width: 'auto',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 marginTop: -96,
-                height:  window.innerWidth > 768 ? 700 :  375,
+                height: window.innerWidth > 768 ? 700 : 375,
                 position: 'relative',
               }}
             >
@@ -104,17 +127,25 @@ const SpecialToIndividual = ({
                 <div className='col px-0'>
                   <Row style={{marginTop: 120}}>
                     <Col lg='8'>
-                    <h1 className="display-3 text-white"
-                    style={{
-                     fontSize: window.innerWidth > 400 ? 60 : 25,
-                     fontFamily: 'Calibri'
-                    }}
-                    >
-                    GÜVENİLİRLİĞİ YÜKSEK YÖNTEMLERLE COVID-19 TESTLERİ{" "}
+                      <h1
+                        className='display-3 text-white'
+                        style={{
+                          fontSize:
+                            window.innerWidth > 1125
+                              ? 60
+                              : window.innerWidth > 500
+                              ? 40
+                              : 25,
+                          fontFamily: 'Calibri',
+                        }}
+                      >
+                        GÜVENİLİRLİĞİ YÜKSEK YÖNTEMLERLE COVID-19 TESTLERİ{' '}
                       </h1>
-                      <p className="lead text-white"
-                      style={{fontFamily:'Arial'}}>
-                       Erken Evrede Tanı ve Hızlı Sonuç.
+                      <p
+                        className='lead text-white'
+                        style={{fontFamily: 'Arial'}}
+                      >
+                        Erken Evrede Tanı ve Hızlı Sonuç.
                       </p>
                       {/* <h1
                         className='display-3'
@@ -962,222 +993,226 @@ const SpecialToIndividual = ({
                     >
                       Randevu almak için formu doldurunuz.
                     </p>
-                    <Form
-                      form={form}
-                      name='register'
-                      onFinish={submit}
-                      scrollToFirstError
-                    >
-                      <Form.Item
-                        name='nickname'
-                        rules={[
-                          {
-                            required: true,
-                            message: 'Lütfen Alanı Boş Brakmayın!',
-                            whitespace: true,
-                          },
-                        ]}
+                    <Spin spinning={loading}>
+                      <Form
+                        form={form}
+                        name='register'
+                        onFinish={submit}
+                        scrollToFirstError
                       >
-                        <InputGroup className='input-group-alternative'>
-                          <InputGroupAddon addonType='prepend'>
-                            <InputGroupText>
-                              <i className='ni ni-circle-08' />
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <Input
-                            placeholder='Adınız-Soyadınız'
-                            type='text'
-                            onChange={e =>
-                              setAppointment({
-                                ...appointments,
-                                Name: e.target.value,
-                              })
-                            }
-                          />
-                        </InputGroup>
-                      </Form.Item>
-                      <Form.Item
-                        name='email'
-                        rules={[
-                          {
-                            type: 'email',
-                            message: 'Lütfen e-posta formatında giriniz!',
-                          },
-                          {
-                            required: true,
-                            message: 'Lütfen eposta giriniz!',
-                          },
-                        ]}
-                      >
-                        <InputGroup className='input-group-alternative'>
-                          <InputGroupAddon addonType='prepend'>
-                            <InputGroupText>
-                              <i className='ni ni-email-83' />
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <Input
-                            placeholder='Email'
-                            type='email'
-                            // value={appointment.Email}
-                            onChange={e =>
-                              setAppointment({
-                                ...appointments,
-                                Email: e.target.value,
-                              })
-                            }
-                          />
-                        </InputGroup>
-                      </Form.Item>
-
-                      <Form.Item
-                        name='phone'
-                        className='input-group-alternative'
-                        rules={[
-                          {
-                            required: true,
-                            message: 'Lütfen Telefon Numarası Giriniz!',
-                          },
-                        ]}
-                      >
-                        <InputGroup className='input-group-alternative'>
-                          <InputGroupAddon addonType='prepend'>
-                            <InputGroupText>
-                              <i className='ni ni-mobile-button' />
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <Input
-                            placeholder='Telefon'
-                            type='text'
-                            onChange={e => {
-                              setAppointment({
-                                ...appointments,
-                                Phone: e.target.value,
-                              });
-                            }}
-                            value={appointments.Phone}
-                          />
-                        </InputGroup>
-                      </Form.Item>
-
-                      <Form.Item
-                        name='residence'
-                        rules={[
-                          {
-                            required: true,
-                            message: 'Lütfen Test Tipi Seçiniz!',
-                          },
-                        ]}
-                      >
-                        <InputGroup className='input-group-alternative'>
-                          <InputGroupAddon addonType='prepend'>
-                            <InputGroupText>
-                              <i className='ni ni-sound-wave' />
-                            </InputGroupText>
-                          </InputGroupAddon>
-
-                          <Input
-                            placeholder='Test Tipi'
-                            type='select'
-                            onFocus={e => setState({testTypeFocused: true})}
-                            onBlur={e => setState({testTypeFocused: false})}
-                            onChange={e =>
-                              setAppointment({
-                                ...appointments,
-                                TestType: e.target.value,
-                              })
-                            }
-                          >
-                            <option value='0'>Test Tipi Seçiniz</option>
-                            <option value='1'>PCR</option>
-                            <option value='2'>Antikor(IgM/IgG)</option>
-                            <option value='3'>PCR + Antikor(IgM/IgG)</option>
-                          </Input>
-                        </InputGroup>
-                      </Form.Item>
-                      <Form.Item
-                        name='location'
-                        rules={[
-                          {
-                            required: true,
-                            message: 'Lütfen Lokasyon Giriniz!',
-                          },
-                        ]}
-                      >
-                        <InputGroup className='input-group-alternative'>
-                          <InputGroupAddon addonType='prepend'>
-                            <InputGroupText>
-                              <i className='ni ni-map-big' />
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <Input
-                            placeholder='Lokasyon'
-                            type='text'
-                            value={appointments.Location}
-                            onChange={e =>
-                              setAppointment({
-                                ...appointments,
-                                Location: e.target.value,
-                              })
-                            }
-                          />
-                        </InputGroup>
-                      </Form.Item>
-                      <FormGroup className='mb-4'>
-                        <div>
-                          <Input
-                            className='form-control-alternative'
-                            cols='80'
-                            name='name'
-                            placeholder='Bir mesaj yazın...'
-                            rows='4'
-                            type='textarea'
-                            onChange={e =>
-                              setAppointment({
-                                ...appointments,
-                                Message: e.target.value,
-                              })
-                            }
-                          />
-                        </div>
-                      </FormGroup>
-                      <Form.Item
-                        name='agreement'
-                        valuePropName='checked'
-                        rules={[
-                          {
-                            validator: (_, value) =>
-                              value
-                                ? Promise.resolve()
-                                : Promise.reject(
-                                    'KVKK Şartlarını Kabul Etmelisiniz..'
-                                  ),
-                          },
-                        ]}
-                        onChange={e =>
-                          setAppointment({
-                            ...appointments,
-                            KVKK: e.target.checked,
-                          })
-                        }
-                      >
-                        <Checkbox>
-                          Kişisel Verilerin Korunması Kanunu uyarınca,
-                          verilerimin belirtilen kapsamda işlenmesini ve sağlık
-                          hizmet sunumu amacıyla tarafımla iletişime geçilmesini
-                          kabul ediyorum.
-                        </Checkbox>
-                      </Form.Item>
-                      <Form.Item>
-                        <Button
-                          block
-                          className='btn-round'
-                          color='default'
-                          size='lg'
+                        <Form.Item
+                          name='nickname'
+                          rules={[
+                            {
+                              required: true,
+                              message: 'Lütfen Alanı Boş Brakmayın!',
+                              whitespace: true,
+                            },
+                          ]}
                         >
-                          RANDEVU AL
-                        </Button>
-                      </Form.Item>
-                    </Form>
+                          <InputGroup className='input-group-alternative'>
+                            <InputGroupAddon addonType='prepend'>
+                              <InputGroupText>
+                                <i className='ni ni-circle-08' />
+                              </InputGroupText>
+                            </InputGroupAddon>
+                            <Input
+                              placeholder='Adınız-Soyadınız'
+                              type='text'
+                              onChange={e =>
+                                setAppointment({
+                                  ...appointments,
+                                  Name: e.target.value,
+                                })
+                              }
+                            />
+                          </InputGroup>
+                        </Form.Item>
+                        <Form.Item
+                          name='email'
+                          rules={[
+                            {
+                              type: 'email',
+                              message: 'Lütfen e-posta formatında giriniz!',
+                            },
+                            {
+                              required: true,
+                              message: 'Lütfen eposta giriniz!',
+                            },
+                          ]}
+                        >
+                          <InputGroup className='input-group-alternative'>
+                            <InputGroupAddon addonType='prepend'>
+                              <InputGroupText>
+                                <i className='ni ni-email-83' />
+                              </InputGroupText>
+                            </InputGroupAddon>
+                            <Input
+                              placeholder='Email'
+                              type='email'
+                              // value={appointment.Email}
+                              onChange={e =>
+                                setAppointment({
+                                  ...appointments,
+                                  Email: e.target.value,
+                                })
+                              }
+                            />
+                          </InputGroup>
+                        </Form.Item>
+
+                        <Form.Item
+                          name='phone'
+                          className='input-group-alternative'
+                          rules={[
+                            {
+                              required: true,
+                              message: 'Lütfen Telefon Numarası Giriniz!',
+                            },
+                          ]}
+                        >
+                          <InputGroup className='input-group-alternative'>
+                            <InputGroupAddon addonType='prepend'>
+                              <InputGroupText>
+                                <i className='ni ni-mobile-button' />
+                              </InputGroupText>
+                            </InputGroupAddon>
+                            <Input
+                              placeholder='Telefon'
+                              type='text'
+                              onChange={e => {
+                                setAppointment({
+                                  ...appointments,
+                                  Phone: e.target.value,
+                                });
+                              }}
+                              value={appointments.Phone}
+                            />
+                          </InputGroup>
+                        </Form.Item>
+
+                        <Form.Item
+                          name='residence'
+                          rules={[
+                            {
+                              required: true,
+                              message: 'Lütfen Test Tipi Seçiniz!',
+                            },
+                          ]}
+                        >
+                          <InputGroup className='input-group-alternative'>
+                            <InputGroupAddon addonType='prepend'>
+                              <InputGroupText>
+                                <i className='ni ni-sound-wave' />
+                              </InputGroupText>
+                            </InputGroupAddon>
+
+                            <Input
+                              placeholder='Test Tipi'
+                              type='select'
+                              onFocus={e => setState({testTypeFocused: true})}
+                              onBlur={e => setState({testTypeFocused: false})}
+                              onChange={e =>
+                                setAppointment({
+                                  ...appointments,
+                                  TestType: e.target.value,
+                                })
+                              }
+                            >
+                              <option value='0'>Test Tipi Seçiniz</option>
+                              <option value='1'>PCR</option>
+                              <option value='2'>Antikor(IgM/IgG)</option>
+                              <option value='3'>PCR + Antikor(IgM/IgG)</option>
+                            </Input>
+                          </InputGroup>
+                        </Form.Item>
+                        <Form.Item
+                          name='location'
+                          rules={[
+                            {
+                              required: true,
+                              message: 'Lütfen Lokasyon Giriniz!',
+                            },
+                          ]}
+                        >
+                          <InputGroup className='input-group-alternative'>
+                            <InputGroupAddon addonType='prepend'>
+                              <InputGroupText>
+                                <i className='ni ni-map-big' />
+                              </InputGroupText>
+                            </InputGroupAddon>
+                            <Input
+                              placeholder='Lokasyon'
+                              type='text'
+                              value={appointments.Location}
+                              onChange={e =>
+                                setAppointment({
+                                  ...appointments,
+                                  Location: e.target.value,
+                                })
+                              }
+                            />
+                          </InputGroup>
+                        </Form.Item>
+                        <FormGroup className='mb-4'>
+                          <div>
+                            <Input
+                              className='form-control-alternative'
+                              cols='80'
+                              name='name'
+                              placeholder='Bir mesaj yazın...'
+                              rows='4'
+                              type='textarea'
+                              onChange={e =>
+                                setAppointment({
+                                  ...appointments,
+                                  Message: e.target.value,
+                                })
+                              }
+                            />
+                          </div>
+                        </FormGroup>
+                        <Form.Item
+                          name='agreement'
+                          valuePropName='checked'
+                          rules={[
+                            {
+                              validator: (_, value) =>
+                                value
+                                  ? Promise.resolve()
+                                  : Promise.reject(
+                                      'KVKK Şartlarını Kabul Etmelisiniz..'
+                                    ),
+                            },
+                          ]}
+                          onChange={e =>
+                            setAppointment({
+                              ...appointments,
+                              KVKK: e.target.checked,
+                            })
+                          }
+                        >
+                          <Checkbox>
+                            Kişisel Verilerin Korunması Kanunu uyarınca,
+                            verilerimin belirtilen kapsamda işlenmesini ve
+                            sağlık hizmet sunumu amacıyla tarafımla iletişime
+                            geçilmesini kabul ediyorum.
+                          </Checkbox>
+                        </Form.Item>
+                        <Form.Item>
+                          <Button
+                            block
+                            className='btn-round'
+                            // type='submit'
+                            color='default'
+                            size='lg'
+                            // onClick={() => submit}
+                          >
+                            RANDEVU AL
+                          </Button>
+                        </Form.Item>
+                      </Form>
+                    </Spin>
                   </CardBody>
                 </Card>
                 <Button
