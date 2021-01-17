@@ -14,7 +14,7 @@ import Register from 'views/examples/Register.js';
 import SpecialToIndividual from 'views/examples/SpecialToIndividual.js';
 import SpecialToCorporate from 'views/examples/SpecialToCorporate.js';
 import Dashboard from 'views/examples/Dashboard.js';
-import Applications from 'views/examples/Applications.js';
+import ApplicationsOffersView from 'views/examples/ApplicationsOffersView.js';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -33,7 +33,7 @@ ReactDOM.render(
        <Route
         path='/basvurular'
         exact
-        render={props => <Applications {...props} />}
+        render={props => <ApplicationsOffersView {...props} />}
       />
       <Route
         path='/landing-page'
