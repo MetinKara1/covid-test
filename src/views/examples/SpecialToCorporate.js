@@ -326,12 +326,12 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
             <Row className='row-grid align-items-center'>
               <Col
                 md='5'
-                style={{paddingTop: `${window.innerWidth > 768 ? '183px' : 0}`}}
+                style={{paddingTop: `${window.innerWidth > 768 ? '55px' : 0}`}}
               >
                 <Card className='bg-default shadow border-0'>
                   <CardImg
                     alt='...'
-                    src={require('assets/img/theme/covid1.jpg')}
+                    src={require('assets/img/theme/res1.jpg')}
                     top
                   />
                   <blockquote className='card-blockquote'>
@@ -473,17 +473,26 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
                 <img
                   alt='...'
                   className='img-fluid floating'
-                  src={require('../../assets/img/theme/covid2.png')}
+                  src={require('../../assets/img/theme/res2.jpg')}
                 />
               </Col>
-              <Col className='order-md-1' md='8'>
+              {/* <Row className='row-grid align-items-center'> */}
+              <Col
+                className='order-md-1'
+                md='4'
+                style={{
+                  marginTop: `${window.innerWidth < 768 ? '0.1rem' : '-10rem'}`,
+                }}
+              >
                 <div className='pr-md-5'>
-                  {/* <div className='icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5'>
-                      <i className='ni ni-settings-gear-65' />
-                    </div> */}
                   <ul className='list-unstyled mt-5'>
-                    <li className='py-2'>
-                      <div className='d-flex'>
+                    <li
+                      className='py-2'
+                      // style={{
+                      //   paddingTop: `${window.innerWidth > 792 ? '161px' : 0}`,
+                      // }}
+                    >
+                      <div className='d-flex' style={{paddingTop: '166px'}}>
                         <div style={{marginTop: 7}}>
                           <Badge className='badge-circle mr-3' color='success'>
                             <i className='ni ni-check-bold' />
@@ -540,6 +549,40 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
                             className='mb-0'
                             style={{fontSize: 20, fontFamily: 'Calibri'}}
                           >
+                            7/24 HİZMET
+                          </h5>
+                          <h6 style={{fontSize: 15, fontFamily: 'Arial'}}>
+                            PCR ve antikor testleriniz için anlaşmalı olduğumuz
+                            hastanelerde 7 gün 24 saat örnek alınabilmektedir.
+                          </h6>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </Col>
+
+              <Col
+                className='order-md-1'
+                md='4'
+                style={{
+                  marginTop: `${window.innerWidth < 768 ? '0.1rem' : '-4rem'}`,
+                }}
+              >
+                <div className='pr-md-5'>
+                  <ul className='list-unstyled mt-5'>
+                    <li className='py-2'>
+                      <div className='d-flex'>
+                        <div style={{marginTop: 7}}>
+                          <Badge className='badge-circle mr-3' color='success'>
+                            <i className='ni ni-check-bold' />
+                          </Badge>
+                        </div>
+                        <div>
+                          <h5
+                            className='mb-0'
+                            style={{fontSize: 20, fontFamily: 'Calibri'}}
+                          >
                             HIZLI SONUÇ
                           </h5>
                           <h6 style={{fontSize: 15, fontFamily: 'Arial'}}>
@@ -577,30 +620,10 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
                         </div>
                       </div>
                     </li>
-                    <li className='py-2'>
-                      <div className='d-flex'>
-                        <div style={{marginTop: 7}}>
-                          <Badge className='badge-circle mr-3' color='success'>
-                            <i className='ni ni-check-bold' />
-                          </Badge>
-                        </div>
-                        <div>
-                          <h5
-                            className='mb-0'
-                            style={{fontSize: 20, fontFamily: 'Calibri'}}
-                          >
-                            7/24 HİZMET
-                          </h5>
-                          <h6 style={{fontSize: 15, fontFamily: 'Arial'}}>
-                            PCR ve antikor testleriniz için anlaşmalı olduğumuz
-                            hastanelerde 7 gün 24 saat örnek alınabilmektedir.
-                          </h6>
-                        </div>
-                      </div>
-                    </li>
                   </ul>
                 </div>
               </Col>
+              {/* </Row> */}
             </Row>
           </Container>
         </section>
