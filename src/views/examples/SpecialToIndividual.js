@@ -173,7 +173,7 @@ const SpecialToIndividual = ({
             </div>
             <section
               className='section section-lg pt-lg-0 mt--200 '
-              style={{paddingBottom: 0}}
+              style={{paddingBottom: 20}}
             >
               <Container style={{marginTop: 85}}>
                 <Row className='justify-content-center'>
