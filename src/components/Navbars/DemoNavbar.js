@@ -100,6 +100,26 @@ class DemoNavbar extends React.Component {
                   <UncontrolledDropdown nav>
                     <DropdownToggle
                       nav
+                      // onClick={() => this.setState({changeButtonText: true})}
+                    >
+                      <i className='ni ni-ui-04 d-lg-none mr-1' />
+                      <span className='nav-link-inner--text'>
+                        <Link
+                          to='/'
+                          style={{
+                            color: `${
+                              window.innerWidth > 992 ? 'white' : 'black'
+                            } `,
+                          }}
+                        >
+                          Anasayfa
+                        </Link>
+                      </span>
+                    </DropdownToggle>
+                  </UncontrolledDropdown>
+                  <UncontrolledDropdown nav>
+                    <DropdownToggle
+                      nav
                       onClick={() => this.setState({changeButtonText: true})}
                     >
                       <i className='ni ni-ui-04 d-lg-none mr-1' />
