@@ -17,7 +17,7 @@ import {
 import classnames from "classnames";
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import SimpleFooter from "components/Footers/SimpleFooter.js";
-
+import ExportExcell from './ExportExcell.js';
 import {AppointmentService} from '../../services/index';
 
 import '../../assets/css/validation.css';
@@ -28,6 +28,7 @@ const ApplicationsOffersView = ({
   appointmentService = new AppointmentService(),
 }) => {
   
+    const [tableTitles,] = useState({Name:'Ad-Soyad',Email:'Eposta',Phone:'Telefon',TestType:'Test Tipi',Location:'Lokasyon',Message:'Mesaj',KVKK:'KVKK'});
   const [navstate,setNavState] = useState({iconTabs:1,plainTabs:1});
 
   const [offerData, setOfferData] = useState([]);
@@ -141,7 +142,7 @@ const ApplicationsOffersView = ({
                            <span className="btn-inner--icon mr-1">
                     <i className="ni ni-curved-next" />
                   </span>
-                        Excel Aktar
+                  <ExportExcell data={offerData && offerData} titles={tableTitles}/>
                       </Button>
                     </div>
                       <Table responsive>
