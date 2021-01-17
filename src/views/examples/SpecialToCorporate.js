@@ -492,7 +492,14 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
                       //   paddingTop: `${window.innerWidth > 792 ? '161px' : 0}`,
                       // }}
                     >
-                      <div className='d-flex' style={{paddingTop: '177px'}}>
+                      <div
+                        className='d-flex'
+                        style={{
+                          paddingTop: `${
+                            window.innerWidth > 768 ? '177px' : 0
+                          }`,
+                        }}
+                      >
                         <div style={{marginTop: 7}}>
                           <Badge className='badge-circle mr-3' color='success'>
                             <i className='ni ni-check-bold' />
