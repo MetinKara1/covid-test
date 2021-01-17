@@ -8,6 +8,8 @@ class AppointmentService {
       // localStorage.setItem('user_id', res.data.userId);
       return res;
     });
+
+  getAppointmentsData = () => tysClient.get(`${DEFAULT_QUERY}/getAppointmentsData`);
 }
 
 export default AppointmentService;
