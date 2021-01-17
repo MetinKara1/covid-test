@@ -103,7 +103,10 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
       <main>
         <div className=''>
           {/* shape Hero */}
-          <section className='section section-lg section-shaped'>
+          <section
+            className='section section-lg section-shaped'
+            style={{paddingBottom: 10}}
+          >
             <div
               className=''
               style={{
@@ -150,7 +153,10 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
                 </div>
               </Container>
             </div>
-            <section className='section section-lg pt-lg-0 mt--200 '>
+            <section
+              className='section section-lg pt-lg-0 mt--200 '
+              style={{paddingBottom: 0}}
+            >
               <Container style={{marginTop: 85}}>
                 <Row className='justify-content-center'>
                   <Col lg='12'>
@@ -315,10 +321,13 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
           {/* 1st Hero Variation */}
         </div>
 
-        <section className='section section-lg'>
+        <section className='section section-lg' style={{paddingTop: 10}}>
           <Container>
             <Row className='row-grid align-items-center'>
-              <Col md='5'>
+              <Col
+                md='5'
+                style={{paddingTop: `${window.innerWidth > 768 ? '183px' : 0}`}}
+              >
                 <Card className='bg-default shadow border-0'>
                   <CardImg
                     alt='...'

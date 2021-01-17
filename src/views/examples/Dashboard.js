@@ -42,7 +42,10 @@ class Landing extends React.Component {
         <main ref='main'>
           <div className=''>
             {/* shape Hero */}
-            <section className='section section-lg section-shaped'>
+            <section
+              className='section section-lg section-shaped'
+              style={{paddingTop: 10, paddingBottom: 0}}
+            >
               <div
                 className=''
                 style={{
@@ -61,7 +64,7 @@ class Landing extends React.Component {
                 <Container className='py-lg-md d-flex'>
                   <div className='col px-0'>
                     <Row style={{marginTop: 200}}>
-                      <Col lg='6'>
+                      <Col lg='7'>
                         <h1
                           className='display-3 text-white'
                           style={{
@@ -94,7 +97,10 @@ class Landing extends React.Component {
                   </div>
                 </Container>
               </div>
-              <section className='section section-lg pt-lg-0 mt--200'>
+              <section
+                className='section section-lg pt-lg-0 mt--200'
+                style={{paddingTop: 0, paddingBottom: 30}}
+              >
                 <Container style={{marginTop: 96}}>
                   <Row className='justify-content-center'>
                     <Col lg='12'>
