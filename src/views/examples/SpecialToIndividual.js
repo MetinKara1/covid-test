@@ -496,7 +496,7 @@ const SpecialToIndividual = ({
                       //   paddingTop: `${window.innerWidth > 792 ? '161px' : 0}`,
                       // }}
                     >
-                      <div className='d-flex' style={{paddingTop: '166px'}}>
+                      <div className='d-flex' style={{paddingTop: '177px'}}>
                         <div style={{marginTop: 7}}>
                           <Badge className='badge-circle mr-3' color='success'>
                             <i className='ni ni-check-bold' />
@@ -514,33 +514,42 @@ const SpecialToIndividual = ({
                             kurumlarında, yüksek teknoloji ve hassas ölçüm
                             metotları kullanılarak duyarlı yöntemlerle
                             yapılmaktadır.
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{' '}
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{' '}
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{' '}
                           </h6>
                         </div>
                       </div>
                     </li>
-                    <li className='py-2'>
-                      <div className='d-flex'>
-                        <div style={{marginTop: 7}}>
-                          <Badge className='badge-circle mr-3' color='success'>
-                            <i className='ni ni-check-bold' />
-                          </Badge>
+                    <div>
+                      <li className='py-2'>
+                        <div className='d-flex'>
+                          <div style={{marginTop: 7}}>
+                            <Badge
+                              className='badge-circle mr-3'
+                              color='success'
+                            >
+                              <i className='ni ni-check-bold' />
+                            </Badge>
+                          </div>
+                          <div>
+                            <h5
+                              className='mb-0'
+                              style={{fontSize: 20, fontFamily: 'Calibri'}}
+                            >
+                              KİŞİSEL VERİLERİN GİZLİLİĞİ
+                            </h5>
+                            <h6 style={{fontSize: 15, fontFamily: 'Arial'}}>
+                              Test sonuçlarınız, uzman doktor ve raporlama
+                              ekipleri sayesinde, eksiksiz bir biçimde, hasta
+                              bilgilerinin gizliliği ve KVKK veri işleme
+                              kuralları çerçevesinde sadece tarafınıza teslim
+                              edilmektedir.
+                            </h6>
+                          </div>
                         </div>
-                        <div>
-                          <h5
-                            className='mb-0'
-                            style={{fontSize: 20, fontFamily: 'Calibri'}}
-                          >
-                            KİŞİSEL VERİLERİN GİZLİLİĞİ
-                          </h5>
-                          <h6 style={{fontSize: 15, fontFamily: 'Arial'}}>
-                            Test sonuçlarınız, uzman doktor ve raporlama
-                            ekipleri sayesinde, eksiksiz bir biçimde, hasta
-                            bilgilerinin gizliliği ve KVKK veri işleme kuralları
-                            çerçevesinde sadece tarafınıza teslim edilmektedir.
-                          </h6>
-                        </div>
-                      </div>
-                    </li>
+                      </li>
+                    </div>
                     <li className='py-2'>
                       <div className='d-flex'>
                         <div style={{marginTop: 7}}>
@@ -565,12 +574,15 @@ const SpecialToIndividual = ({
                   </ul>
                 </div>
               </Col>
-
+              {/* 
+              <Col md='4'>
+                <Row>Test</Row>
+              </Col> */}
               <Col
                 className='order-md-1'
                 md='4'
                 style={{
-                  marginTop: `${window.innerWidth < 768 ? '0.1rem' : '-4rem'}`,
+                  marginTop: `${window.innerWidth < 768 ? '0.1rem' : '-7rem'}`,
                 }}
               >
                 <div className='pr-md-5'>
