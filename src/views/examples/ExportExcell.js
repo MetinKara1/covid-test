@@ -14,20 +14,6 @@ const ExportExcell = ({ titles, data, lang, disabled = true, surveyData = true }
       const enhancedData = data && data.map((k, index) => {
         const el = { ...k };
 
-const ExportExcell = ({
-  titles,
-  data,
-  lang,
-  disabled = true,
-  surveyData = false,
-}) => {
-  debugger;
-  const onExportExcellClick = () => {
-    const wscols = [];
-    const enhancedData =
-      data &&
-      data.map((k, index) => {
-        const el = {...k};
 
         const titled = {};
         Object.keys(el).forEach(key => {
