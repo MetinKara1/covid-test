@@ -28,28 +28,33 @@ const ApplicationsOffersView = ({
   appointmentService = new AppointmentService(),
 }) => {
   
-    const [tableTitles,] = useState({Name:'Ad-Soyad',Email:'Eposta',Phone:'Telefon',TestType:'Test Tipi',Location:'Lokasyon',Message:'Mesaj',KVKK:'KVKK'});
+  const [tableTitles,] = useState({AddedDate:'Tarih',Email:'Eposta',Location:'Lokasyon',Message:'Mesaj',Name:'Ad-Soyad',Phone:'Telefon',TestType:'Test Tipi'});
   const [navstate,setNavState] = useState({iconTabs:1,plainTabs:1});
-
   const [offerData, setOfferData] = useState([]);
+  const [appointmentsData, setAppointmentsData] = useState([]);
+  
   useEffect(() => {
-    // submit();
-
     appointmentService.getAppointmentsData().then(res => {
+        if (res.data) {
+            setAppointmentsData(res.data.data);
+        }
+    });
+   
+  }, []);
+ const getOffersData = () => {
+    appointmentService.getOffersData().then(res => {
         if (res.data) {
             setOfferData(res.data.data);
         }
-        console.log("res",res.data);
-        console.log("of",offerData);
-      });
-  }, []);
+    });
+ }
   const toggleNavs = (e, state, index) => {
     e.preventDefault();
     setNavState({
       [state]: index
     });
   };
-  console.log('dataaaaaaaaaaaaaaa', offerData);
+
   return (
     <>
       <DemoNavbar />
@@ -159,16 +164,17 @@ const ApplicationsOffersView = ({
                         </thead>
                         <tbody>
                         {
-                            offerData.length > 0 && offerData.map((item) => {
+                            appointmentsData.length > 0 && appointmentsData.map((item) => {
                             return ( 
                             <tr>
                                 <th scope="row">1</th>
                                 <td>{item.Name} </td>
                                 <td>{item.Email}</td>
-                                <td>@mdo</td>
-                                <td>PCR</td>
-                                <td>Ankara</td>
-                                <td>Bu bir test mesajıdır..</td>
+                                <td>{item.Phone}</td>
+                                <td>{item.TestType}</td>
+                                <td>{item.Location}</td>
+                                <td>{item.Message}</td>
+                                <td>{item.AddedDate}</td>
                             </tr>
                             )
                             })
@@ -180,13 +186,63 @@ const ApplicationsOffersView = ({
                         </tbody>
                     </Table>
                       </TabPane>
-                      <TabPane tabId="plainTabs2">
-                          <p className="description">
-                          Cosby sweater eu banh mi, qui irure terry richardson ex
-                          squid. Aliquip placeat salvia cillum iphone. Seitan
-                          aliquip quis cardigan american apparel, butcher voluptate
-                          nisi qui.
-                          </p>
+                      <TabPane tabId="plainTabs2"
+                      onClick={getOffersData()}>
+                      <div className="card-profile-actions">
+                      <Button
+                        className="float-right"
+                        color="default"
+                        href="#pablo"
+                        onClick={e => e.preventDefault()}
+                        size="sm"
+                        style ={{marginBottom:10}}
+                      >
+                           <span className="btn-inner--icon mr-1">
+                    <i className="ni ni-curved-next" />
+                  </span>
+                  <ExportExcell data={offerData && offerData} titles={tableTitles}/>
+                      </Button>
+                    </div>
+                      <Table responsive>
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Ad-Soyad</th>
+                            <th>Email</th>
+                            <th>Telefon</th>
+                            <th>Test Tipi</th>
+                            <th>Kurum Adı</th>
+                            <th>Çalışan Sayısı</th>
+                            <th>Lokasyon</th>
+                            <th>Messages</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {
+                            offerData.length > 0 && offerData.map((item) => {
+                            return ( 
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>{item.Name} </td>
+                                <td>{item.Email}</td>
+                                <td>{item.Phone}</td>
+                                <td>{item.TestType}</td>
+                                <td>{item.CorporateName}</td>
+                                <td>{item.WorkerCount}</td>
+                                <td>{item.Location}</td>
+                                <td>{item.Message}</td>
+                                <td>{item.AddedDate}</td>
+                            </tr>
+                            )
+                            })
+                        }
+                           
+                           
+                       
+                           
+                        </tbody>
+                    </Table>
+                    
                       </TabPane>
                        </TabContent>
                   </CardBody>

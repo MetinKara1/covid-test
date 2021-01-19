@@ -10,6 +10,8 @@ class AppointmentService {
     });
 
   getAppointmentsData = () => tysClient.get(`${DEFAULT_QUERY}/getAppointmentsData`);
+
+  getOffersData = () => tysClient.get(`${DEFAULT_QUERY}/getOffersData`);
 }
 
 export default AppointmentService;

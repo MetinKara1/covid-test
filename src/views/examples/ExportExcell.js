@@ -5,7 +5,7 @@ import { FormattedMessage,IntlProvider } from 'react-intl';
 
 // import '../excellExport/excellExport.less';
 
-const ExportExcell = ({ titles, data, lang, disabled = true, surveyData = false }) => {
+const ExportExcell = ({ titles, data, lang, disabled = true, surveyData = true }) => {
     debugger;
     const onExportExcellClick = () => {
       const wscols = [];
