@@ -80,6 +80,7 @@ const Landing = () => {
                             fontFamily: 'Calibri',
                           }}
                         >
+                          
                            <TextTransition
                           text='COVID-19 TESTLERİNİZİ GÜVENLE YAPTIRIN'
                           springConfig={ presets.molasses }
