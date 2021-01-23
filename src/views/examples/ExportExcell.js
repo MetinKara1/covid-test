@@ -6,14 +6,19 @@ import {FormattedMessage, IntlProvider} from 'react-intl';
 
 // import '../excellExport/excellExport.less';
 
-
-const ExportExcell = ({ titles, data, lang, disabled = true, surveyData = false }) => {
-
-    const onExportExcellClick = () => {
-      const wscols = [];
-      const enhancedData = data && data.map((k, index) => {
-        const el = { ...k };
-
+const ExportExcell = ({
+  titles,
+  data,
+  lang,
+  disabled = true,
+  surveyData = false,
+}) => {
+  const onExportExcellClick = () => {
+    const wscols = [];
+    const enhancedData =
+      data &&
+      data.map((k, index) => {
+        const el = {...k};
 
         const titled = {};
         Object.keys(el).forEach(key => {
@@ -82,49 +87,48 @@ const ExportExcell = ({ titles, data, lang, disabled = true, surveyData = false 
 
   return (
     <>
-    <div className='excellExport'>
-      {disabled && (
-        // <button onClick={onExportExcellClick}>
-        //   <i className='icon-excel'></i>
-        //   <IntlProvider locale='en'>
-        //     <FormattedMessage id="label.downloadExcel" />
-        //   </IntlProvider>
-        // </button>
-        <div className="card-profile-actions">
-        <Button
-         id='collapseExample'
-        onClick={onExportExcellClick}
-          className="float-right"
-          color="default"
-          href="#pablo"
-          onClick={onExportExcellClick}
-          size="sm"
-          style ={{marginBottom:10}}
-        >
-             <span className="btn-inner--icon mr-1">
-                <i className="ni ni-curved-next" />
+      <div className='excellExport'>
+        {disabled && (
+          // <button onClick={onExportExcellClick}>
+          //   <i className='icon-excel'></i>
+          //   <IntlProvider locale='en'>
+          //     <FormattedMessage id="label.downloadExcel" />
+          //   </IntlProvider>
+          // </button>
+          <div className='card-profile-actions'>
+            <Button
+              id='collapseExample'
+              onClick={onExportExcellClick}
+              className='float-right'
+              color='default'
+              href='#pablo'
+              onClick={onExportExcellClick}
+              size='sm'
+              style={{marginBottom: 10}}
+            >
+              <span className='btn-inner--icon mr-1'>
+                <i className='ni ni-curved-next' />
               </span>
-            EXCELL AKTAR
-        </Button>
-        
+              EXCELL AKTAR
+            </Button>
+          </div>
+          // <Button
+          //   type='button'
+          //   id='collapseExample'
+          //   onClick={onExportExcellClick}
+          //   style={{
+          //     marginBottom: 5,
+          //     width: '100%',
+          //     textAlign: 'start',
+          //     color: '#32325d',
+          //     fontFamily: 'Arial',
+          //     textTransform: 'none',
+          //   }}
+          // >
+          //   Excell AKTAR
+          // </Button>
+        )}
       </div>
-        // <Button
-        //   type='button'
-        //   id='collapseExample'
-        //   onClick={onExportExcellClick}
-        //   style={{
-        //     marginBottom: 5,
-        //     width: '100%',
-        //     textAlign: 'start',
-        //     color: '#32325d',
-        //     fontFamily: 'Arial',
-        //     textTransform: 'none',
-        //   }}
-        // >
-        //   Excell AKTAR
-        // </Button>
-      )}
-    </div>
     </>
   );
 };
