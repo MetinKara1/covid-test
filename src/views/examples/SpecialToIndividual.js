@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import 'antd/dist/antd.css';
 import {Form, Checkbox, Spin} from 'antd';
+import TextTransition, { presets } from "react-text-transition";
 // nodejs library that concatenates classes
 import bg from '../../assets/img/theme/bg3.png';
 import mbg from '../../assets/img/theme/mbg.png';
@@ -106,29 +107,28 @@ const SpecialToIndividual = ({
       <DemoNavbar />
       <main>
         <div className=''>
-          {/* shape Hero */}
-          <section
-            className='section section-lg section-shaped'
-            style={{paddingBottom: 10, paddingBottom: 0}}
-          >
-            <div
-              className=''
-              style={{
-                backgroundImage: `${
-                  window.innerWidth > 992 ? `url(${bg})` : `url(${mbg})`
-                } `,
-                width: 'auto',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
-                marginTop: -96,
-                height: window.innerWidth > 768 ? 700 : 375,
-                position: 'relative',
-              }}
+        <section
+              className='section section-lg section-shaped'
+              style={{paddingTop: 10, paddingBottom: 0}}
             >
-              <Container className='py-lg-md d-flex' style={{paddingLeft: 5}}>
-                <div className='col px-0'>
-                  <Row style={{marginTop: 120}}>
+              <div
+                className=''
+                style={{
+                  backgroundImage: `${
+                    window.innerWidth > 992 ? `url(${bg})` : `url(${mbg})`
+                  } `,
+                  width: 'auto',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                  backgroundSize: 'cover',
+                  marginTop: -96,
+                  height: window.innerWidth > 768 ? 700 : 375,
+                  position: 'relative',
+                }}
+              >
+                <Container className='py-lg-md d-flex'>
+                  <div className='col px-0'>
+                  <Row style={{marginTop: 200}}>
                     <Col lg='8'>
                       <h1
                         className='display-3 text-white'
@@ -142,36 +142,31 @@ const SpecialToIndividual = ({
                           fontFamily: 'Calibri',
                         }}
                       >
-                        GÜVENİLİRLİĞİ YÜKSEK YÖNTEMLERLE COVID-19 TESTLERİ{' '}
+                           <TextTransition
+                          text='GÜVENİLİRLİĞİ YÜKSEK YÖNTEMLERLE COVID-19 TESTLERİ'
+                          springConfig={ presets.molasses }
+                          direction="up"
+                          />
+                      
                       </h1>
                       <p
                         className='lead text-white'
                         style={{fontFamily: 'Arial'}}
                       >
-                        Erken Evrede Tanı ve Hızlı Sonuç.
+                         <TextTransition
+                          text='Erken Evrede Tanı ve Hızlı Sonuç.'
+                          springConfig={ presets.slow }
+                          delay={1000}
+                          direction="up"
+                          />
+                        
                       </p>
-                      {/* <h1
-                        className='display-3'
-                        style={{
-                          fontSize: 60,
-                          color: '#ffffff',
-                          fontFamily: 'Calibri',
-                          marginBottom: 30,
-                        }}
-                      >
-                        GÜVENİLİRLİĞİ YÜKSEK YÖNTEMLERLE COVID-19 TESTLERİ{' '}
-                      </h1> */}
-                      {/* <p className='lead text-white'>
-                        COVID-19 testlerinizi yaptırarak virüse karşı önlem
-                        alabilir, kendinizi ve sevdiklerinizi koruyabilirsiniz.
-                      </p> */}
-                      {/* <div className='btn-wrapper'></div> */}
+                     
                     </Col>
-                  </Row>
-                </div>
-              </Container>
-            </div>
-            <section
+                  </Row> </div>
+                </Container>
+              </div>
+              <section
               className='section section-lg pt-lg-0 mt--200 '
               style={{paddingTop: 0, paddingBottom: 30}}
             >
@@ -317,9 +312,7 @@ const SpecialToIndividual = ({
                   </Col>
                 </Row>
               </Container>
-            </section>
-          </section>
-          {/* 1st Hero Variation */}
+            </section> </section>
         </div>
 
         <section
