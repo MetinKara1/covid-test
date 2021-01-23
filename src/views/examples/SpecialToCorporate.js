@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Form, Spin} from 'antd';
+import TextTransition, { presets } from "react-text-transition";
 // nodejs library that concatenates classes
 import classnames from 'classnames';
 import bg from '../../assets/img/theme/bg3.png';
@@ -102,62 +103,71 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
       <DemoNavbar />
       <main>
         <div className=''>
-          {/* shape Hero */}
-          <section
-            className='section section-lg section-shaped'
-            style={{paddingBottom: 10}}
-          >
-            <div
-              className=''
-              style={{
-                backgroundImage: `${
-                  window.innerWidth > 992 ? `url(${bg})` : `url(${mbg})`
-                } `,
-                width: 'auto',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
-                marginTop: -96,
-                height: window.innerWidth > 768 ? 700 : 400,
-                position: 'relative',
-              }}
+        <section
+              className='section section-lg section-shaped'
+              style={{paddingTop: 10, paddingBottom: 0}}
             >
-              <Container className='py-lg-md d-flex'>
-                <div className='col px-0'>
-                  <Row style={{marginTop: 100}}>
-                    <Col lg='8'>
-                      <h1
-                        className='display-3 text-white'
-                        style={{
-                          fontSize:
-                            window.innerWidth > 1125
-                              ? 60
-                              : window.innerWidth > 500
-                              ? 40
-                              : 25,
-                          fontFamily: 'Calibri',
-                        }}
-                      >
-                        COVID-19 TESTLERİNDE KURUMLARA ÖZEL TEKLİFLER{' '}
-                      </h1>
-                      <p
+              <div
+                className=''
+                style={{
+                  backgroundImage: `${
+                    window.innerWidth > 992 ? `url(${bg})` : `url(${mbg})`
+                  } `,
+                  width: 'auto',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                  backgroundSize: 'cover',
+                  marginTop: -96,
+                  height: window.innerWidth > 768 ? 700 : 400,
+                  position: 'relative',
+                }}
+              >
+                <Container className='py-lg-md d-flex'>
+                  <div className='col px-0'>
+                    <Row style={{marginTop: 200}}>
+                      <Col lg='8'>
+                        <h1
+                         className='display-3 text-white'
+                         style={{
+                           fontSize:
+                             window.innerWidth > 1125
+                               ? 60
+                               : window.innerWidth > 500
+                               ? 40
+                               : 25,
+                           fontFamily: 'Calibri',
+                         }}
+                        >
+                          
+                           <TextTransition
+                          text='COVID-19 TESTLERİNDE KURUMLARA ÖZEL TEKLİFLER'
+                          springConfig={ presets.molasses }
+                          direction="up"
+                          />
+                          {/* <span>completed with examples</span> */}
+                        </h1>
+                        <p
                         className='lead text-white'
                         style={{fontFamily: 'Arial'}}
                       >
-                        Avrupa standartlarına uygunluk belgesi bulunan, %99,9
-                        güvenilirlikte testler
+                        <TextTransition
+                          text='Avrupa standartlarına uygunluk belgesi bulunan, %99,9
+                          güvenilirlikte testler'
+                          springConfig={ presets.slow }
+                          delay={1000}
+                          direction="up"
+                          />
                       </p>
-                      {/* <div className='btn-wrapper'></div> */}
-                    </Col>
-                  </Row>
-                </div>
-              </Container>
-            </div>
-            <section
-              className='section section-lg pt-lg-0 mt--200 '
-              style={{paddingBottom: 20}}
-            >
-              <Container style={{marginTop: 85}}>
+                      </Col>
+                    </Row>
+                  </div>
+                </Container>
+              </div>
+              <section
+                className='section section-lg pt-lg-0 mt--200'
+                style={{paddingTop: 0, paddingBottom: 30}}
+              >
+               <Container style={{marginTop: 85}}>
                 <Row className='justify-content-center'>
                   <Col lg='12'>
                     <Row className='row-grid'>
@@ -298,28 +308,9 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
                     </Row>
                   </Col>
                 </Row>
-              </Container>
+              </Container></section>
             </section>
-
-            {/* SVG separator */}
-            {/* <div className='separator separator-bottom separator-skew'>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  preserveAspectRatio='none'
-                  version='1.1'
-                  viewBox='0 0 2560 100'
-                  x='0'
-                  y='0'
-                >
-                  <polygon
-                    className='fill-white'
-                    points='2560 0 2560 100 0 100'
-                  />
-                </svg>
-              </div> */}
-          </section>
-          {/* 1st Hero Variation */}
-        </div>
+          </div>
 
         <section className='section section-lg' style={{paddingTop: 10}}>
           <Container>
