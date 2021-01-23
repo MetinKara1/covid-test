@@ -13,13 +13,13 @@ const ExportExcell = ({
   disabled = true,
   surveyData = false,
 }) => {
-  debugger;
   const onExportExcellClick = () => {
     const wscols = [];
     const enhancedData =
       data &&
       data.map((k, index) => {
         const el = {...k};
+
         const titled = {};
         Object.keys(el).forEach(key => {
           if (index === 0) {
@@ -86,32 +86,50 @@ const ExportExcell = ({
   };
 
   return (
-    <div className='excellExport'>
-      {disabled && (
-        // <button onClick={onExportExcellClick}>
-        //   <i className='icon-excel'></i>
-        //   <IntlProvider locale='en'>
-        //     <FormattedMessage id="label.downloadExcel" />
-        //   </IntlProvider>
-        // </button>
-        <Button
-          color='neutral'
-          type='button'
-          id='collapseExample'
-          onClick={onExportExcellClick}
-          style={{
-            marginBottom: 5,
-            width: '100%',
-            textAlign: 'start',
-            color: '#32325d',
-            fontFamily: 'Arial',
-            textTransform: 'none',
-          }}
-        >
-          Excell İndir
-        </Button>
-      )}
-    </div>
+    <>
+      <div className='excellExport'>
+        {disabled && (
+          // <button onClick={onExportExcellClick}>
+          //   <i className='icon-excel'></i>
+          //   <IntlProvider locale='en'>
+          //     <FormattedMessage id="label.downloadExcel" />
+          //   </IntlProvider>
+          // </button>
+          <div className='card-profile-actions'>
+            <Button
+              id='collapseExample'
+              onClick={onExportExcellClick}
+              className='float-right'
+              color='default'
+              href='#pablo'
+              onClick={onExportExcellClick}
+              size='sm'
+              style={{marginBottom: 10}}
+            >
+              <span className='btn-inner--icon mr-1'>
+                <i className='ni ni-curved-next' />
+              </span>
+              EXCELL AKTAR
+            </Button>
+          </div>
+          // <Button
+          //   type='button'
+          //   id='collapseExample'
+          //   onClick={onExportExcellClick}
+          //   style={{
+          //     marginBottom: 5,
+          //     width: '100%',
+          //     textAlign: 'start',
+          //     color: '#32325d',
+          //     fontFamily: 'Arial',
+          //     textTransform: 'none',
+          //   }}
+          // >
+          //   Excell AKTAR
+          // </Button>
+        )}
+      </div>
+    </>
   );
 };
 

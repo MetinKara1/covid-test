@@ -109,7 +109,7 @@ const SpecialToIndividual = ({
           {/* shape Hero */}
           <section
             className='section section-lg section-shaped'
-            style={{paddingBottom: 10}}
+            style={{paddingBottom: 10, paddingBottom: 0}}
           >
             <div
               className=''
@@ -173,7 +173,7 @@ const SpecialToIndividual = ({
             </div>
             <section
               className='section section-lg pt-lg-0 mt--200 '
-              style={{paddingBottom: 20}}
+              style={{paddingTop: 0, paddingBottom: 30}}
             >
               <Container style={{marginTop: 85}}>
                 <Row className='justify-content-center'>

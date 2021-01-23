@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import TextTransition, { presets } from "react-text-transition";
 // nodejs library that concatenates classes
 import classnames from 'classnames';
 import bg from '../../assets/img/theme/bg3.png';
@@ -10,12 +11,6 @@ import {
   Button,
   Card,
   CardBody,
-  CardImg,
-  FormGroup,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
   Container,
   Row,
   Col,
@@ -28,18 +23,26 @@ import CardsFooter from 'components/Footers/CardsFooter.js';
 // index page sections
 import Download from '../IndexSections/Download.js';
 
-class Landing extends React.Component {
-  state = {};
-  componentDidMount() {
-    document.documentElement.scrollTop = 0;
-    document.scrollingElement.scrollTop = 0;
-    this.refs.main.scrollTop = 0;
-  }
-  render() {
+const Landing = () => {
+  // state = {};
+  // componentDidMount() {
+  //   document.documentElement.scrollTop = 0;
+  //   document.scrollingElement.scrollTop = 0;
+  //   this.refs.main.scrollTop = 0;
+  // }
+  const [index, setIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    const intervalId = setInterval(() =>
+      setIndex(index => index + 1),
+      3000 // every 3 seconds
+    );
+  });
+
     return (
       <>
         <DemoNavbar />
-        <main ref='main'>
+        <main>
           <div className=''>
             {/* shape Hero */}
             <section
@@ -77,21 +80,14 @@ class Landing extends React.Component {
                             fontFamily: 'Calibri',
                           }}
                         >
-                          COVID-19 TESTLERİNİZİ GÜVENLE YAPTIRIN{' '}
+                          
+                           <TextTransition
+                          text='COVID-19 TESTLERİNİZİ GÜVENLE YAPTIRIN'
+                          springConfig={ presets.molasses }
+                          direction="up"
+                          />
                           {/* <span>completed with examples</span> */}
                         </h1>
-                        <p
-                          className='lead text-white'
-                          style={{
-                            fontFamily: 'Arial',
-                            fontSize: window.innerWidth < 325 ? 12 : 20,
-                          }}
-                        >
-                          COVID-19 testlerinizi yaptırarak virüse karşı önlem
-                          alabilir, kendinizi ve sevdiklerinizi
-                          koruyabilirsiniz.
-                        </p>
-                        {/* <div className='btn-wrapper'></div> */}
                       </Col>
                     </Row>
                   </div>
@@ -219,7 +215,7 @@ class Landing extends React.Component {
         <CardsFooter />
       </>
     );
-  }
+  
 }
 
 export default Landing;
