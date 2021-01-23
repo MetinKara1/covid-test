@@ -11,7 +11,7 @@ import {
   Container,
   Button,
   Row,
-  Col,
+  Col
 } from 'reactstrap';
 // core components
 import classnames from 'classnames';
@@ -19,7 +19,7 @@ import DemoNavbar from 'components/Navbars/DemoNavbar.js';
 import SimpleFooter from 'components/Footers/SimpleFooter.js';
 import ExportExcell from './ExportExcell.js';
 import {AppointmentService} from '../../services/index';
-
+import PaginationComp from 'components/Pagination.js';
 import '../../assets/css/validation.css';
 import {responseMessages} from 'config/utils';
 import Applications from './Applications';
@@ -90,75 +90,60 @@ const ApplicationsOffersView = ({
                     <Col lg="12">
                     <Col className="mt-5 mt-lg-0" lg="12">
           {/* Menu */}
-          <div className="mb-3">
-            <small className="text-uppercase font-weight-bold">
-              BAŞVURU - TEKLİF EKRANI
-            </small>
-          </div>
-          <div className="nav-wrapper">
-            <Nav
-              className="nav-fill flex-column flex-md-row"
-              id="tabs-icons-text"
-              pills
-              role="tablist"
-            >
-              <NavItem>
-                <NavLink
-                  aria-selected={navstate.plainTabs === 1}
-                  className={classnames("mb-sm-3 mb-md-0", {
-                    active: navstate.plainTabs === 1
-                  })}
-                  onClick={e => toggleNavs(e, "plainTabs", 1)}
-                  href="#pablo"
-                  role="tab"
-                >
-                  Başvurular
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  aria-selected={navstate.plainTabs === 2}
-                  className={classnames("mb-sm-3 mb-md-0", {
-                    active: navstate.plainTabs === 2
-                  })}
-                  onClick={e => toggleNavs(e, "plainTabs", 2)}
-                  href="#pablo"
-                  role="tab"
-                >
-                 Teklifler
-                </NavLink>
-              </NavItem>
-                </Nav>
-          </div>
-                  <Card className="shadow">
+                    <div className="mb-3">
+                      <small className="text-uppercase font-weight-bold">
+                        BAŞVURU - TEKLİF EKRANI
+                      </small>
+                    </div>
+                  <div className="nav-wrapper">
+                    <Nav
+                      className="nav-fill flex-column flex-md-row"
+                      id="tabs-icons-text"
+                      pills
+                      role="tablist"
+                    >
+                      <NavItem>
+                        <NavLink
+                          aria-selected={navstate.plainTabs === 1}
+                          className={classnames("mb-sm-3 mb-md-0", {
+                            active: navstate.plainTabs === 1
+                          })}
+                          onClick={e => toggleNavs(e, "plainTabs", 1)}
+                          href="#pablo"
+                          role="tab"
+                        >
+                          Başvurular
+                        </NavLink>
+                      </NavItem>
+                      <NavItem>
+                        <NavLink
+                          aria-selected={navstate.plainTabs === 2}
+                          className={classnames("mb-sm-3 mb-md-0", {
+                            active: navstate.plainTabs === 2
+                          })}
+                          onClick={e => toggleNavs(e, "plainTabs", 2)}
+                          href="#pablo"
+                          role="tab"
+                        >
+                        Teklifler
+                        </NavLink>
+                      </NavItem>
+                        </Nav>
+                  </div>
+                  <Card >
                   <CardBody>
                       <TabContent activeTab={"plainTabs" + navstate.plainTabs}>
                       <TabPane tabId="plainTabs1">
-                      <div className="card-profile-actions">
-                      <Button
-                        className="float-right"
-                        color="default"
-                        href="#pablo"
-                        onClick={e => e.preventDefault()}
-                        size="sm"
-                        style ={{marginBottom:10}}
-                      >
-                           <span className="btn-inner--icon mr-1">
-                    <i className="ni ni-curved-next" />
-                  </span>
-                  <ExportExcell data={offerData && offerData} titles={tableTitles}/>
-                      </Button>
-                    </div>
+                      <ExportExcell data={offerData && offerData} titles={tableTitles} surveyData={true} />
                       <Table responsive>
                         <thead>
                         <tr>
-                            <th>#</th>
                             <th>Ad-Soyad</th>
                             <th>Email</th>
                             <th>Telefon</th>
                             <th>Test Tipi</th>
                             <th>Lokasyon</th>
-                            <th>Messages</th>
+                            <th>Mesaj</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -187,25 +172,10 @@ const ApplicationsOffersView = ({
                       </TabPane>
                       <TabPane tabId="plainTabs2"
                       onClick={getOffersData()}>
-                      <div className="card-profile-actions">
-                      <Button
-                        className="float-right"
-                        color="default"
-                        href="#pablo"
-                        onClick={e => e.preventDefault()}
-                        size="sm"
-                        style ={{marginBottom:10}}
-                      >
-                           <span className="btn-inner--icon mr-1">
-                    <i className="ni ni-curved-next" />
-                  </span>
-                  <ExportExcell data={offerData && offerData} titles={tableTitles}/>
-                      </Button>
-                    </div>
+                        <ExportExcell data={offerData && offerData} titles={tableTitles} surveyData={true} /> 
                       <Table responsive>
                         <thead>
                         <tr>
-                            <th>#</th>
                             <th>Ad-Soyad</th>
                             <th>Email</th>
                             <th>Telefon</th>
@@ -213,7 +183,8 @@ const ApplicationsOffersView = ({
                             <th>Kurum Adı</th>
                             <th>Çalışan Sayısı</th>
                             <th>Lokasyon</th>
-                            <th>Messages</th>
+                            <th>Mesaj</th>
+                            <th>Tarih</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -221,7 +192,6 @@ const ApplicationsOffersView = ({
                             offerData.length > 0 && offerData.map((item) => {
                             return ( 
                             <tr>
-                                <th scope="row">1</th>
                                 <td>{item.Name} </td>
                                 <td>{item.Email}</td>
                                 <td>{item.Phone}</td>
@@ -246,10 +216,9 @@ const ApplicationsOffersView = ({
                        </TabContent>
                   </CardBody>
                   </Card>
+                  <PaginationComp />
                   </Col>
-     
-
-                    </Col>
+                   </Col>
                   </Row>
                 </div>
               </div>

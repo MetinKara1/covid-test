@@ -7,8 +7,8 @@ import {FormattedMessage, IntlProvider} from 'react-intl';
 // import '../excellExport/excellExport.less';
 
 
-const ExportExcell = ({ titles, data, lang, disabled = true, surveyData = true }) => {
-    debugger;
+const ExportExcell = ({ titles, data, lang, disabled = true, surveyData = false }) => {
+
     const onExportExcellClick = () => {
       const wscols = [];
       const enhancedData = data && data.map((k, index) => {
@@ -81,6 +81,7 @@ const ExportExcell = ({ titles, data, lang, disabled = true, surveyData = true }
   };
 
   return (
+    <>
     <div className='excellExport'>
       {disabled && (
         // <button onClick={onExportExcellClick}>
@@ -89,24 +90,42 @@ const ExportExcell = ({ titles, data, lang, disabled = true, surveyData = true }
         //     <FormattedMessage id="label.downloadExcel" />
         //   </IntlProvider>
         // </button>
+        <div className="card-profile-actions">
         <Button
-          color='neutral'
-          type='button'
-          id='collapseExample'
+         id='collapseExample'
+        onClick={onExportExcellClick}
+          className="float-right"
+          color="default"
+          href="#pablo"
           onClick={onExportExcellClick}
-          style={{
-            marginBottom: 5,
-            width: '100%',
-            textAlign: 'start',
-            color: '#32325d',
-            fontFamily: 'Arial',
-            textTransform: 'none',
-          }}
+          size="sm"
+          style ={{marginBottom:10}}
         >
-          Excell İndir
+             <span className="btn-inner--icon mr-1">
+                <i className="ni ni-curved-next" />
+              </span>
+            EXCELL AKTAR
         </Button>
+        
+      </div>
+        // <Button
+        //   type='button'
+        //   id='collapseExample'
+        //   onClick={onExportExcellClick}
+        //   style={{
+        //     marginBottom: 5,
+        //     width: '100%',
+        //     textAlign: 'start',
+        //     color: '#32325d',
+        //     fontFamily: 'Arial',
+        //     textTransform: 'none',
+        //   }}
+        // >
+        //   Excell AKTAR
+        // </Button>
       )}
     </div>
+    </>
   );
 };
 
