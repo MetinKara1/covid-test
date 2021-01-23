@@ -22,7 +22,6 @@ import {AppointmentService} from '../../services/index';
 import PaginationComp from 'components/Pagination.js';
 import '../../assets/css/validation.css';
 import {responseMessages} from 'config/utils';
-import Applications from './Applications';
 
 const ApplicationsOffersView = ({
   appointmentService = new AppointmentService(),
