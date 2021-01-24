@@ -61,6 +61,7 @@ class DemoNavbar extends React.Component {
               <NavbarBrand className='mr-lg-5' to='/' tag={Link}>
                 <img
                   alt='...'
+                  onClick={() => window.scrollTo(0, 0)}
                   src={require('assets/img/icons/common/lg.png')}
                 />
               </NavbarBrand>
@@ -81,7 +82,7 @@ class DemoNavbar extends React.Component {
                       xs='6'
                       // style={{background: '#0a1720'}}
                     >
-                      <Link to='/'>
+                      <Link to='/' onClick={() => window.scrollTo(0, 0)}>
                         <img
                           alt='...'
                           src={require('assets/img/icons/common/lg2.png')}
@@ -111,6 +112,7 @@ class DemoNavbar extends React.Component {
                               window.innerWidth > 992 ? 'white' : 'black'
                             } `,
                           }}
+                          onClick={() => window.scrollTo(0, 0)}
                         >
                           Anasayfa
                         </Link>
@@ -131,6 +133,7 @@ class DemoNavbar extends React.Component {
                               window.innerWidth > 992 ? 'white' : 'black'
                             } `,
                           }}
+                          onClick={() => window.scrollTo(0, 0)}
                         >
                           Bireylere Özel
                         </Link>
@@ -151,6 +154,7 @@ class DemoNavbar extends React.Component {
                               window.innerWidth > 992 ? 'white' : 'black'
                             } `,
                           }}
+                          onClick={() => window.scrollTo(0, 0)}
                         >
                           {' '}
                           Kurumlara Özel
