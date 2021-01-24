@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import 'antd/dist/antd.css';
 import {Form, Checkbox, Spin} from 'antd';
-import TextTransition, { presets } from "react-text-transition";
+import TextTransition, {presets} from 'react-text-transition';
 // nodejs library that concatenates classes
 import bg from '../../assets/img/theme/bg3.png';
 import mbg from '../../assets/img/theme/mbg.png';
@@ -54,34 +54,6 @@ const SpecialToIndividual = ({
 
   const submit = data => {
     setLoading(true);
-    // form.validateFields((err, values) => {
-    //   debugger;
-    //   if (!err) {
-    //   }
-    // });
-
-    // fetch('https://localhost:44390/addAppointment', {
-    //   method: 'POST',
-    //   body: JSON.stringify(appointments),
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     'access-control-allow-origin': '*',
-    //   },
-    // })
-    //   .then(res => res.json())
-    //   .then(json => setAppointment(json.appointments));
-
-    // fetch('https://api.covid19-tanimerkezi.com/api/values', {
-    //   method: 'POST',
-    //   body: 'some',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     // 'access-control-allow-origin': '*',
-    //   },
-    // }).then(res => {
-    //   debugger;
-    //   console.log('response', res.data);
-    // });
 
     appointmentService.addAppointment(appointments).then(res => {
       setLoading(false);
@@ -107,27 +79,27 @@ const SpecialToIndividual = ({
       <DemoNavbar />
       <main>
         <div className=''>
-        <section
-              className='section section-lg section-shaped'
-              style={{paddingTop: 10, paddingBottom: 0}}
+          <section
+            className='section section-lg section-shaped'
+            style={{paddingTop: 10, paddingBottom: 0}}
+          >
+            <div
+              className=''
+              style={{
+                backgroundImage: `${
+                  window.innerWidth > 992 ? `url(${bg})` : `url(${mbg})`
+                } `,
+                width: 'auto',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover',
+                marginTop: -96,
+                height: window.innerWidth > 768 ? 700 : 490,
+                position: 'relative',
+              }}
             >
-              <div
-                className=''
-                style={{
-                  backgroundImage: `${
-                    window.innerWidth > 992 ? `url(${bg})` : `url(${mbg})`
-                  } `,
-                  width: 'auto',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat',
-                  backgroundSize: 'cover',
-                  marginTop: -96,
-                  height: window.innerWidth > 768 ? 700 : 375,
-                  position: 'relative',
-                }}
-              >
-                <Container className='py-lg-md d-flex'>
-                  <div className='col px-0'>
+              <Container className='py-lg-md d-flex'>
+                <div className='col px-0'>
                   <Row style={{marginTop: 200}}>
                     <Col lg='8'>
                       <h1
@@ -142,31 +114,29 @@ const SpecialToIndividual = ({
                           fontFamily: 'Calibri',
                         }}
                       >
-                           <TextTransition
+                        <TextTransition
                           text='GÜVENİLİRLİĞİ YÜKSEK YÖNTEMLERLE COVID-19 TESTLERİ'
-                          springConfig={ presets.molasses }
-                          direction="up"
-                          />
-                      
+                          springConfig={presets.molasses}
+                          direction='up'
+                        />
                       </h1>
                       <p
                         className='lead text-white'
                         style={{fontFamily: 'Arial'}}
                       >
-                         <TextTransition
+                        <TextTransition
                           text='Erken Evrede Tanı ve Hızlı Sonuç.'
-                          springConfig={ presets.slow }
+                          springConfig={presets.slow}
                           delay={1000}
-                          direction="up"
-                          />
-                        
+                          direction='up'
+                        />
                       </p>
-                     
                     </Col>
-                  </Row> </div>
-                </Container>
-              </div>
-              <section
+                  </Row>{' '}
+                </div>
+              </Container>
+            </div>
+            <section
               className='section section-lg pt-lg-0 mt--200 '
               style={{paddingTop: 0, paddingBottom: 30}}
             >
@@ -312,7 +282,8 @@ const SpecialToIndividual = ({
                   </Col>
                 </Row>
               </Container>
-            </section> </section>
+            </section>{' '}
+          </section>
         </div>
 
         <section
@@ -671,7 +642,8 @@ const SpecialToIndividual = ({
                 </div>
               </Col>
             </Row>
-            <Row className='row-grid align-items-center'>
+            {/* className='row-grid align-items-center' */}
+            <Row>
               <Col
                 className='order-md-1'
                 md='6'
@@ -727,7 +699,6 @@ const SpecialToIndividual = ({
                   </ul>
                 </div>
               </Col>
-
               <Col
                 className='order-md-1'
                 md='6'
@@ -736,7 +707,10 @@ const SpecialToIndividual = ({
                 }}
               >
                 <div className='pr-md-5'>
-                  <ul className='list-unstyled mt-5'>
+                  <ul
+                    className='list-unstyled mt-5'
+                    style={{marginTop: '74px !important'}}
+                  >
                     <li className='py-2'>
                       <div className='d-flex'>
                         <div style={{marginTop: 7}}>
@@ -1028,7 +1002,7 @@ const SpecialToIndividual = ({
                   className='bg-gradient-secondary shadow'
                   style={{overflowY: 'scroll', scrollBehavior: 'smooth'}}
                 >
-                  <CardBody className='p-lg-5'>
+                  <CardBody className='p-lg-5' style={{marginTop: 15}}>
                     <h4
                       className='mb-1'
                       style={{
