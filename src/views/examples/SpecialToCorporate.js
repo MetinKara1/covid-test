@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Form, Spin} from 'antd';
-import TextTransition, { presets } from "react-text-transition";
+import TextTransition, {presets} from 'react-text-transition';
 // nodejs library that concatenates classes
 import classnames from 'classnames';
 import bg from '../../assets/img/theme/bg3.png';
@@ -54,27 +54,6 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
   const submit = data => {
     setLoading(true);
 
-    // fetch('https://api.covid19-tanimerkezi.com/api/addOfferCorporate', {
-    //   method: 'POST',
-    //   body: JSON.stringify(corporates),
-    //   headers: {'Content-Type': 'application/json'},
-    // }).then(res => {
-    //   if (res.status === 200) {
-    //     responseMessages('success', [
-    //       {
-    //         Message: 'Kaydınız başarıyla oluşturulmuştur.',
-    //       },
-    //     ]);
-    //   } else {
-    //     responseMessages('error', [
-    //       {
-    //         Message:
-    //           'Bir hata oluştu. Lütfen tekrar deneyiniz. Sorun devam ederse yetkili ile iletişime geçiniz.',
-    //       },
-    //     ]);
-    //   }
-    // });
-
     offerService.addOffer(corporates).then(res => {
       setLoading(false);
       if (res.status === 200) {
@@ -103,71 +82,70 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
       <DemoNavbar />
       <main>
         <div className=''>
-        <section
-              className='section section-lg section-shaped'
-              style={{paddingTop: 10, paddingBottom: 0}}
+          <section
+            className='section section-lg section-shaped'
+            style={{paddingTop: 10, paddingBottom: 0}}
+          >
+            <div
+              className=''
+              style={{
+                backgroundImage: `${
+                  window.innerWidth > 992 ? `url(${bg})` : `url(${mbg})`
+                } `,
+                width: 'auto',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover',
+                marginTop: -96,
+                height: window.innerWidth > 768 ? 700 : 490,
+                position: 'relative',
+              }}
             >
-              <div
-                className=''
-                style={{
-                  backgroundImage: `${
-                    window.innerWidth > 992 ? `url(${bg})` : `url(${mbg})`
-                  } `,
-                  width: 'auto',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat',
-                  backgroundSize: 'cover',
-                  marginTop: -96,
-                  height: window.innerWidth > 768 ? 700 : 400,
-                  position: 'relative',
-                }}
-              >
-                <Container className='py-lg-md d-flex'>
-                  <div className='col px-0'>
-                    <Row style={{marginTop: 200}}>
-                      <Col lg='8'>
-                        <h1
-                         className='display-3 text-white'
-                         style={{
-                           fontSize:
-                             window.innerWidth > 1125
-                               ? 60
-                               : window.innerWidth > 500
-                               ? 40
-                               : 25,
-                           fontFamily: 'Calibri',
-                         }}
-                        >
-                          
-                           <TextTransition
+              <Container className='py-lg-md d-flex'>
+                <div className='col px-0'>
+                  <Row style={{marginTop: 200}}>
+                    <Col lg='8'>
+                      <h1
+                        className='display-3 text-white'
+                        style={{
+                          fontSize:
+                            window.innerWidth > 1125
+                              ? 60
+                              : window.innerWidth > 500
+                              ? 40
+                              : 25,
+                          fontFamily: 'Calibri',
+                        }}
+                      >
+                        <TextTransition
                           text='COVID-19 TESTLERİNDE KURUMLARA ÖZEL TEKLİFLER'
-                          springConfig={ presets.molasses }
-                          direction="up"
-                          />
-                          {/* <span>completed with examples</span> */}
-                        </h1>
-                        <p
+                          springConfig={presets.molasses}
+                          direction='up'
+                        />
+                        {/* <span>completed with examples</span> */}
+                      </h1>
+                      <p
                         className='lead text-white'
                         style={{fontFamily: 'Arial'}}
                       >
                         <TextTransition
                           text='Avrupa standartlarına uygunluk belgesi bulunan, %99,9
                           güvenilirlikte testler'
-                          springConfig={ presets.slow }
+                          springConfig={presets.slow}
                           delay={1000}
-                          direction="up"
-                          />
+                          direction='up'
+                        />
                       </p>
-                      </Col>
-                    </Row>
-                  </div>
-                </Container>
-              </div>
-              <section
-                className='section section-lg pt-lg-0 mt--200'
-                style={{paddingTop: 0, paddingBottom: 30}}
-              >
-               <Container style={{marginTop: 85}}>
+                    </Col>
+                  </Row>
+                </div>
+              </Container>
+            </div>
+            <section
+              className='section section-lg pt-lg-0 mt--200'
+              style={{paddingTop: 0, paddingBottom: 30}}
+            >
+              <Container style={{marginTop: 85}}>
                 <Row className='justify-content-center'>
                   <Col lg='12'>
                     <Row className='row-grid'>
@@ -308,9 +286,10 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
                     </Row>
                   </Col>
                 </Row>
-              </Container></section>
+              </Container>
             </section>
-          </div>
+          </section>
+        </div>
 
         <section className='section section-lg' style={{paddingTop: 10}}>
           <Container>
@@ -443,7 +422,8 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
                       textAlign: 'center',
                     }}
                   >
-                    ÇALIŞANLARINIZIN TESTLERİNİ VAKİT KAYBETMEDEN YAPTIRIN
+                    ÇALIŞANLARINIZIN TESTLERİNİ VAKİT <br /> KAYBETMEDEN
+                    YAPTIRIN
                   </h3>
                   <p
                     style={{
@@ -665,7 +645,8 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
                 </div>
               </Col>
             </Row>
-            <Row className='row-grid align-items-center'>
+            {/* className='row-grid align-items-center' */}
+            <Row>
               <Col
                 className='order-md-1'
                 md='6'
@@ -1018,7 +999,7 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
             <Row className='justify-content-center mt--300'>
               <Col lg='8'>
                 <Card className='bg-gradient-secondary shadow'>
-                  <CardBody className='p-lg-5'>
+                  <CardBody className='p-lg-5' style={{marginTop: 15}}>
                     <h4
                       className='mb-1'
                       style={{
