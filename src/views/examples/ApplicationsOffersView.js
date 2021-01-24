@@ -11,7 +11,7 @@ import {
   Container,
   Button,
   Row,
-  Col
+  Col,
 } from 'reactstrap';
 // core components
 import classnames from 'classnames';
@@ -21,35 +21,42 @@ import ExportExcell from './ExportExcell.js';
 import {AppointmentService} from '../../services/index';
 import PaginationComp from 'components/Pagination.js';
 import '../../assets/css/validation.css';
-import {responseMessages} from 'config/utils';
 
 const ApplicationsOffersView = ({
   appointmentService = new AppointmentService(),
 }) => {
-
-  const [tableTitles,] = useState({AddedDate:'Tarih',Email:'Eposta',Location:'Lokasyon',Message:'Mesaj',Name:'Ad-Soyad',Phone:'Telefon',TestType:'Test Tipi'});
-  const [navstate,setNavState] = useState({iconTabs:1,plainTabs:1});
+  const [tableTitles] = useState({
+    AddedDate: 'Tarih',
+    Email: 'Eposta',
+    Location: 'Lokasyon',
+    Message: 'Mesaj',
+    Name: 'Ad-Soyad',
+    Phone: 'Telefon',
+    TestType: 'Test Tipi',
+  });
+  const [navstate, setNavState] = useState({iconTabs: 1, plainTabs: 1});
 
   const [offerData, setOfferData] = useState([]);
   const [appointmentsData, setAppointmentsData] = useState([]);
-  
+
   useEffect(() => {
     appointmentService.getAppointmentsData().then(res => {
-
-        if (res.data) {
-            setAppointmentsData(res.data.data);
-        }
+      if (res.data) {
+        setAppointmentsData(res.data.data);
+      }
     });
-   
-
   }, []);
- const getOffersData = () => {
-    appointmentService.getOffersData().then(res => {
+
+  useEffect(() => {
+    if (navstate.plainTabs === 2) {
+      appointmentService.getOffersData().then(res => {
         if (res.data) {
-            setOfferData(res.data.data);
+          setOfferData(res.data.data);
         }
-    });
- }
+      });
+    }
+  }, [navstate.plainTabs]);
+
   const toggleNavs = (e, state, index) => {
     e.preventDefault();
     setNavState({
@@ -80,144 +87,143 @@ const ApplicationsOffersView = ({
         </section>
         <section className='section' style={{paddingTop: 0}}>
           <Container>
-
-            <Card className="card-profile shadow mt--300">
-              <div className="px-4">
-                
-                <div className="mt-5 py-5 border-top text-center">
-                  <Row className="justify-content-center">
-                    <Col lg="12">
-                    <Col className="mt-5 mt-lg-0" lg="12">
-          {/* Menu */}
-                    <div className="mb-3">
-                      <small className="text-uppercase font-weight-bold">
-                        BAŞVURU - TEKLİF EKRANI
-                      </small>
-                    </div>
-                  <div className="nav-wrapper">
-                    <Nav
-                      className="nav-fill flex-column flex-md-row"
-                      id="tabs-icons-text"
-                      pills
-                      role="tablist"
-                    >
-                      <NavItem>
-                        <NavLink
-                          aria-selected={navstate.plainTabs === 1}
-                          className={classnames("mb-sm-3 mb-md-0", {
-                            active: navstate.plainTabs === 1
-                          })}
-                          onClick={e => toggleNavs(e, "plainTabs", 1)}
-                          href="#pablo"
-                          role="tab"
-                        >
-                          Başvurular
-                        </NavLink>
-                      </NavItem>
-                      <NavItem>
-                        <NavLink
-                          aria-selected={navstate.plainTabs === 2}
-                          className={classnames("mb-sm-3 mb-md-0", {
-                            active: navstate.plainTabs === 2
-                          })}
-                          onClick={e => toggleNavs(e, "plainTabs", 2)}
-                          href="#pablo"
-                          role="tab"
-                        >
-                        Teklifler
-                        </NavLink>
-                      </NavItem>
-                        </Nav>
-                  </div>
-                  <Card >
-                  <CardBody>
-                      <TabContent activeTab={"plainTabs" + navstate.plainTabs}>
-                      <TabPane tabId="plainTabs1">
-                      <ExportExcell data={offerData && offerData} titles={tableTitles} surveyData={true} />
-                      <Table responsive>
-                        <thead>
-                        <tr>
-                            <th>Ad-Soyad</th>
-                            <th>Email</th>
-                            <th>Telefon</th>
-                            <th>Test Tipi</th>
-                            <th>Lokasyon</th>
-                            <th>Mesaj</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {
-                            appointmentsData.length > 0 && appointmentsData.map((item) => {
-                            return ( 
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>{item.Name} </td>
-                                <td>{item.Email}</td>
-                                <td>{item.Phone}</td>
-                                <td>{item.TestType}</td>
-                                <td>{item.Location}</td>
-                                <td>{item.Message}</td>
-                                <td>{item.AddedDate}</td>
-                            </tr>
-                            )
-                            })
-                        }
-                           
-                           
-                       
-                           
-                        </tbody>
-                    </Table>
-                      </TabPane>
-                      <TabPane tabId="plainTabs2"
-                      onClick={getOffersData()}>
-                        <ExportExcell data={offerData && offerData} titles={tableTitles} surveyData={true} /> 
-                      <Table responsive>
-                        <thead>
-                        <tr>
-                            <th>Ad-Soyad</th>
-                            <th>Email</th>
-                            <th>Telefon</th>
-                            <th>Test Tipi</th>
-                            <th>Kurum Adı</th>
-                            <th>Çalışan Sayısı</th>
-                            <th>Lokasyon</th>
-                            <th>Mesaj</th>
-                            <th>Tarih</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {
-                            offerData.length > 0 && offerData.map((item) => {
-                            return ( 
-                            <tr>
-                                <td>{item.Name} </td>
-                                <td>{item.Email}</td>
-                                <td>{item.Phone}</td>
-                                <td>{item.TestType}</td>
-                                <td>{item.CorporateName}</td>
-                                <td>{item.WorkerCount}</td>
-                                <td>{item.Location}</td>
-                                <td>{item.Message}</td>
-                                <td>{item.AddedDate}</td>
-                            </tr>
-                            )
-                            })
-                        }
-                           
-                           
-                       
-                           
-                        </tbody>
-                    </Table>
-                    
-                      </TabPane>
-                       </TabContent>
-                  </CardBody>
-                  </Card>
-                  <PaginationComp />
-                  </Col>
-                   </Col>
+            <Card className='card-profile shadow mt--300'>
+              <div className='px-4'>
+                <div className='mt-5 py-5 border-top text-center'>
+                  <Row className='justify-content-center'>
+                    <Col lg='12'>
+                      <Col className='mt-5 mt-lg-0' lg='12'>
+                        {/* Menu */}
+                        <div className='mb-3'>
+                          <small className='text-uppercase font-weight-bold'>
+                            BAŞVURU - TEKLİF EKRANI
+                          </small>
+                        </div>
+                        <div className='nav-wrapper'>
+                          <Nav
+                            className='nav-fill flex-column flex-md-row'
+                            id='tabs-icons-text'
+                            pills
+                            role='tablist'
+                          >
+                            <NavItem>
+                              <NavLink
+                                aria-selected={navstate.plainTabs === 1}
+                                className={classnames('mb-sm-3 mb-md-0', {
+                                  active: navstate.plainTabs === 1,
+                                })}
+                                onClick={e => toggleNavs(e, 'plainTabs', 1)}
+                                href='#pablo'
+                                role='tab'
+                              >
+                                Başvurular
+                              </NavLink>
+                            </NavItem>
+                            <NavItem>
+                              <NavLink
+                                aria-selected={navstate.plainTabs === 2}
+                                className={classnames('mb-sm-3 mb-md-0', {
+                                  active: navstate.plainTabs === 2,
+                                })}
+                                onClick={e => toggleNavs(e, 'plainTabs', 2)}
+                                href='#pablo'
+                                role='tab'
+                              >
+                                Teklifler
+                              </NavLink>
+                            </NavItem>
+                          </Nav>
+                        </div>
+                        <Card>
+                          <CardBody>
+                            <TabContent
+                              activeTab={'plainTabs' + navstate.plainTabs}
+                            >
+                              <TabPane tabId='plainTabs1'>
+                                <ExportExcell
+                                  data={appointmentsData}
+                                  titles={tableTitles}
+                                  surveyData={true}
+                                />
+                                <Table responsive>
+                                  <thead>
+                                    <tr>
+                                      <th>Ad-Soyad</th>
+                                      <th>Email</th>
+                                      <th>Telefon</th>
+                                      <th>Test Tipi</th>
+                                      <th>Lokasyon</th>
+                                      <th>Mesaj</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    {appointmentsData.length > 0 &&
+                                      appointmentsData.map(item => {
+                                        return (
+                                          <tr>
+                                            <th scope='row'>1</th>
+                                            <td>{item.Name} </td>
+                                            <td>{item.Email}</td>
+                                            <td>{item.Phone}</td>
+                                            <td>{item.TestType}</td>
+                                            <td>{item.Location}</td>
+                                            <td>{item.Message}</td>
+                                            <td>{item.AddedDate}</td>
+                                          </tr>
+                                        );
+                                      })}
+                                  </tbody>
+                                </Table>
+                              </TabPane>
+                              <TabPane
+                                tabId='plainTabs2'
+                                // onClick={() => getOffersData}
+                              >
+                                <ExportExcell
+                                  data={offerData}
+                                  titles={tableTitles}
+                                  surveyData={true}
+                                />
+                                <Table responsive>
+                                  <thead>
+                                    <tr>
+                                      <th>Ad-Soyad</th>
+                                      <th>Email</th>
+                                      <th>Telefon</th>
+                                      <th>Test Tipi</th>
+                                      <th>Kurum Adı</th>
+                                      <th>Çalışan Sayısı</th>
+                                      <th>Lokasyon</th>
+                                      <th>Mesaj</th>
+                                      <th>Tarih</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    {offerData.length > 0 &&
+                                      offerData.map(item => {
+                                        return (
+                                          <tr>
+                                            <td>{item.Name} </td>
+                                            <td>{item.Email}</td>
+                                            <td>{item.Phone}</td>
+                                            <td>{item.TestType}</td>
+                                            <td>{item.CorporateName}</td>
+                                            <td>{item.WorkerCount}</td>
+                                            <td>{item.Location}</td>
+                                            <td>{item.Message}</td>
+                                            <td>{item.AddedDate}</td>
+                                          </tr>
+                                        );
+                                      })}
+                                  </tbody>
+                                </Table>
+                              </TabPane>
+                            </TabContent>
+                          </CardBody>
+                        </Card>
+                        <PaginationComp />
+                      </Col>
+                    </Col>
                   </Row>
                 </div>
               </div>

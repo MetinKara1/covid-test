@@ -9,76 +9,50 @@ import {FormattedMessage, IntlProvider} from 'react-intl';
 const ExportExcell = ({
   titles,
   data,
-  lang,
+  lang = 'tr',
   disabled = true,
   surveyData = false,
 }) => {
+  let enhancedData = [];
   const onExportExcellClick = () => {
-    const wscols = [];
-    const enhancedData =
-      data &&
-      data.map((k, index) => {
-        const el = {...k};
-
-        const titled = {};
-        Object.keys(el).forEach(key => {
-          if (index === 0) {
-            if (titles[key])
-              wscols.push({
-                width: 20,
-              });
-          }
-
-          if (titles[key] && titles[key].ttExcelRender) {
-            el[key] = titles[key].ttExcelRender(el[key]);
-          }
-          if (lang === 'tr') {
-            if (titles[key] && titles[key].tr) {
-              if (
-                el[key] !== null &&
-                (key.includes('date') || key.includes('Date'))
-              ) {
-                titled[titles[key].tr] = moment(el[key]).format('DD.MM.YYYY');
-              } else if (el[key] === true) {
-                titled[titles[key].tr] = 'Tamamlandı';
-              } else if (el[key] === false) {
-                titled[titles[key].tr] = 'Tamamlanmadı';
-              } else {
-                titled[titles[key].tr] = el[key];
-              }
-            }
-          } else {
-            if (titles[key] && titles[key].en) {
-              if (
-                el[key] !== null &&
-                (key.includes('date') || key.includes('Date'))
-              ) {
-                titled[titles[key].en] = moment(el[key]).format('DD.MM.YYYY');
-              } else if (el[key] === true) {
-                titled[titles[key].en] = 'Completed';
-              } else if (el[key] === false) {
-                titled[titles[key].en] = 'Incomplete';
-              } else {
-                titled[titles[key].en] = el[key];
-              }
+    if (data && Array.isArray(data)) {
+      enhancedData = data.map(item => {
+        let enhancedObject = {};
+        Object.keys(item).forEach((key, index) => {
+          if (key !== 'id') {
+            if (key === 'Name') {
+              enhancedObject['Ad Soyad'] = Object.values(item)[index];
+            } else if (key === 'Email') {
+              enhancedObject['Mail'] = Object.values(item)[index];
+            } else if (key === 'Phone') {
+              enhancedObject['Telefon'] = Object.values(item)[index];
+            } else if (key === 'CorporateName') {
+              enhancedObject['Kurum Adı'] = Object.values(item)[index];
+            } else if (key === 'WorkerCount') {
+              enhancedObject['Çalışan Sayısı'] = Object.values(item)[index];
+            } else if (key === 'TestType') {
+              enhancedObject['Test Tipi'] = Object.values(item)[index];
+            } else if (key === 'Location') {
+              enhancedObject['Lokasyon'] = Object.values(item)[index];
+            } else if (key === 'Message') {
+              enhancedObject['Mesaj'] = Object.values(item)[index];
+            } else if (key === 'AddedDate') {
+              enhancedObject['Tarih'] = moment(
+                Object.values(item)[index]
+              ).format('DD.MM.YYYY, h:mm:ss');
+            } else {
+              enhancedObject[key] = Object.values(item)[index];
             }
           }
         });
-        return {...titled};
+        return {...enhancedObject};
       });
-
-    const newWorkBook = XLSX.utils.book_new();
-    const newSheet = surveyData
-      ? XLSX.utils.json_to_sheet(data)
-      : XLSX.utils.json_to_sheet(enhancedData);
-    XLSX.utils.book_append_sheet(newWorkBook, newSheet, 'Sayfa');
-    newSheet['!cols'] = wscols;
-
-    if (surveyData) {
-      const range = XLSX.utils.decode_range(newSheet['!ref']);
-      range.s.r = 1; // <-- zero-indexed, so setting to 1 will skip row 0
-      newSheet['!ref'] = XLSX.utils.encode_range(range);
     }
+    console.log('enhancedData', enhancedData);
+    const newWorkBook = XLSX.utils.book_new();
+    const newSheet = XLSX.utils.json_to_sheet(enhancedData);
+    XLSX.utils.book_append_sheet(newWorkBook, newSheet, 'Sayfa');
+    //   newSheet['!cols'] = wscols;
 
     XLSX.writeFile(newWorkBook, 'Unknown.xlsx', {
       bookType: 'xlsx',
@@ -102,7 +76,6 @@ const ExportExcell = ({
               className='float-right'
               color='default'
               href='#pablo'
-              onClick={onExportExcellClick}
               size='sm'
               style={{marginBottom: 10}}
             >
