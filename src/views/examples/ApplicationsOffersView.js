@@ -13,6 +13,8 @@ import {
   Row,
   Col,
 } from 'reactstrap';
+import moment from 'moment';
+import 'moment/locale/tr';
 // core components
 import classnames from 'classnames';
 import DemoNavbar from 'components/Navbars/DemoNavbar.js';
@@ -21,6 +23,8 @@ import ExportExcell from './ExportExcell.js';
 import {AppointmentService} from '../../services/index';
 import PaginationComp from 'components/Pagination.js';
 import '../../assets/css/validation.css';
+
+moment().locale('tr');
 
 const ApplicationsOffersView = ({
   appointmentService = new AppointmentService(),
@@ -154,6 +158,7 @@ const ApplicationsOffersView = ({
                                       <th>Test Tipi</th>
                                       <th>Lokasyon</th>
                                       <th>Mesaj</th>
+                                      <th>Tarih</th>
                                     </tr>
                                   </thead>
                                   <tbody>
@@ -161,14 +166,17 @@ const ApplicationsOffersView = ({
                                       appointmentsData.map(item => {
                                         return (
                                           <tr>
-                                            <th scope='row'>1</th>
                                             <td>{item.Name} </td>
                                             <td>{item.Email}</td>
                                             <td>{item.Phone}</td>
                                             <td>{item.TestType}</td>
                                             <td>{item.Location}</td>
                                             <td>{item.Message}</td>
-                                            <td>{item.AddedDate}</td>
+                                            <td>
+                                              {moment(item.AddedDate).format(
+                                                'LLL'
+                                              )}
+                                            </td>
                                           </tr>
                                         );
                                       })}
@@ -211,7 +219,11 @@ const ApplicationsOffersView = ({
                                             <td>{item.WorkerCount}</td>
                                             <td>{item.Location}</td>
                                             <td>{item.Message}</td>
-                                            <td>{item.AddedDate}</td>
+                                            <td>
+                                              {moment(item.AddedDate).format(
+                                                'LLL'
+                                              )}
+                                            </td>
                                           </tr>
                                         );
                                       })}
