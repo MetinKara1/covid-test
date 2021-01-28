@@ -3,8 +3,8 @@ import 'antd/dist/antd.css';
 import {Form, Checkbox, Spin} from 'antd';
 import TextTransition, {presets} from 'react-text-transition';
 // nodejs library that concatenates classes
-import bg from '../../assets/img/theme/deneme1.png';
-import mbg from '../../assets/img/theme/mbSon.png';
+import bg from '../../assets/img/theme/wback2.png';
+import mbg from '../../assets/img/theme/mback2.png';
 import {
   Badge,
   Card,
