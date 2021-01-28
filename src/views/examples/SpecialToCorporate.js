@@ -3,7 +3,7 @@ import {Form, Spin} from 'antd';
 import TextTransition, {presets} from 'react-text-transition';
 // nodejs library that concatenates classes
 import classnames from 'classnames';
-import bg from '../../assets/img/theme/wback2.png';
+import bg from '../../assets/img/theme/wback3.png';
 import mbg from '../../assets/img/theme/mback2.png';
 
 import {
@@ -81,8 +81,8 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
     <>
       <DemoNavbar />
       <main>
-      <div className=''>
-      <section
+        <div className=''>
+          <section
             className='section section-lg section-shaped'
             style={{paddingTop: 10, paddingBottom: 0}}
           >
@@ -289,7 +289,7 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
               </Container>
             </section>
           </section>
-      </div>
+        </div>
 
         <section className='section section-lg' style={{paddingTop: 10}}>
           <Container>
@@ -959,7 +959,7 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
             </svg>
           </div> */}
         </section>
-{/* 
+        {/* 
         <section className='section section-lg '>
           <Container></Container>
         </section> */}
