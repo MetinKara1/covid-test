@@ -3,8 +3,8 @@ import {Link} from 'react-router-dom';
 import TextTransition, {presets} from 'react-text-transition';
 // nodejs library that concatenates classes
 import classnames from 'classnames';
-import bg from '../../assets/img/theme/deneme1.png';
-import mbg from '../../assets/img/theme/mbSon.png';
+import bg from '../../assets/img/theme/wback1.png';
+import mbg from '../../assets/img/theme/mback1.png';
 
 import {Badge, Button, Card, CardBody, Container, Row, Col} from 'reactstrap';
 
