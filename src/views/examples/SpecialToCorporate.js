@@ -3,8 +3,8 @@ import {Form, Spin} from 'antd';
 import TextTransition, {presets} from 'react-text-transition';
 // nodejs library that concatenates classes
 import classnames from 'classnames';
-import bg from '../../assets/img/theme/wback3.png';
-import mbg from '../../assets/img/theme/mback3.png';
+import bg from '../../assets/img/theme/wback2.png';
+import mbg from '../../assets/img/theme/mback2.png';
 
 import {
   Badge,
