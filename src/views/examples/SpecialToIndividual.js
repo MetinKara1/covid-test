@@ -493,7 +493,14 @@ const SpecialToIndividual = ({
                       </div>
                     </li>
                     <div>
-                      <li className='py-2'>
+                      <li
+                        className='py-2'
+                        style={{
+                          marginTop: `${
+                            window.innerWidth < 768 ? '-3rem' : '0'
+                          }`,
+                        }}
+                      >
                         <div className='d-flex'>
                           <div style={{marginTop: 7}}>
                             <Badge
@@ -553,7 +560,7 @@ const SpecialToIndividual = ({
                 className='order-md-1'
                 md='4'
                 style={{
-                  marginTop: `${window.innerWidth < 768 ? '0.1rem' : '-7rem'}`,
+                  marginTop: `${window.innerWidth < 768 ? '-3.8rem' : '-7rem'}`,
                 }}
               >
                 <div className='pr-md-5'>
@@ -703,7 +710,7 @@ const SpecialToIndividual = ({
                 className='order-md-1'
                 md='6'
                 style={{
-                  marginTop: `${window.innerWidth < 768 ? '0.1rem' : '3rem'}`,
+                  marginTop: `${window.innerWidth < 768 ? '-3.8rem' : '3rem'}`,
                 }}
               >
                 <div className='pr-md-5'>
