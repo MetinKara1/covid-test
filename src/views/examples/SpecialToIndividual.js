@@ -345,7 +345,7 @@ const SpecialToIndividual = ({
                       fontSize: 30,
                       fontWeight: 700,
                       fontFamily: 'Calibri',
-                      marginBottom: 30,
+                      marginBottom: 20,
                     }}
                   >
                     COVID-19 PCR ve ANTİKOR TESTLERİ
@@ -365,7 +365,7 @@ const SpecialToIndividual = ({
                       fontSize: 20,
                       fontWeight: 700,
                       fontFamily: 'Calibri',
-                      marginBottom: 30,
+                      marginBottom: 20,
                     }}
                   >
                     Ameliyat ve Yurt Dışına Çıkış Öncesi
@@ -380,7 +380,7 @@ const SpecialToIndividual = ({
                       fontSize: 20,
                       fontWeight: 700,
                       fontFamily: 'Calibri',
-                      marginBottom: 30,
+                      marginBottom: 20,
                     }}
                   >
                     Tanıda Güvenilirliği Artırın
