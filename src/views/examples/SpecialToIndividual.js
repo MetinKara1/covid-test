@@ -762,7 +762,7 @@ const SpecialToIndividual = ({
           </Container>
         </section>
 
-        <section className='pb-0 bg-secondary'>
+        <section className='section bg-secondary'>
           <Container>
             <Row className='row-grid'>
               <Col className='order-lg-1' lg='12'>
@@ -944,7 +944,7 @@ const SpecialToIndividual = ({
               </Col>
             </Row>
           </Container>
-          <div className='separator separator-bottom separator-skew zindex-100'>
+          {/* <div className='separator separator-bottom separator-skew zindex-100'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               preserveAspectRatio='none'
@@ -955,7 +955,7 @@ const SpecialToIndividual = ({
             >
               <polygon className='fill-white' points='2560 0 2560 100 0 100' />
             </svg>
-          </div>
+          </div> */}
         </section>
 
         {/* <section className='section section-lg pt-0'>
