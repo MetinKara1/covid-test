@@ -1,7 +1,7 @@
 import React from 'react';
 // nodejs library that concatenates classes
 import classnames from 'classnames';
-import bg from '../../assets/img/theme/bg1.png';
+import bg from '../../assets/img/theme/wback1.png';
 
 import {
   Badge,
@@ -237,7 +237,7 @@ class Landing extends React.Component {
                   <img
                     alt='...'
                     className='img-fluid floating'
-                    src={require('../../assets/img/theme/covid2.png')}
+                    src={require('../../assets/img/theme/res1.jpg')}
                   />
                 </Col>
                 <Col className='order-md-1' md='8'>
@@ -329,7 +329,7 @@ class Landing extends React.Component {
                   <Card className='bg-default shadow border-0'>
                     <CardImg
                       alt='...'
-                      src={require('assets/img/theme/covid1.jpg')}
+                      src={require('assets/img/theme/res1.jpg')}
                       top
                     />
                     <blockquote className='card-blockquote'>
