@@ -81,8 +81,8 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
     <>
       <DemoNavbar />
       <main>
-        <div className=''>
-          <section
+      <div className=''>
+      <section
             className='section section-lg section-shaped'
             style={{paddingTop: 10, paddingBottom: 0}}
           >
@@ -289,7 +289,7 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
               </Container>
             </section>
           </section>
-        </div>
+      </div>
 
         <section className='section section-lg' style={{paddingTop: 10}}>
           <Container>
@@ -763,7 +763,7 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
             </Row>
           </Container>
         </section>
-        <section className='pb-0 bg-secondary'>
+        <section className='section bg-secondary'>
           <Container>
             <Row className='row-grid'>
               <Col className='order-lg-1' lg='12'>
@@ -946,7 +946,7 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
             </Row>
           </Container>
 
-          <div className='separator separator-bottom separator-skew zindex-100'>
+          {/* <div className='separator separator-bottom separator-skew zindex-100'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               preserveAspectRatio='none'
@@ -957,12 +957,12 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
             >
               <polygon className='fill-white' points='2560 0 2560 100 0 100' />
             </svg>
-          </div>
+          </div> */}
         </section>
-
-        <section className='section section-lg pt-0'>
+{/* 
+        <section className='section section-lg '>
           <Container></Container>
-        </section>
+        </section> */}
         <section className='section section-lg bg-gradient-default'>
           <Container className=' pb-200'>
             <h5
