@@ -101,6 +101,7 @@ class DemoNavbar extends React.Component {
                   <UncontrolledDropdown nav>
                     <DropdownToggle
                       nav
+                      style={{paddingLeft: 0}}
                       // onClick={() => this.setState({changeButtonText: true})}
                     >
                       <i className='ni ni-ui-04 d-lg-none mr-1' />
@@ -123,6 +124,7 @@ class DemoNavbar extends React.Component {
                     <DropdownToggle
                       nav
                       onClick={() => this.setState({changeButtonText: true})}
+                      style={{paddingLeft: 0}}
                     >
                       <i className='ni ni-ui-04 d-lg-none mr-1' />
                       <span className='nav-link-inner--text'>
@@ -141,7 +143,7 @@ class DemoNavbar extends React.Component {
                     </DropdownToggle>
                   </UncontrolledDropdown>
                   <UncontrolledDropdown nav>
-                    <DropdownToggle nav>
+                    <DropdownToggle nav style={{paddingLeft: 0}}>
                       <i className='ni ni-collection d-lg-none mr-1' />
                       <span
                         className='nav-link-inner--text'
