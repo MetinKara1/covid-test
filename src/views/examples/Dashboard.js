@@ -58,7 +58,7 @@ const Landing = () => {
             >
               <Container className='py-lg-md d-flex'>
                 <div className='col px-0'>
-                  <Row style={{marginTop: 200}}>
+                  <Row style={{marginTop: 260}}>
                     <Col lg='7'>
                       <h1
                         className='display-3 text-white'
@@ -70,6 +70,7 @@ const Landing = () => {
                               ? 40
                               : 25,
                           fontFamily: 'Calibri',
+                          lineHeight:1.2,
                         }}
                       >
                         <TextTransition

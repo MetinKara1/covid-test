@@ -103,7 +103,7 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
             >
               <Container className='py-lg-md d-flex'>
                 <div className='col px-0'>
-                  <Row style={{marginTop: 200}}>
+                  <Row style={{marginTop: 260}}>
                     <Col lg='8'>
                       <h1
                         className='display-3 text-white'
@@ -115,6 +115,7 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
                               ? 40
                               : 25,
                           fontFamily: 'Calibri',
+                          lineHeight:1.2,
                         }}
                       >
                         <TextTransition
