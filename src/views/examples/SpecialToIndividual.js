@@ -968,7 +968,7 @@ const SpecialToIndividual = ({
         {/* <section className='section section-lg pt-0'>
           <Container></Container>
         </section> */}
-        <section className='section section-lg bg-gradient-default'>
+        <section className='section section-lg bg-gradient-default'  id='appointment'>
           <Container className=' pb-200'>
             <h5
               className='display-3'
@@ -999,7 +999,7 @@ const SpecialToIndividual = ({
 
         <section
           className='section section-lg pt-lg-0 section-contact-us'
-          id='appointment'
+         
           style={{paddingBottom: 10}}
         >
           <Container>

@@ -970,7 +970,7 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
         <section className='section section-lg '>
           <Container></Container>
         </section> */}
-        <section className='section section-lg bg-gradient-default'>
+        <section className='section section-lg bg-gradient-default' id='appointment'>
           <Container className=' pb-200'>
             <h5
               className='display-3'
@@ -1000,7 +1000,7 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
         </section>
         <section
           className='section section-lg pt-lg-0 section-contact-us'
-          id='appointment'
+          
         >
           <Container>
             <Row className='justify-content-center mt--300'>
