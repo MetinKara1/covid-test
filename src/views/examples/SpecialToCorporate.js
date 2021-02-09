@@ -3,7 +3,7 @@ import {Form, Spin} from 'antd';
 import TextTransition, {presets} from 'react-text-transition';
 // nodejs library that concatenates classes
 import classnames from 'classnames';
-import bg from '../../assets/img/theme/wback5.png';
+import bg from '../../assets/img/theme/bg14.png';
 import mbg from '../../assets/img/theme/mback2.png';
 
 import {
@@ -115,7 +115,7 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
                               ? 40
                               : 25,
                           fontFamily: 'Calibri',
-                          lineHeight:1.2,
+                          lineHeight: 1.2,
                         }}
                       >
                         <TextTransition
@@ -175,9 +175,9 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
                               style={{fontFamily: 'Arial'}}
                             >
                               PCR testi virüslerin genetik yapısını tespit eden
-                              moleküler bir tanı ve antijen testidir. COVID-19’a
-                              yakalanan ve virüsü aktif olarak taşıyan kişilerin
-                              belirlenmesini
+                              moleküler bir tanı testidir. COVID-19’a yakalanan
+                              ve virüsü aktif olarak taşıyan kişilerin
+                              belirlenmesini sağlar.
                             </p>
                             <Button
                               className='text-primary '
@@ -190,7 +190,7 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
                                 fontFamily: 'Arial',
                               }}
                             >
-                              Detaylı Bilgi <i className='ni ni-fat-add'></i>
+                              {/* Detaylı Bilgi <i className='ni ni-fat-add'></i> */}
                             </Button>
                           </CardBody>
                         </Card>
@@ -235,7 +235,7 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
                                 fontFamily: 'Arial',
                               }}
                             >
-                              Detaylı Bilgi <i className='ni ni-fat-add'></i>
+                              {/* Detaylı Bilgi <i className='ni ni-fat-add'></i> */}
                             </Button>
                           </CardBody>
                         </Card>
@@ -279,7 +279,7 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
                                 fontFamily: 'Arial',
                               }}
                             >
-                              Detaylı Bilgi <i className='ni ni-fat-add'></i>
+                              {/* Detaylı Bilgi <i className='ni ni-fat-add'></i> */}
                             </Button>
                           </CardBody>
                         </Card>
@@ -971,7 +971,10 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
         <section className='section section-lg '>
           <Container></Container>
         </section> */}
-        <section className='section section-lg bg-gradient-default' id='appointment'>
+        <section
+          className='section section-lg bg-gradient-default'
+          id='appointment'
+        >
           <Container className=' pb-200'>
             <h5
               className='display-3'
@@ -999,10 +1002,7 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
             </svg>
           </div>
         </section>
-        <section
-          className='section section-lg pt-lg-0 section-contact-us'
-          
-        >
+        <section className='section section-lg pt-lg-0 section-contact-us'>
           <Container>
             <Row className='justify-content-center mt--300'>
               <Col lg='8'>
