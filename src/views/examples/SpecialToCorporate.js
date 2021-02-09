@@ -103,7 +103,7 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
             >
               <Container className='py-lg-md d-flex'>
                 <div className='col px-0'>
-                  <Row style={{marginTop: 200}}>
+                  <Row style={{marginTop: 260}}>
                     <Col lg='8'>
                       <h1
                         className='display-3 text-white'
@@ -115,6 +115,7 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
                               ? 40
                               : 25,
                           fontFamily: 'Calibri',
+                          lineHeight:1.2,
                         }}
                       >
                         <TextTransition
@@ -970,7 +971,7 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
         <section className='section section-lg '>
           <Container></Container>
         </section> */}
-        <section className='section section-lg bg-gradient-default'>
+        <section className='section section-lg bg-gradient-default' id='appointment'>
           <Container className=' pb-200'>
             <h5
               className='display-3'
@@ -1000,7 +1001,7 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
         </section>
         <section
           className='section section-lg pt-lg-0 section-contact-us'
-          id='appointment'
+          
         >
           <Container>
             <Row className='justify-content-center mt--300'>
