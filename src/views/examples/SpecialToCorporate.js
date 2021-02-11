@@ -398,13 +398,13 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
                     birlikte yapılarak hastalık ve evresi güvenli bir şekilde
                     belirlenebilmektedir.
                   </p>
-                  <a
+                  {/* <a
                     className='font-weight-bold text-warning mt-5'
                     href='#pablo'
                     onClick={e => e.preventDefault()}
                   >
                     Randevu Al
-                  </a>
+                  </a> */}
                 </div>
               </Col>
             </Row>
