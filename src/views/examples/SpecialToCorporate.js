@@ -1293,10 +1293,11 @@ const SpecialToCorporate = ({offerService = new OfferService()}) => {
                                 type='text'
                                 onFocus={e => setState({locationFocused: true})}
                                 onBlur={e => setState({locationFocused: false})}
+                                value={corporates.Location}
                                 onChange={e =>
                                   setCorporate({
                                     ...corporates,
-                                    Location: e.target.value,
+                                    Location: e.target.value.toUpperCase(),
                                   })
                                 }
                               />
