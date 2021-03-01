@@ -3,7 +3,7 @@ import 'antd/dist/antd.css';
 import {Form, Checkbox, Spin} from 'antd';
 import TextTransition, {presets} from 'react-text-transition';
 // nodejs library that concatenates classes
-import bg from '../../assets/img/theme/wback2.png';
+import bg from '../../assets/img/theme/bg11.png';
 import mbg from '../../assets/img/theme/mback3.png';
 import {
   Badge,
@@ -112,7 +112,7 @@ const SpecialToIndividual = ({
                               ? 40
                               : 25,
                           fontFamily: 'Calibri',
-                          lineHeight:1.2,
+                          lineHeight: 1.2,
                         }}
                       >
                         <TextTransition
@@ -170,9 +170,9 @@ const SpecialToIndividual = ({
                               style={{fontFamily: 'Arial'}}
                             >
                               PCR testi virüslerin genetik yapısını tespit eden
-                              moleküler bir tanı ve antijen testidir. COVID-19’a
-                              yakalanan ve virüsü aktif olarak taşıyan kişilerin
-                              belirlenmesini
+                              moleküler bir tanı testidir. COVID-19’a yakalanan
+                              ve virüsü aktif olarak taşıyan kişilerin
+                              belirlenmesini sağlar.
                             </p>
                             <Button
                               className='text-primary '
@@ -185,7 +185,7 @@ const SpecialToIndividual = ({
                                 fontFamily: 'Arial',
                               }}
                             >
-                              Detaylı Bilgi <i className='ni ni-fat-add'></i>
+                              {/* Detaylı Bilgi <i className='ni ni-fat-add'></i> */}
                             </Button>
                           </CardBody>
                         </Card>
@@ -230,7 +230,7 @@ const SpecialToIndividual = ({
                                 fontFamily: 'Arial',
                               }}
                             >
-                              Detaylı Bilgi <i className='ni ni-fat-add'></i>
+                              {/* Detaylı Bilgi <i className='ni ni-fat-add'></i> */}
                             </Button>
                           </CardBody>
                         </Card>
@@ -274,7 +274,7 @@ const SpecialToIndividual = ({
                                 fontFamily: 'Arial',
                               }}
                             >
-                              Detaylı Bilgi <i className='ni ni-fat-add'></i>
+                              {/* Detaylı Bilgi <i className='ni ni-fat-add'></i> */}
                             </Button>
                           </CardBody>
                         </Card>
@@ -396,13 +396,13 @@ const SpecialToIndividual = ({
                     birlikte yapılarak hastalık ve evresi güvenli bir şekilde
                     belirlenebilmektedir.
                   </p>
-                  <a
+                  {/* <a
                     className='font-weight-bold text-warning mt-5'
                     href='#pablo'
                     onClick={e => e.preventDefault()}
                   >
                     Randevu Al
-                  </a>
+                  </a> */}
                 </div>
               </Col>
             </Row>
@@ -969,7 +969,10 @@ const SpecialToIndividual = ({
         {/* <section className='section section-lg pt-0'>
           <Container></Container>
         </section> */}
-        <section className='section section-lg bg-gradient-default'  id='appointment'>
+        <section
+          className='section section-lg bg-gradient-default'
+          id='appointment'
+        >
           <Container className=' pb-200'>
             <h5
               className='display-3'
@@ -1000,7 +1003,6 @@ const SpecialToIndividual = ({
 
         <section
           className='section section-lg pt-lg-0 section-contact-us'
-         
           style={{paddingBottom: 10}}
         >
           <Container>
